@@ -1006,11 +1006,12 @@ def generate_html(weekly, season, updated_at):
     var popupStatHeader = document.getElementById('career-stat-header');
     var currentYear = {config.CURRENT_SEASON_YEAR};
 
-    function showCareer(name) {{
+    function showCareer(name, contextYear) {{
       var career = window.CAREER[name];
       if (!career || career.length === 0) return;
       var s = stat;
       var su = s.toUpperCase();
+      var hlYear = contextYear || null;
       popupName.textContent = name;
       popupStatHeader.textContent = su;
       var html = '';
@@ -1028,7 +1029,7 @@ def generate_html(weekly, season, updated_at):
           avgVal = av !== undefined ? av.toFixed(1) : '';
         }}
         var ldrCell = ldrVal || '\\u2014';
-        var rc = c.y === currentYear ? ' class="cp-current"' : '';
+        var rc = c.y === hlYear ? ' class="cp-current"' : '';
         html += '<tr' + rc + '>'
           + '<td class="cp-season">' + sl + '</td>'
           + '<td class="cp-team">' + tm + '</td>'
@@ -1050,7 +1051,9 @@ def generate_html(weekly, season, updated_at):
       var td = e.target.closest('td.player[data-player]');
       if (td) {{
         e.stopPropagation();
-        showCareer(td.getAttribute('data-player'));
+        var yearDiv = td.closest('.year-table[data-year]');
+        var ctxYear = yearDiv ? parseInt(yearDiv.getAttribute('data-year')) : null;
+        showCareer(td.getAttribute('data-player'), ctxYear);
       }}
     }});
 
