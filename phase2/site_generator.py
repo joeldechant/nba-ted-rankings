@@ -7,6 +7,7 @@ a single docs/index.html for GitHub Pages deployment.
 import os
 import sys
 import json
+import html as html_module
 from datetime import date, timedelta
 from . import config, database as db
 from .weekly_update import calculate_season_rankings, calculate_weekly_rankings
@@ -36,9 +37,10 @@ def render_table(rankings, stat_key, title, week_label=None):
         for r in rankings:
             rank = r.get(f'{stat_key}_rank', 0)
             name_html = format_player_name(r['player'])
+            player_attr = html_module.escape(r['player'], quote=True)
             rows_html += f"""        <tr>
           <td class="rank">{rank}</td>
-          <td class="player">{name_html}</td>
+          <td class="player" data-player="{player_attr}">{name_html}</td>
           <td class="team">{r['team']}</td>
           <td class="num stat">{r[stat_key]:.1f}</td>
         </tr>
@@ -131,9 +133,10 @@ def render_historical_section(data, stat_key='ted'):
             rows = ''
             for rank, p in enumerate(players_sorted, 1):
                 name_html = format_player_name(p['player'])
+                player_attr = html_module.escape(p['player'], quote=True)
                 team = p['team'] if p['team'] else '&mdash;'
                 val_str = f'{p[stat_key]:.1f}'
-                rows += f'        <tr><td class="rank">{rank}</td><td class="player">{name_html}</td><td class="team">{team}</td><td class="num stat">{val_str}</td></tr>\n'
+                rows += f'        <tr><td class="rank">{rank}</td><td class="player" data-player="{player_attr}">{name_html}</td><td class="team">{team}</td><td class="num stat">{val_str}</td></tr>\n'
 
             year_tables.append(f"""      <div class="year-table" data-year="{year_data['year']}">
         <div class="table-header"><h2>{season_label} SEASON &mdash; {stat_upper} TOP {top_n}</h2></div>
@@ -217,6 +220,48 @@ def render_all_time_html(data, stat_key='ted'):
 """
 
 
+def build_career_js(historical, season_all):
+    """Build JS career data from historical JSON + current season results.
+
+    Returns a <script> tag string with window.CAREER and window.SEASON_STATS.
+    """
+    career = {}
+    season_stats = {}
+
+    if historical:
+        career = historical.get('career_data', {})
+        season_stats = historical.get('season_stats', {})
+
+    # Merge current-season players into career data
+    current_year = config.CURRENT_SEASON_YEAR
+    if season_all:
+        for r in season_all:
+            name = r['player']
+            entry = {'y': current_year, 'tm': r['team'], 'ted': round(r['ted'], 1), 'tap': round(r['tap'], 1)}
+            if name not in career:
+                career[name] = []
+            # Avoid duplicate if already present for this year
+            if not any(s['y'] == current_year for s in career[name]):
+                career[name].append(entry)
+                career[name].sort(key=lambda x: x['y'])
+
+        # Add current season to season_stats
+        teds = [r['ted'] for r in season_all]
+        taps = [r['tap'] for r in season_all]
+        ted_leader = max(season_all, key=lambda r: r['ted'])
+        tap_leader = max(season_all, key=lambda r: r['tap'])
+        season_stats[str(current_year)] = {
+            'avg_ted': round(sum(teds) / len(teds), 1),
+            'avg_tap': round(sum(taps) / len(taps), 1),
+            'ldr_ted': ted_leader['player'], 'ldr_ted_val': round(ted_leader['ted'], 1),
+            'ldr_tap': tap_leader['player'], 'ldr_tap_val': round(tap_leader['tap'], 1),
+        }
+
+    career_json = json.dumps(career, ensure_ascii=False, separators=(',', ':'))
+    stats_json = json.dumps(season_stats, ensure_ascii=False, separators=(',', ':'))
+    return f'<script>window.CAREER={career_json};window.SEASON_STATS={stats_json};</script>'
+
+
 def generate_html(weekly, season, updated_at):
     """Generate the full HTML page — TED only."""
     season_label = f"{config.CURRENT_SEASON_YEAR}-{str(config.CURRENT_SEASON_YEAR + 1)[-2:]}"
@@ -225,6 +270,12 @@ def generate_html(weekly, season, updated_at):
     season_ted_table = render_table(season['ted'], 'ted', 'SEASON-TO-DATE TED TOP 100')
     weekly_tap_table = render_table(weekly['tap'], 'tap', 'WEEKLY TAP TOP 100')
     season_tap_table = render_table(season['tap'], 'tap', 'SEASON-TO-DATE TAP TOP 100')
+
+    # Build career popup data
+    career_js = build_career_js(
+        load_historical_rankings(),
+        season.get('all', [])
+    )
 
     historical = load_historical_rankings()
     if historical:
@@ -646,6 +697,116 @@ def generate_html(weekly, season, updated_at):
       height: 28px;
     }}
 
+    td.player[data-player] {{
+      cursor: pointer;
+    }}
+    td.player[data-player]:hover {{
+      opacity: 0.7;
+    }}
+
+    .career-overlay {{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }}
+    .career-overlay.active {{
+      display: flex;
+    }}
+
+    .career-popup {{
+      background: #111;
+      border: 2px solid #fff;
+      max-width: 600px;
+      width: 92%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 0;
+      position: relative;
+    }}
+
+    .career-popup-header {{
+      background: #fff;
+      color: #000;
+      padding: 12px 16px;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.1em;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }}
+
+    .career-popup-close {{
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      cursor: pointer;
+      font-size: 1.4em;
+      font-weight: 900;
+      color: #000;
+      background: none;
+      border: none;
+      font-family: 'Courier New', monospace;
+      line-height: 1;
+    }}
+
+    .career-popup table {{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88em;
+    }}
+
+    .career-popup thead {{
+      position: sticky;
+      top: 42px;
+      z-index: 1;
+    }}
+
+    .career-popup thead th {{
+      font-family: Georgia, 'Times New Roman', serif;
+      text-align: left;
+      padding: 6px 8px;
+      font-weight: 900;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      background: #111;
+    }}
+
+    .career-popup tbody tr {{
+      border-bottom: 1px solid #333;
+    }}
+
+    .career-popup td {{
+      padding: 4px 8px;
+      color: #fff;
+    }}
+
+    .career-popup .cp-season {{ width: 68px; }}
+    .career-popup .cp-team {{ width: 40px; text-align: center; }}
+    .career-popup .cp-stat {{ width: 52px; text-align: right; font-weight: 900; }}
+    .career-popup .cp-leader {{ text-align: left; font-size: 0.85em; }}
+    .career-popup .cp-avg {{ width: 48px; text-align: right; }}
+
+    .career-popup thead th.cp-stat {{ text-align: right; }}
+    .career-popup thead th.cp-avg {{ text-align: right; }}
+
+    .career-popup tr.cp-current td {{
+      color: #ee7623;
+      font-weight: 900;
+    }}
+
     @media (max-width: 900px) {{
       .tables-grid {{
         grid-template-columns: 1fr;
@@ -760,6 +921,28 @@ def generate_html(weekly, season, updated_at):
       <path d="M90 18 C70 38 70 62 90 82" stroke="#000" stroke-width="2.5" fill="none"/>
     </svg>
   </div>
+  <div class="career-overlay" id="career-overlay">
+    <div class="career-popup" id="career-popup">
+      <div class="career-popup-header">
+        <span id="career-popup-name"></span>
+        <button class="career-popup-close" id="career-popup-close">&times;</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="cp-season">Season</th>
+            <th class="cp-team">Team</th>
+            <th class="cp-stat" id="career-stat-header">TED</th>
+            <th class="cp-leader">Leader</th>
+            <th class="cp-avg">Avg</th>
+          </tr>
+        </thead>
+        <tbody id="career-popup-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+{career_js}
   <script>
   (function() {{
     var stat = 'ted';
@@ -779,6 +962,7 @@ def generate_html(weekly, season, updated_at):
     }}
 
     function doToggle() {{
+      closeCareer();
       var info = findVisibleYear();
       stat = stat === 'ted' ? 'tap' : 'ted';
       document.querySelectorAll('.view-ted').forEach(function(el) {{
@@ -814,6 +998,74 @@ def generate_html(weekly, season, updated_at):
         var target = document.getElementById('decade-' + decade + suffix);
         if (target) target.scrollIntoView({{behavior: 'smooth'}});
       }});
+    }});
+
+    // === Career Popup ===
+    var overlay = document.getElementById('career-overlay');
+    var popupBody = document.getElementById('career-popup-body');
+    var popupName = document.getElementById('career-popup-name');
+    var popupStatHeader = document.getElementById('career-stat-header');
+    var currentYear = {config.CURRENT_SEASON_YEAR};
+
+    function showCareer(name) {{
+      var career = window.CAREER[name];
+      if (!career || career.length === 0) return;
+      var s = stat;
+      var su = s.toUpperCase();
+      popupName.textContent = name;
+      popupStatHeader.textContent = su;
+      var html = '';
+      for (var i = 0; i < career.length; i++) {{
+        var c = career[i];
+        var sl = c.y + '-' + String(c.y + 1).slice(-2);
+        var tm = c.tm || '\\u2014';
+        var val = c[s] !== null && c[s] !== undefined ? c[s].toFixed(1) : '\\u2014';
+        var ss = window.SEASON_STATS[String(c.y)];
+        var ldrName = '', ldrVal = '', avgVal = '';
+        if (ss) {{
+          ldrName = ss['ldr_' + s] || '';
+          var lv = ss['ldr_' + s + '_val'];
+          ldrVal = lv !== undefined ? lv.toFixed(1) : '';
+          var av = ss['avg_' + s];
+          avgVal = av !== undefined ? av.toFixed(1) : '';
+          if (ldrName.length > 16) {{
+            var parts = ldrName.split(' ');
+            ldrName = parts[parts.length - 1];
+          }}
+        }}
+        var ldrCell = ldrName ? (ldrName + ' ' + ldrVal) : '\\u2014';
+        var rc = c.y === currentYear ? ' class="cp-current"' : '';
+        html += '<tr' + rc + '>'
+          + '<td class="cp-season">' + sl + '</td>'
+          + '<td class="cp-team">' + tm + '</td>'
+          + '<td class="cp-stat">' + val + '</td>'
+          + '<td class="cp-leader">' + ldrCell + '</td>'
+          + '<td class="cp-avg">' + (avgVal || '\\u2014') + '</td>'
+          + '</tr>';
+      }}
+      popupBody.innerHTML = html;
+      overlay.classList.add('active');
+    }}
+
+    function closeCareer() {{
+      overlay.classList.remove('active');
+      popupBody.innerHTML = '';
+    }}
+
+    document.querySelector('.container').addEventListener('click', function(e) {{
+      var td = e.target.closest('td.player[data-player]');
+      if (td) {{
+        e.stopPropagation();
+        showCareer(td.getAttribute('data-player'));
+      }}
+    }});
+
+    document.getElementById('career-popup-close').addEventListener('click', closeCareer);
+    overlay.addEventListener('click', function(e) {{
+      if (e.target === overlay) closeCareer();
+    }});
+    document.addEventListener('keydown', function(e) {{
+      if (e.key === 'Escape') closeCareer();
     }});
   }})();
   </script>
