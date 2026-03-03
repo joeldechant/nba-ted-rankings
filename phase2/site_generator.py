@@ -1054,7 +1054,7 @@ def generate_html(weekly, season, updated_at):
       if (td) {{
         e.stopPropagation();
         var yearDiv = td.closest('.year-table[data-year]');
-        var ctxYear = yearDiv ? parseInt(yearDiv.getAttribute('data-year')) : null;
+        var ctxYear = yearDiv ? parseInt(yearDiv.getAttribute('data-year')) : currentYear;
         showCareer(td.getAttribute('data-player'), ctxYear);
       }}
     }});
