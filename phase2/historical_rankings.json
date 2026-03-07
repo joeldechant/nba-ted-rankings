@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-04",
+  "generated": "2026-03-07",
   "all_time_top_100": [
     {
       "rank": 1,
@@ -4069,7 +4069,7 @@
         {
           "year": 2013,
           "season_label": "2013-14",
-          "top_n": 20,
+          "top_n": 40,
           "players": [
             {
               "rank": 1,
@@ -4210,13 +4210,153 @@
               "team": null,
               "ted": 33.6,
               "tap": 34.8
+            },
+            {
+              "rank": 21,
+              "player": "Carmelo Anthony",
+              "team": null,
+              "ted": 33.4,
+              "tap": 36.0
+            },
+            {
+              "rank": 22,
+              "player": "Dwyane Wade",
+              "team": null,
+              "ted": 32.9,
+              "tap": 32.9
+            },
+            {
+              "rank": 23,
+              "player": "Dirk Nowitzki",
+              "team": null,
+              "ted": 32.9,
+              "tap": 34.2
+            },
+            {
+              "rank": 24,
+              "player": "Kyle Lowry",
+              "team": null,
+              "ted": 32.6,
+              "tap": 34.7
+            },
+            {
+              "rank": 25,
+              "player": "Jeff Green",
+              "team": null,
+              "ted": 32.3,
+              "tap": 29.5
+            },
+            {
+              "rank": 26,
+              "player": "Marc Gasol",
+              "team": null,
+              "ted": 32.3,
+              "tap": 32.3
+            },
+            {
+              "rank": 27,
+              "player": "DeAndre Jordan",
+              "team": null,
+              "ted": 32.0,
+              "tap": 29.6
+            },
+            {
+              "rank": 28,
+              "player": "Serge Ibaka",
+              "team": null,
+              "ted": 31.1,
+              "tap": 30.6
+            },
+            {
+              "rank": 29,
+              "player": "Eric Bledsoe",
+              "team": null,
+              "ted": 31.1,
+              "tap": 31.2
+            },
+            {
+              "rank": 30,
+              "player": "David Lee",
+              "team": null,
+              "ted": 30.5,
+              "tap": 30.5
+            },
+            {
+              "rank": 31,
+              "player": "Mike Conley",
+              "team": null,
+              "ted": 30.4,
+              "tap": 32.6
+            },
+            {
+              "rank": 32,
+              "player": "Kyrie Irving",
+              "team": null,
+              "ted": 30.2,
+              "tap": 32.6
+            },
+            {
+              "rank": 33,
+              "player": "Pau Gasol",
+              "team": null,
+              "ted": 30.0,
+              "tap": 29.0
+            },
+            {
+              "rank": 34,
+              "player": "Goran Dragić",
+              "team": null,
+              "ted": 29.6,
+              "tap": 31.3
+            },
+            {
+              "rank": 35,
+              "player": "Andre Drummond",
+              "team": null,
+              "ted": 29.0,
+              "tap": 27.9
+            },
+            {
+              "rank": 36,
+              "player": "Nikola Vučević",
+              "team": null,
+              "ted": 28.9,
+              "tap": 27.9
+            },
+            {
+              "rank": 37,
+              "player": "Ty Lawson",
+              "team": null,
+              "ted": 28.6,
+              "tap": 29.0
+            },
+            {
+              "rank": 38,
+              "player": "Chris Bosh",
+              "team": null,
+              "ted": 28.4,
+              "tap": 28.3
+            },
+            {
+              "rank": 39,
+              "player": "Tony Parker",
+              "team": null,
+              "ted": 28.0,
+              "tap": 29.0
+            },
+            {
+              "rank": 40,
+              "player": "Kenneth Faried",
+              "team": null,
+              "ted": 27.9,
+              "tap": 27.6
             }
           ]
         },
         {
           "year": 2012,
           "season_label": "2012-13",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -4357,13 +4497,83 @@
               "team": null,
               "ted": 33.4,
               "tap": 34.9
+            },
+            {
+              "rank": 21,
+              "player": "Carmelo Anthony",
+              "team": null,
+              "ted": 33.0,
+              "tap": 36.4
+            },
+            {
+              "rank": 22,
+              "player": "Mike Conley",
+              "team": null,
+              "ted": 32.7,
+              "tap": 33.9
+            },
+            {
+              "rank": 23,
+              "player": "Al Horford",
+              "team": null,
+              "ted": 32.3,
+              "tap": 32.0
+            },
+            {
+              "rank": 24,
+              "player": "Anthony Davis",
+              "team": null,
+              "ted": 32.1,
+              "tap": 31.8
+            },
+            {
+              "rank": 25,
+              "player": "Stephen Curry",
+              "team": null,
+              "ted": 32.0,
+              "tap": 34.1
+            },
+            {
+              "rank": 26,
+              "player": "Tiago Splitter",
+              "team": null,
+              "ted": 31.4,
+              "tap": 30.8
+            },
+            {
+              "rank": 27,
+              "player": "Al Jefferson",
+              "team": null,
+              "ted": 31.1,
+              "tap": 32.0
+            },
+            {
+              "rank": 28,
+              "player": "David Lee",
+              "team": null,
+              "ted": 30.9,
+              "tap": 30.9
+            },
+            {
+              "rank": 29,
+              "player": "Paul Millsap",
+              "team": null,
+              "ted": 30.7,
+              "tap": 31.3
+            },
+            {
+              "rank": 30,
+              "player": "Kyrie Irving",
+              "team": null,
+              "ted": 30.6,
+              "tap": 32.8
             }
           ]
         },
         {
           "year": 2011,
           "season_label": "2011-12",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -4504,13 +4714,83 @@
               "team": null,
               "ted": 31.8,
               "tap": 34.1
+            },
+            {
+              "rank": 21,
+              "player": "Pau Gasol",
+              "team": null,
+              "ted": 31.4,
+              "tap": 31.9
+            },
+            {
+              "rank": 22,
+              "player": "Serge Ibaka",
+              "team": null,
+              "ted": 31.4,
+              "tap": 30.2
+            },
+            {
+              "rank": 23,
+              "player": "Kobe Bryant",
+              "team": null,
+              "ted": 31.3,
+              "tap": 34.8
+            },
+            {
+              "rank": 24,
+              "player": "Tony Parker",
+              "team": null,
+              "ted": 31.3,
+              "tap": 33.3
+            },
+            {
+              "rank": 25,
+              "player": "Greg Monroe",
+              "team": null,
+              "ted": 31.1,
+              "tap": 31.5
+            },
+            {
+              "rank": 26,
+              "player": "Roy Hibbert",
+              "team": null,
+              "ted": 30.3,
+              "tap": 30.5
+            },
+            {
+              "rank": 27,
+              "player": "Marcin Gortat",
+              "team": null,
+              "ted": 30.1,
+              "tap": 30.1
+            },
+            {
+              "rank": 28,
+              "player": "Kenneth Faried",
+              "team": null,
+              "ted": 30.0,
+              "tap": 29.3
+            },
+            {
+              "rank": 29,
+              "player": "JaVale McGee",
+              "team": null,
+              "ted": 30.0,
+              "tap": 28.5
+            },
+            {
+              "rank": 30,
+              "player": "Marcus Camby",
+              "team": null,
+              "ted": 29.9,
+              "tap": 27.9
             }
           ]
         },
         {
           "year": 2010,
           "season_label": "2010-11",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -4651,6 +4931,76 @@
               "team": null,
               "ted": 33.2,
               "tap": 33.7
+            },
+            {
+              "rank": 21,
+              "player": "Amar'e Stoudemire",
+              "team": null,
+              "ted": 33.2,
+              "tap": 33.4
+            },
+            {
+              "rank": 22,
+              "player": "Nenê",
+              "team": null,
+              "ted": 33.1,
+              "tap": 32.1
+            },
+            {
+              "rank": 23,
+              "player": "Al Horford",
+              "team": null,
+              "ted": 33.1,
+              "tap": 32.9
+            },
+            {
+              "rank": 24,
+              "player": "David West",
+              "team": null,
+              "ted": 32.2,
+              "tap": 33.0
+            },
+            {
+              "rank": 25,
+              "player": "Kevin Love",
+              "team": null,
+              "ted": 31.6,
+              "tap": 32.1
+            },
+            {
+              "rank": 26,
+              "player": "Zach Randolph",
+              "team": null,
+              "ted": 31.3,
+              "tap": 32.6
+            },
+            {
+              "rank": 27,
+              "player": "Lamar Odom",
+              "team": null,
+              "ted": 31.1,
+              "tap": 31.2
+            },
+            {
+              "rank": 28,
+              "player": "Carmelo Anthony",
+              "team": null,
+              "ted": 31.0,
+              "tap": 32.3
+            },
+            {
+              "rank": 29,
+              "player": "Tony Parker",
+              "team": null,
+              "ted": 30.5,
+              "tap": 31.3
+            },
+            {
+              "rank": 30,
+              "player": "LaMarcus Aldridge",
+              "team": null,
+              "ted": 30.0,
+              "tap": 32.0
             }
           ]
         }
@@ -4661,7 +5011,7 @@
         {
           "year": 2009,
           "season_label": "2009-10",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -4802,13 +5152,83 @@
               "team": null,
               "ted": 31.8,
               "tap": 33.2
+            },
+            {
+              "rank": 21,
+              "player": "Andrew Bynum",
+              "team": null,
+              "ted": 31.5,
+              "tap": 30.9
+            },
+            {
+              "rank": 22,
+              "player": "Carmelo Anthony",
+              "team": null,
+              "ted": 31.1,
+              "tap": 33.5
+            },
+            {
+              "rank": 23,
+              "player": "Paul Pierce",
+              "team": null,
+              "ted": 30.7,
+              "tap": 30.9
+            },
+            {
+              "rank": 24,
+              "player": "Nenê",
+              "team": null,
+              "ted": 30.6,
+              "tap": 30.1
+            },
+            {
+              "rank": 25,
+              "player": "Amar'e Stoudemire",
+              "team": null,
+              "ted": 30.4,
+              "tap": 30.6
+            },
+            {
+              "rank": 26,
+              "player": "Al Horford",
+              "team": null,
+              "ted": 29.7,
+              "tap": 29.6
+            },
+            {
+              "rank": 27,
+              "player": "Steve Nash",
+              "team": null,
+              "ted": 29.6,
+              "tap": 29.7
+            },
+            {
+              "rank": 28,
+              "player": "Chauncey Billups",
+              "team": null,
+              "ted": 28.5,
+              "tap": 30.3
+            },
+            {
+              "rank": 29,
+              "player": "Brandon Roy",
+              "team": null,
+              "ted": 28.4,
+              "tap": 31.4
+            },
+            {
+              "rank": 30,
+              "player": "Marc Gasol",
+              "team": null,
+              "ted": 28.1,
+              "tap": 27.7
             }
           ]
         },
         {
           "year": 2008,
           "season_label": "2008-09",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -4949,13 +5369,83 @@
               "team": null,
               "ted": 32.1,
               "tap": 32.6
+            },
+            {
+              "rank": 21,
+              "player": "Brandon Roy",
+              "team": null,
+              "ted": 32.0,
+              "tap": 35.6
+            },
+            {
+              "rank": 22,
+              "player": "Marcus Camby",
+              "team": null,
+              "ted": 31.2,
+              "tap": 28.4
+            },
+            {
+              "rank": 23,
+              "player": "Nenê",
+              "team": null,
+              "ted": 31.1,
+              "tap": 30.0
+            },
+            {
+              "rank": 24,
+              "player": "Carmelo Anthony",
+              "team": null,
+              "ted": 30.4,
+              "tap": 31.5
+            },
+            {
+              "rank": 25,
+              "player": "Devin Harris",
+              "team": null,
+              "ted": 30.4,
+              "tap": 31.7
+            },
+            {
+              "rank": 26,
+              "player": "Andris Biedriņš",
+              "team": null,
+              "ted": 30.3,
+              "tap": 28.3
+            },
+            {
+              "rank": 27,
+              "player": "Josh Smith",
+              "team": null,
+              "ted": 30.0,
+              "tap": 29.2
+            },
+            {
+              "rank": 28,
+              "player": "Kevin Durant",
+              "team": null,
+              "ted": 29.7,
+              "tap": 30.7
+            },
+            {
+              "rank": 29,
+              "player": "David Lee",
+              "team": null,
+              "ted": 28.7,
+              "tap": 27.8
+            },
+            {
+              "rank": 30,
+              "player": "Amar'e Stoudemire",
+              "team": null,
+              "ted": 28.4,
+              "tap": 28.0
             }
           ]
         },
         {
           "year": 2007,
           "season_label": "2007-08",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5096,13 +5586,83 @@
               "team": null,
               "ted": 31.7,
               "tap": 31.2
+            },
+            {
+              "rank": 21,
+              "player": "Tony Parker",
+              "team": null,
+              "ted": 31.5,
+              "tap": 32.8
+            },
+            {
+              "rank": 22,
+              "player": "Deron Williams",
+              "team": null,
+              "ted": 31.5,
+              "tap": 31.7
+            },
+            {
+              "rank": 23,
+              "player": "Carmelo Anthony",
+              "team": null,
+              "ted": 31.4,
+              "tap": 32.3
+            },
+            {
+              "rank": 24,
+              "player": "David West",
+              "team": null,
+              "ted": 31.2,
+              "tap": 32.0
+            },
+            {
+              "rank": 25,
+              "player": "Allen Iverson",
+              "team": null,
+              "ted": 31.2,
+              "tap": 32.8
+            },
+            {
+              "rank": 26,
+              "player": "Andre Iguodala",
+              "team": null,
+              "ted": 30.8,
+              "tap": 32.2
+            },
+            {
+              "rank": 27,
+              "player": "Pau Gasol",
+              "team": null,
+              "ted": 30.2,
+              "tap": 30.4
+            },
+            {
+              "rank": 28,
+              "player": "Steve Nash",
+              "team": null,
+              "ted": 30.1,
+              "tap": 29.5
+            },
+            {
+              "rank": 29,
+              "player": "Baron Davis",
+              "team": null,
+              "ted": 29.9,
+              "tap": 31.9
+            },
+            {
+              "rank": 30,
+              "player": "Caron Butler",
+              "team": null,
+              "ted": 29.7,
+              "tap": 31.4
             }
           ]
         },
         {
           "year": 2006,
           "season_label": "2006-07",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5243,13 +5803,83 @@
               "team": null,
               "ted": 33.6,
               "tap": 33.0
+            },
+            {
+              "rank": 21,
+              "player": "Chris Bosh",
+              "team": null,
+              "ted": 33.6,
+              "tap": 33.7
+            },
+            {
+              "rank": 22,
+              "player": "Chris Paul",
+              "team": null,
+              "ted": 33.4,
+              "tap": 34.9
+            },
+            {
+              "rank": 23,
+              "player": "Pau Gasol",
+              "team": null,
+              "ted": 33.0,
+              "tap": 32.6
+            },
+            {
+              "rank": 24,
+              "player": "Baron Davis",
+              "team": null,
+              "ted": 32.8,
+              "tap": 33.8
+            },
+            {
+              "rank": 25,
+              "player": "Vince Carter",
+              "team": null,
+              "ted": 32.7,
+              "tap": 35.1
+            },
+            {
+              "rank": 26,
+              "player": "Josh Smith",
+              "team": null,
+              "ted": 32.6,
+              "tap": 31.6
+            },
+            {
+              "rank": 27,
+              "player": "Gilbert Arenas",
+              "team": null,
+              "ted": 32.2,
+              "tap": 35.6
+            },
+            {
+              "rank": 28,
+              "player": "Emeka Okafor",
+              "team": null,
+              "ted": 31.4,
+              "tap": 30.1
+            },
+            {
+              "rank": 29,
+              "player": "Paul Pierce",
+              "team": null,
+              "ted": 31.4,
+              "tap": 33.4
+            },
+            {
+              "rank": 30,
+              "player": "Gerald Wallace",
+              "team": null,
+              "ted": 30.9,
+              "tap": 31.1
             }
           ]
         },
         {
           "year": 2005,
           "season_label": "2005-06",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5390,13 +6020,83 @@
               "team": null,
               "ted": 34.9,
               "tap": 36.4
+            },
+            {
+              "rank": 21,
+              "player": "Chris Paul",
+              "team": null,
+              "ted": 34.5,
+              "tap": 35.5
+            },
+            {
+              "rank": 22,
+              "player": "Alonzo Mourning",
+              "team": null,
+              "ted": 33.9,
+              "tap": 30.9
+            },
+            {
+              "rank": 23,
+              "player": "Steve Nash",
+              "team": null,
+              "ted": 33.7,
+              "tap": 33.8
+            },
+            {
+              "rank": 24,
+              "player": "Allen Iverson",
+              "team": null,
+              "ted": 33.1,
+              "tap": 36.9
+            },
+            {
+              "rank": 25,
+              "player": "Tony Parker",
+              "team": null,
+              "ted": 33.1,
+              "tap": 33.8
+            },
+            {
+              "rank": 26,
+              "player": "Gilbert Arenas",
+              "team": null,
+              "ted": 32.9,
+              "tap": 36.3
+            },
+            {
+              "rank": 27,
+              "player": "Chauncey Billups",
+              "team": null,
+              "ted": 32.5,
+              "tap": 34.9
+            },
+            {
+              "rank": 28,
+              "player": "Zydrunas Ilgauskas",
+              "team": null,
+              "ted": 31.2,
+              "tap": 31.6
+            },
+            {
+              "rank": 29,
+              "player": "Baron Davis",
+              "team": null,
+              "ted": 30.1,
+              "tap": 31.8
+            },
+            {
+              "rank": 30,
+              "player": "Richard Jefferson",
+              "team": null,
+              "ted": 29.9,
+              "tap": 30.5
             }
           ]
         },
         {
           "year": 2004,
           "season_label": "2004-05",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5537,13 +6237,83 @@
               "team": null,
               "ted": 32.9,
               "tap": 34.0
+            },
+            {
+              "rank": 21,
+              "player": "Chris Webber",
+              "team": null,
+              "ted": 31.8,
+              "tap": 32.6
+            },
+            {
+              "rank": 22,
+              "player": "Baron Davis",
+              "team": null,
+              "ted": 31.8,
+              "tap": 34.3
+            },
+            {
+              "rank": 23,
+              "player": "Brad Miller",
+              "team": null,
+              "ted": 31.2,
+              "tap": 31.3
+            },
+            {
+              "rank": 24,
+              "player": "Kobe Bryant",
+              "team": null,
+              "ted": 30.9,
+              "tap": 33.5
+            },
+            {
+              "rank": 25,
+              "player": "Drew Gooden",
+              "team": null,
+              "ted": 29.7,
+              "tap": 29.8
+            },
+            {
+              "rank": 26,
+              "player": "Steve Nash",
+              "team": null,
+              "ted": 29.4,
+              "tap": 29.7
+            },
+            {
+              "rank": 27,
+              "player": "Gilbert Arenas",
+              "team": null,
+              "ted": 29.2,
+              "tap": 32.3
+            },
+            {
+              "rank": 28,
+              "player": "Steve Francis",
+              "team": null,
+              "ted": 28.8,
+              "tap": 30.3
+            },
+            {
+              "rank": 29,
+              "player": "Zydrunas Ilgauskas",
+              "team": null,
+              "ted": 28.6,
+              "tap": 29.2
+            },
+            {
+              "rank": 30,
+              "player": "Chauncey Billups",
+              "team": null,
+              "ted": 28.4,
+              "tap": 30.2
             }
           ]
         },
         {
           "year": 2003,
           "season_label": "2003-04",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5684,13 +6454,83 @@
               "team": null,
               "ted": 30.0,
               "tap": 31.4
+            },
+            {
+              "rank": 21,
+              "player": "Paul Pierce",
+              "team": null,
+              "ted": 29.8,
+              "tap": 31.5
+            },
+            {
+              "rank": 22,
+              "player": "Chauncey Billups",
+              "team": null,
+              "ted": 29.6,
+              "tap": 32.3
+            },
+            {
+              "rank": 23,
+              "player": "Carlos Boozer",
+              "team": null,
+              "ted": 29.5,
+              "tap": 29.8
+            },
+            {
+              "rank": 24,
+              "player": "Allen Iverson",
+              "team": null,
+              "ted": 29.4,
+              "tap": 34.1
+            },
+            {
+              "rank": 25,
+              "player": "Tracy McGrady",
+              "team": null,
+              "ted": 28.9,
+              "tap": 34.3
+            },
+            {
+              "rank": 26,
+              "player": "Zydrunas Ilgauskas",
+              "team": null,
+              "ted": 28.6,
+              "tap": 29.4
+            },
+            {
+              "rank": 27,
+              "player": "Shawn Marion",
+              "team": null,
+              "ted": 27.9,
+              "tap": 29.9
+            },
+            {
+              "rank": 28,
+              "player": "Erick Dampier",
+              "team": null,
+              "ted": 27.6,
+              "tap": 27.3
+            },
+            {
+              "rank": 29,
+              "player": "Peja Stojaković",
+              "team": null,
+              "ted": 27.2,
+              "tap": 29.8
+            },
+            {
+              "rank": 30,
+              "player": "Amar'e Stoudemire",
+              "team": null,
+              "ted": 27.0,
+              "tap": 27.4
             }
           ]
         },
         {
           "year": 2002,
           "season_label": "2002-03",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5831,13 +6671,83 @@
               "team": null,
               "ted": 29.4,
               "tap": 31.6
+            },
+            {
+              "rank": 21,
+              "player": "Chauncey Billups",
+              "team": null,
+              "ted": 28.9,
+              "tap": 31.7
+            },
+            {
+              "rank": 22,
+              "player": "Gary Payton",
+              "team": null,
+              "ted": 27.9,
+              "tap": 30.9
+            },
+            {
+              "rank": 23,
+              "player": "Eddie Jones",
+              "team": null,
+              "ted": 27.9,
+              "tap": 30.4
+            },
+            {
+              "rank": 24,
+              "player": "Stephon Marbury",
+              "team": null,
+              "ted": 27.8,
+              "tap": 31.1
+            },
+            {
+              "rank": 25,
+              "player": "Pau Gasol",
+              "team": null,
+              "ted": 27.7,
+              "tap": 28.0
+            },
+            {
+              "rank": 26,
+              "player": "Sam Cassell",
+              "team": null,
+              "ted": 27.4,
+              "tap": 29.9
+            },
+            {
+              "rank": 27,
+              "player": "Rasheed Wallace",
+              "team": null,
+              "ted": 27.3,
+              "tap": 29.1
+            },
+            {
+              "rank": 28,
+              "player": "Michael Jordan",
+              "team": null,
+              "ted": 27.1,
+              "tap": 29.6
+            },
+            {
+              "rank": 29,
+              "player": "Zydrunas Ilgauskas",
+              "team": null,
+              "ted": 27.0,
+              "tap": 27.9
+            },
+            {
+              "rank": 30,
+              "player": "Vince Carter",
+              "team": null,
+              "ted": 26.9,
+              "tap": 30.4
             }
           ]
         },
         {
           "year": 2001,
           "season_label": "2001-02",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -5978,13 +6888,83 @@
               "team": null,
               "ted": 30.8,
               "tap": 34.8
+            },
+            {
+              "rank": 21,
+              "player": "Andre Miller",
+              "team": null,
+              "ted": 30.7,
+              "tap": 31.6
+            },
+            {
+              "rank": 22,
+              "player": "Andrei Kirilenko",
+              "team": null,
+              "ted": 30.6,
+              "tap": 30.9
+            },
+            {
+              "rank": 23,
+              "player": "Rasheed Wallace",
+              "team": null,
+              "ted": 29.8,
+              "tap": 31.4
+            },
+            {
+              "rank": 24,
+              "player": "Vince Carter",
+              "team": null,
+              "ted": 29.3,
+              "tap": 33.8
+            },
+            {
+              "rank": 25,
+              "player": "Brent Barry",
+              "team": null,
+              "ted": 29.1,
+              "tap": 29.7
+            },
+            {
+              "rank": 26,
+              "player": "Shareef Abdur-Rahim",
+              "team": null,
+              "ted": 29.1,
+              "tap": 30.0
+            },
+            {
+              "rank": 27,
+              "player": "Sam Cassell",
+              "team": null,
+              "ted": 28.6,
+              "tap": 31.1
+            },
+            {
+              "rank": 28,
+              "player": "Peja Stojaković",
+              "team": null,
+              "ted": 28.2,
+              "tap": 30.3
+            },
+            {
+              "rank": 29,
+              "player": "Pau Gasol",
+              "team": null,
+              "ted": 28.2,
+              "tap": 27.9
+            },
+            {
+              "rank": 30,
+              "player": "Jerry Stackhouse",
+              "team": null,
+              "ted": 28.0,
+              "tap": 30.3
             }
           ]
         },
         {
           "year": 2000,
           "season_label": "2000-01",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -6125,6 +7105,76 @@
               "team": null,
               "ted": 30.6,
               "tap": 32.4
+            },
+            {
+              "rank": 21,
+              "player": "Lamar Odom",
+              "team": null,
+              "ted": 30.5,
+              "tap": 30.8
+            },
+            {
+              "rank": 22,
+              "player": "Jerry Stackhouse",
+              "team": null,
+              "ted": 30.2,
+              "tap": 35.1
+            },
+            {
+              "rank": 23,
+              "player": "Donyell Marshall",
+              "team": null,
+              "ted": 30.2,
+              "tap": 31.3
+            },
+            {
+              "rank": 24,
+              "player": "Antoine Walker",
+              "team": null,
+              "ted": 30.1,
+              "tap": 32.1
+            },
+            {
+              "rank": 25,
+              "player": "Ray Allen",
+              "team": null,
+              "ted": 29.5,
+              "tap": 32.5
+            },
+            {
+              "rank": 26,
+              "player": "Gary Payton",
+              "team": null,
+              "ted": 29.0,
+              "tap": 32.7
+            },
+            {
+              "rank": 27,
+              "player": "Terrell Brandon",
+              "team": null,
+              "ted": 28.9,
+              "tap": 30.7
+            },
+            {
+              "rank": 28,
+              "player": "Bonzi Wells",
+              "team": null,
+              "ted": 28.8,
+              "tap": 29.3
+            },
+            {
+              "rank": 29,
+              "player": "Andre Miller",
+              "team": null,
+              "ted": 28.3,
+              "tap": 30.1
+            },
+            {
+              "rank": 30,
+              "player": "Shareef Abdur-Rahim",
+              "team": null,
+              "ted": 27.2,
+              "tap": 28.2
             }
           ]
         }
@@ -6135,7 +7185,7 @@
         {
           "year": 1999,
           "season_label": "1999-00",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -6276,13 +7326,83 @@
               "team": null,
               "ted": 31.6,
               "tap": 33.3
+            },
+            {
+              "rank": 21,
+              "player": "Anfernee Hardaway",
+              "team": null,
+              "ted": 31.1,
+              "tap": 32.0
+            },
+            {
+              "rank": 22,
+              "player": "Tracy McGrady",
+              "team": null,
+              "ted": 30.7,
+              "tap": 31.9
+            },
+            {
+              "rank": 23,
+              "player": "Allen Iverson",
+              "team": null,
+              "ted": 30.1,
+              "tap": 34.7
+            },
+            {
+              "rank": 24,
+              "player": "Dikembe Mutombo",
+              "team": null,
+              "ted": 29.8,
+              "tap": 27.2
+            },
+            {
+              "rank": 25,
+              "player": "Shawn Marion",
+              "team": null,
+              "ted": 29.6,
+              "tap": 30.0
+            },
+            {
+              "rank": 26,
+              "player": "Antonio McDyess",
+              "team": null,
+              "ted": 29.5,
+              "tap": 29.9
+            },
+            {
+              "rank": 27,
+              "player": "Rasheed Wallace",
+              "team": null,
+              "ted": 29.3,
+              "tap": 29.9
+            },
+            {
+              "rank": 28,
+              "player": "Paul Pierce",
+              "team": null,
+              "ted": 29.1,
+              "tap": 31.1
+            },
+            {
+              "rank": 29,
+              "player": "Elton Brand",
+              "team": null,
+              "ted": 27.8,
+              "tap": 29.1
+            },
+            {
+              "rank": 30,
+              "player": "Andre Miller",
+              "team": null,
+              "ted": 27.4,
+              "tap": 28.1
             }
           ]
         },
         {
           "year": 1998,
           "season_label": "1998-99",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -6423,13 +7543,83 @@
               "team": null,
               "ted": 30.4,
               "tap": 31.4
+            },
+            {
+              "rank": 21,
+              "player": "Vlade Divac",
+              "team": null,
+              "ted": 29.6,
+              "tap": 29.3
+            },
+            {
+              "rank": 22,
+              "player": "Rod Strickland",
+              "team": null,
+              "ted": 29.0,
+              "tap": 30.5
+            },
+            {
+              "rank": 23,
+              "player": "Tom Gugliotta",
+              "team": null,
+              "ted": 28.0,
+              "tap": 29.4
+            },
+            {
+              "rank": 24,
+              "player": "Antonio McDyess",
+              "team": null,
+              "ted": 27.4,
+              "tap": 28.5
+            },
+            {
+              "rank": 25,
+              "player": "Paul Pierce",
+              "team": null,
+              "ted": 27.3,
+              "tap": 29.4
+            },
+            {
+              "rank": 26,
+              "player": "Rik Smits",
+              "team": null,
+              "ted": 26.3,
+              "tap": 28.4
+            },
+            {
+              "rank": 27,
+              "player": "Scottie Pippen",
+              "team": null,
+              "ted": 26.3,
+              "tap": 26.9
+            },
+            {
+              "rank": 28,
+              "player": "Toni Kukoč",
+              "team": null,
+              "ted": 26.2,
+              "tap": 28.6
+            },
+            {
+              "rank": 29,
+              "player": "Vince Carter",
+              "team": null,
+              "ted": 26.1,
+              "tap": 28.9
+            },
+            {
+              "rank": 30,
+              "player": "Stephon Marbury",
+              "team": null,
+              "ted": 26.0,
+              "tap": 29.4
             }
           ]
         },
         {
           "year": 1997,
           "season_label": "1997-98",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -6570,13 +7760,83 @@
               "team": null,
               "ted": 32.3,
               "tap": 35.0
+            },
+            {
+              "rank": 21,
+              "player": "Dikembe Mutombo",
+              "team": null,
+              "ted": 31.7,
+              "tap": 30.3
+            },
+            {
+              "rank": 22,
+              "player": "Rod Strickland",
+              "team": null,
+              "ted": 31.2,
+              "tap": 32.0
+            },
+            {
+              "rank": 23,
+              "player": "Charles Barkley",
+              "team": null,
+              "ted": 31.1,
+              "tap": 31.5
+            },
+            {
+              "rank": 24,
+              "player": "Terrell Brandon",
+              "team": null,
+              "ted": 30.8,
+              "tap": 32.0
+            },
+            {
+              "rank": 25,
+              "player": "Jason Kidd",
+              "team": null,
+              "ted": 30.3,
+              "tap": 29.6
+            },
+            {
+              "rank": 26,
+              "player": "Tom Gugliotta",
+              "team": null,
+              "ted": 29.9,
+              "tap": 30.8
+            },
+            {
+              "rank": 27,
+              "player": "Sam Cassell",
+              "team": null,
+              "ted": 29.8,
+              "tap": 32.3
+            },
+            {
+              "rank": 28,
+              "player": "Allen Iverson",
+              "team": null,
+              "ted": 29.0,
+              "tap": 31.7
+            },
+            {
+              "rank": 29,
+              "player": "Vin Baker",
+              "team": null,
+              "ted": 28.9,
+              "tap": 30.3
+            },
+            {
+              "rank": 30,
+              "player": "Clyde Drexler",
+              "team": null,
+              "ted": 28.7,
+              "tap": 30.9
             }
           ]
         },
         {
           "year": 1996,
           "season_label": "1996-97",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -6717,13 +7977,83 @@
               "team": null,
               "ted": 32.6,
               "tap": 33.3
+            },
+            {
+              "rank": 21,
+              "player": "Toni Kukoč",
+              "team": null,
+              "ted": 32.5,
+              "tap": 34.2
+            },
+            {
+              "rank": 22,
+              "player": "Kenny Anderson",
+              "team": null,
+              "ted": 32.4,
+              "tap": 34.5
+            },
+            {
+              "rank": 23,
+              "player": "Anfernee Hardaway",
+              "team": null,
+              "ted": 31.8,
+              "tap": 34.2
+            },
+            {
+              "rank": 24,
+              "player": "Rod Strickland",
+              "team": null,
+              "ted": 31.3,
+              "tap": 31.7
+            },
+            {
+              "rank": 25,
+              "player": "Tom Gugliotta",
+              "team": null,
+              "ted": 31.3,
+              "tap": 31.4
+            },
+            {
+              "rank": 26,
+              "player": "Chris Gatling",
+              "team": null,
+              "ted": 30.8,
+              "tap": 30.5
+            },
+            {
+              "rank": 27,
+              "player": "Vlade Divac",
+              "team": null,
+              "ted": 30.7,
+              "tap": 30.0
+            },
+            {
+              "rank": 28,
+              "player": "Christian Laettner",
+              "team": null,
+              "ted": 30.5,
+              "tap": 31.4
+            },
+            {
+              "rank": 29,
+              "player": "Kevin Garnett",
+              "team": null,
+              "ted": 29.7,
+              "tap": 29.7
+            },
+            {
+              "rank": 30,
+              "player": "Detlef Schrempf",
+              "team": null,
+              "ted": 29.3,
+              "tap": 29.9
             }
           ]
         },
         {
           "year": 1995,
           "season_label": "1995-96",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -6864,13 +8194,83 @@
               "team": null,
               "ted": 32.6,
               "tap": 33.5
+            },
+            {
+              "rank": 21,
+              "player": "Vlade Divac",
+              "team": null,
+              "ted": 32.4,
+              "tap": 30.8
+            },
+            {
+              "rank": 22,
+              "player": "Toni Kukoč",
+              "team": null,
+              "ted": 32.3,
+              "tap": 34.3
+            },
+            {
+              "rank": 23,
+              "player": "Tim Hardaway",
+              "team": null,
+              "ted": 30.5,
+              "tap": 31.2
+            },
+            {
+              "rank": 24,
+              "player": "Cedric Ceballos",
+              "team": null,
+              "ted": 29.4,
+              "tap": 30.9
+            },
+            {
+              "rank": 25,
+              "player": "Mookie Blaylock",
+              "team": null,
+              "ted": 29.1,
+              "tap": 31.3
+            },
+            {
+              "rank": 26,
+              "player": "Detlef Schrempf",
+              "team": null,
+              "ted": 29.0,
+              "tap": 29.7
+            },
+            {
+              "rank": 27,
+              "player": "Jason Kidd",
+              "team": null,
+              "ted": 28.6,
+              "tap": 29.3
+            },
+            {
+              "rank": 28,
+              "player": "Rik Smits",
+              "team": null,
+              "ted": 28.3,
+              "tap": 28.8
+            },
+            {
+              "rank": 29,
+              "player": "Greg Anthony",
+              "team": null,
+              "ted": 28.0,
+              "tap": 28.6
+            },
+            {
+              "rank": 30,
+              "player": "Horace Grant",
+              "team": null,
+              "ted": 27.7,
+              "tap": 28.1
             }
           ]
         },
         {
           "year": 1994,
           "season_label": "1994-95",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7011,13 +8411,83 @@
               "team": null,
               "ted": 31.3,
               "tap": 31.4
+            },
+            {
+              "rank": 21,
+              "player": "Anfernee Hardaway",
+              "team": null,
+              "ted": 31.0,
+              "tap": 32.1
+            },
+            {
+              "rank": 22,
+              "player": "Rik Smits",
+              "team": null,
+              "ted": 30.5,
+              "tap": 30.6
+            },
+            {
+              "rank": 23,
+              "player": "Dikembe Mutombo",
+              "team": null,
+              "ted": 30.3,
+              "tap": 27.8
+            },
+            {
+              "rank": 24,
+              "player": "Terrell Brandon",
+              "team": null,
+              "ted": 30.2,
+              "tap": 31.2
+            },
+            {
+              "rank": 25,
+              "player": "Kevin Johnson",
+              "team": null,
+              "ted": 30.1,
+              "tap": 30.6
+            },
+            {
+              "rank": 26,
+              "player": "Danny Manning",
+              "team": null,
+              "ted": 29.4,
+              "tap": 28.9
+            },
+            {
+              "rank": 27,
+              "player": "Clifford Robinson",
+              "team": null,
+              "ted": 28.9,
+              "tap": 31.7
+            },
+            {
+              "rank": 28,
+              "player": "Jeff Hornacek",
+              "team": null,
+              "ted": 28.8,
+              "tap": 30.2
+            },
+            {
+              "rank": 29,
+              "player": "Reggie Miller",
+              "team": null,
+              "ted": 28.8,
+              "tap": 31.4
+            },
+            {
+              "rank": 30,
+              "player": "Dana Barros",
+              "team": null,
+              "ted": 28.1,
+              "tap": 29.5
             }
           ]
         },
         {
           "year": 1993,
           "season_label": "1993-94",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7158,13 +8628,83 @@
               "team": null,
               "ted": 30.6,
               "tap": 31.5
+            },
+            {
+              "rank": 21,
+              "player": "Vlade Divac",
+              "team": null,
+              "ted": 30.4,
+              "tap": 29.7
+            },
+            {
+              "rank": 22,
+              "player": "Brad Daugherty",
+              "team": null,
+              "ted": 30.1,
+              "tap": 30.1
+            },
+            {
+              "rank": 23,
+              "player": "Eric Murdock",
+              "team": null,
+              "ted": 30.0,
+              "tap": 30.9
+            },
+            {
+              "rank": 24,
+              "player": "Gary Payton",
+              "team": null,
+              "ted": 29.9,
+              "tap": 31.4
+            },
+            {
+              "rank": 25,
+              "player": "Kevin Johnson",
+              "team": null,
+              "ted": 29.7,
+              "tap": 30.6
+            },
+            {
+              "rank": 26,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 29.6,
+              "tap": 33.3
+            },
+            {
+              "rank": 27,
+              "player": "Reggie Miller",
+              "team": null,
+              "ted": 29.4,
+              "tap": 31.4
+            },
+            {
+              "rank": 28,
+              "player": "Clyde Drexler",
+              "team": null,
+              "ted": 29.4,
+              "tap": 31.8
+            },
+            {
+              "rank": 29,
+              "player": "Kenny Anderson",
+              "team": null,
+              "ted": 29.3,
+              "tap": 30.9
+            },
+            {
+              "rank": 30,
+              "player": "Ricky Pierce",
+              "team": null,
+              "ted": 28.8,
+              "tap": 32.0
             }
           ]
         },
         {
           "year": 1992,
           "season_label": "1992-93",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7305,13 +8845,83 @@
               "team": null,
               "ted": 31.5,
               "tap": 32.3
+            },
+            {
+              "rank": 21,
+              "player": "Rod Strickland",
+              "team": null,
+              "ted": 31.4,
+              "tap": 31.1
+            },
+            {
+              "rank": 22,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 31.2,
+              "tap": 34.7
+            },
+            {
+              "rank": 23,
+              "player": "Detlef Schrempf",
+              "team": null,
+              "ted": 30.5,
+              "tap": 30.8
+            },
+            {
+              "rank": 24,
+              "player": "Eric Murdock",
+              "team": null,
+              "ted": 30.3,
+              "tap": 30.4
+            },
+            {
+              "rank": 25,
+              "player": "Tim Hardaway",
+              "team": null,
+              "ted": 30.2,
+              "tap": 31.6
+            },
+            {
+              "rank": 26,
+              "player": "Robert Parish",
+              "team": null,
+              "ted": 29.8,
+              "tap": 28.8
+            },
+            {
+              "rank": 27,
+              "player": "Cedric Ceballos",
+              "team": null,
+              "ted": 29.5,
+              "tap": 29.9
+            },
+            {
+              "rank": 28,
+              "player": "Nick Anderson",
+              "team": null,
+              "ted": 28.1,
+              "tap": 30.0
+            },
+            {
+              "rank": 29,
+              "player": "Kevin Johnson",
+              "team": null,
+              "ted": 27.6,
+              "tap": 27.5
+            },
+            {
+              "rank": 30,
+              "player": "Ricky Pierce",
+              "team": null,
+              "ted": 27.5,
+              "tap": 29.8
             }
           ]
         },
         {
           "year": 1991,
           "season_label": "1991-92",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7452,13 +9062,83 @@
               "team": null,
               "ted": 32.7,
               "tap": 31.6
+            },
+            {
+              "rank": 21,
+              "player": "Detlef Schrempf",
+              "team": null,
+              "ted": 32.3,
+              "tap": 31.6
+            },
+            {
+              "rank": 22,
+              "player": "Jeff Hornacek",
+              "team": null,
+              "ted": 32.0,
+              "tap": 33.2
+            },
+            {
+              "rank": 23,
+              "player": "Mark Jackson",
+              "team": null,
+              "ted": 31.5,
+              "tap": 30.6
+            },
+            {
+              "rank": 24,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 31.3,
+              "tap": 33.9
+            },
+            {
+              "rank": 25,
+              "player": "Derrick Coleman",
+              "team": null,
+              "ted": 31.2,
+              "tap": 30.6
+            },
+            {
+              "rank": 26,
+              "player": "Hot Rod Williams",
+              "team": null,
+              "ted": 30.4,
+              "tap": 30.3
+            },
+            {
+              "rank": 27,
+              "player": "Terry Porter",
+              "team": null,
+              "ted": 30.2,
+              "tap": 31.7
+            },
+            {
+              "rank": 28,
+              "player": "Tim Hardaway",
+              "team": null,
+              "ted": 30.0,
+              "tap": 31.6
+            },
+            {
+              "rank": 29,
+              "player": "Kevin Willis",
+              "team": null,
+              "ted": 29.7,
+              "tap": 29.3
+            },
+            {
+              "rank": 30,
+              "player": "Robert Parish",
+              "team": null,
+              "ted": 29.2,
+              "tap": 28.9
             }
           ]
         },
         {
           "year": 1990,
           "season_label": "1990-91",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7599,6 +9279,76 @@
               "team": null,
               "ted": 31.4,
               "tap": 30.9
+            },
+            {
+              "rank": 21,
+              "player": "Micheal Williams",
+              "team": null,
+              "ted": 30.8,
+              "tap": 30.0
+            },
+            {
+              "rank": 22,
+              "player": "Robert Parish",
+              "team": null,
+              "ted": 30.4,
+              "tap": 29.3
+            },
+            {
+              "rank": 23,
+              "player": "Chris Mullin",
+              "team": null,
+              "ted": 29.1,
+              "tap": 30.3
+            },
+            {
+              "rank": 24,
+              "player": "Jeff Hornacek",
+              "team": null,
+              "ted": 28.1,
+              "tap": 29.3
+            },
+            {
+              "rank": 25,
+              "player": "Hersey Hawkins",
+              "team": null,
+              "ted": 27.9,
+              "tap": 29.2
+            },
+            {
+              "rank": 26,
+              "player": "Kenny Smith",
+              "team": null,
+              "ted": 27.6,
+              "tap": 28.0
+            },
+            {
+              "rank": 27,
+              "player": "James Worthy",
+              "team": null,
+              "ted": 27.3,
+              "tap": 30.1
+            },
+            {
+              "rank": 28,
+              "player": "Mark Jackson",
+              "team": null,
+              "ted": 27.2,
+              "tap": 26.6
+            },
+            {
+              "rank": 29,
+              "player": "Bernard King",
+              "team": null,
+              "ted": 26.9,
+              "tap": 29.4
+            },
+            {
+              "rank": 30,
+              "player": "Derek Harper",
+              "team": null,
+              "ted": 26.5,
+              "tap": 28.4
             }
           ]
         }
@@ -7609,7 +9359,7 @@
         {
           "year": 1989,
           "season_label": "1989-90",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7750,13 +9500,83 @@
               "team": null,
               "ted": 30.6,
               "tap": 31.7
+            },
+            {
+              "rank": 21,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 30.4,
+              "tap": 34.2
+            },
+            {
+              "rank": 22,
+              "player": "Hot Rod Williams",
+              "team": null,
+              "ted": 30.1,
+              "tap": 30.2
+            },
+            {
+              "rank": 23,
+              "player": "James Worthy",
+              "team": null,
+              "ted": 29.8,
+              "tap": 31.3
+            },
+            {
+              "rank": 24,
+              "player": "Chris Mullin",
+              "team": null,
+              "ted": 29.5,
+              "tap": 30.2
+            },
+            {
+              "rank": 25,
+              "player": "Scottie Pippen",
+              "team": null,
+              "ted": 29.4,
+              "tap": 28.6
+            },
+            {
+              "rank": 26,
+              "player": "Charles Smith",
+              "team": null,
+              "ted": 29.0,
+              "tap": 29.7
+            },
+            {
+              "rank": 27,
+              "player": "Derek Harper",
+              "team": null,
+              "ted": 28.5,
+              "tap": 29.6
+            },
+            {
+              "rank": 28,
+              "player": "Robert Parish",
+              "team": null,
+              "ted": 28.3,
+              "tap": 27.4
+            },
+            {
+              "rank": 29,
+              "player": "Ricky Pierce",
+              "team": null,
+              "ted": 27.8,
+              "tap": 30.4
+            },
+            {
+              "rank": 30,
+              "player": "Rik Smits",
+              "team": null,
+              "ted": 27.6,
+              "tap": 27.2
             }
           ]
         },
         {
           "year": 1988,
           "season_label": "1988-89",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -7897,13 +9717,83 @@
               "team": null,
               "ted": 30.8,
               "tap": 31.2
+            },
+            {
+              "rank": 21,
+              "player": "Mark Jackson",
+              "team": null,
+              "ted": 29.9,
+              "tap": 30.7
+            },
+            {
+              "rank": 22,
+              "player": "Moses Malone",
+              "team": null,
+              "ted": 29.9,
+              "tap": 30.2
+            },
+            {
+              "rank": 23,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 28.9,
+              "tap": 32.9
+            },
+            {
+              "rank": 24,
+              "player": "Terry Cummings",
+              "team": null,
+              "ted": 28.8,
+              "tap": 31.0
+            },
+            {
+              "rank": 25,
+              "player": "James Worthy",
+              "team": null,
+              "ted": 28.3,
+              "tap": 29.4
+            },
+            {
+              "rank": 26,
+              "player": "Terry Porter",
+              "team": null,
+              "ted": 27.8,
+              "tap": 28.1
+            },
+            {
+              "rank": 27,
+              "player": "Derek Harper",
+              "team": null,
+              "ted": 26.3,
+              "tap": 27.3
+            },
+            {
+              "rank": 28,
+              "player": "Kevin McHale",
+              "team": null,
+              "ted": 25.8,
+              "tap": 26.9
+            },
+            {
+              "rank": 29,
+              "player": "Reggie Lewis",
+              "team": null,
+              "ted": 25.2,
+              "tap": 27.0
+            },
+            {
+              "rank": 30,
+              "player": "Ricky Pierce",
+              "team": null,
+              "ted": 24.7,
+              "tap": 27.1
             }
           ]
         },
         {
           "year": 1987,
           "season_label": "1987-88",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -8044,13 +9934,83 @@
               "team": null,
               "ted": 30.8,
               "tap": 30.2
+            },
+            {
+              "rank": 21,
+              "player": "Byron Scott",
+              "team": null,
+              "ted": 29.0,
+              "tap": 30.5
+            },
+            {
+              "rank": 22,
+              "player": "Moses Malone",
+              "team": null,
+              "ted": 28.8,
+              "tap": 29.4
+            },
+            {
+              "rank": 23,
+              "player": "Dennis Rodman",
+              "team": null,
+              "ted": 27.7,
+              "tap": 27.8
+            },
+            {
+              "rank": 24,
+              "player": "Adrian Dantley",
+              "team": null,
+              "ted": 27.2,
+              "tap": 29.3
+            },
+            {
+              "rank": 25,
+              "player": "Vern Fleming",
+              "team": null,
+              "ted": 27.2,
+              "tap": 27.3
+            },
+            {
+              "rank": 26,
+              "player": "Alex English",
+              "team": null,
+              "ted": 27.2,
+              "tap": 30.0
+            },
+            {
+              "rank": 27,
+              "player": "Xavier McDaniel",
+              "team": null,
+              "ted": 27.0,
+              "tap": 28.9
+            },
+            {
+              "rank": 28,
+              "player": "Derek Harper",
+              "team": null,
+              "ted": 26.9,
+              "tap": 28.4
+            },
+            {
+              "rank": 29,
+              "player": "James Worthy",
+              "team": null,
+              "ted": 26.7,
+              "tap": 28.0
+            },
+            {
+              "rank": 30,
+              "player": "Chris Mullin",
+              "team": null,
+              "ted": 26.4,
+              "tap": 27.4
             }
           ]
         },
         {
           "year": 1986,
           "season_label": "1986-87",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -8191,13 +10151,83 @@
               "team": null,
               "ted": 30.3,
               "tap": 33.3
+            },
+            {
+              "rank": 21,
+              "player": "Sleepy Floyd",
+              "team": null,
+              "ted": 29.4,
+              "tap": 29.1
+            },
+            {
+              "rank": 22,
+              "player": "Robert Parish",
+              "team": null,
+              "ted": 29.3,
+              "tap": 28.5
+            },
+            {
+              "rank": 23,
+              "player": "Bill Laimbeer",
+              "team": null,
+              "ted": 29.0,
+              "tap": 29.2
+            },
+            {
+              "rank": 24,
+              "player": "Kareem Abdul-Jabbar",
+              "team": null,
+              "ted": 28.7,
+              "tap": 28.4
+            },
+            {
+              "rank": 25,
+              "player": "James Worthy",
+              "team": null,
+              "ted": 28.4,
+              "tap": 29.3
+            },
+            {
+              "rank": 26,
+              "player": "Joe Barry Carroll",
+              "team": null,
+              "ted": 27.8,
+              "tap": 28.7
+            },
+            {
+              "rank": 27,
+              "player": "Maurice Cheeks",
+              "team": null,
+              "ted": 26.5,
+              "tap": 26.5
+            },
+            {
+              "rank": 28,
+              "player": "Alex English",
+              "team": null,
+              "ted": 25.9,
+              "tap": 28.8
+            },
+            {
+              "rank": 29,
+              "player": "Walter Davis",
+              "team": null,
+              "ted": 25.8,
+              "tap": 27.8
+            },
+            {
+              "rank": 30,
+              "player": "Adrian Dantley",
+              "team": null,
+              "ted": 25.6,
+              "tap": 27.3
             }
           ]
         },
         {
           "year": 1985,
           "season_label": "1985-86",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -8338,13 +10368,83 @@
               "team": null,
               "ted": 30.7,
               "tap": 31.6
+            },
+            {
+              "rank": 21,
+              "player": "Ralph Sampson",
+              "team": null,
+              "ted": 30.1,
+              "tap": 29.8
+            },
+            {
+              "rank": 22,
+              "player": "James Worthy",
+              "team": null,
+              "ted": 30.1,
+              "tap": 31.1
+            },
+            {
+              "rank": 23,
+              "player": "Sleepy Floyd",
+              "team": null,
+              "ted": 28.8,
+              "tap": 28.5
+            },
+            {
+              "rank": 24,
+              "player": "Alex English",
+              "team": null,
+              "ted": 28.5,
+              "tap": 31.5
+            },
+            {
+              "rank": 25,
+              "player": "Cliff Robinson",
+              "team": null,
+              "ted": 28.4,
+              "tap": 29.1
+            },
+            {
+              "rank": 26,
+              "player": "Calvin Natt",
+              "team": null,
+              "ted": 27.4,
+              "tap": 28.2
+            },
+            {
+              "rank": 27,
+              "player": "Derek Harper",
+              "team": null,
+              "ted": 27.2,
+              "tap": 27.3
+            },
+            {
+              "rank": 28,
+              "player": "Mike Gminski",
+              "team": null,
+              "ted": 26.9,
+              "tap": 27.3
+            },
+            {
+              "rank": 29,
+              "player": "Bill Laimbeer",
+              "team": null,
+              "ted": 26.6,
+              "tap": 26.7
+            },
+            {
+              "rank": 30,
+              "player": "World B. Free",
+              "team": null,
+              "ted": 25.4,
+              "tap": 28.6
             }
           ]
         },
         {
           "year": 1984,
           "season_label": "1984-85",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -8485,13 +10585,83 @@
               "team": null,
               "ted": 31.5,
               "tap": 29.5
+            },
+            {
+              "rank": 21,
+              "player": "Calvin Natt",
+              "team": null,
+              "ted": 30.9,
+              "tap": 31.7
+            },
+            {
+              "rank": 22,
+              "player": "Julius Erving",
+              "team": null,
+              "ted": 30.7,
+              "tap": 32.1
+            },
+            {
+              "rank": 23,
+              "player": "Kevin McHale",
+              "team": null,
+              "ted": 30.4,
+              "tap": 30.5
+            },
+            {
+              "rank": 24,
+              "player": "Clark Kellogg",
+              "team": null,
+              "ted": 29.6,
+              "tap": 29.5
+            },
+            {
+              "rank": 25,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 29.6,
+              "tap": 32.6
+            },
+            {
+              "rank": 26,
+              "player": "Charles Barkley",
+              "team": null,
+              "ted": 29.5,
+              "tap": 28.9
+            },
+            {
+              "rank": 27,
+              "player": "Mark Aguirre",
+              "team": null,
+              "ted": 29.0,
+              "tap": 31.2
+            },
+            {
+              "rank": 28,
+              "player": "Alex English",
+              "team": null,
+              "ted": 28.9,
+              "tap": 31.4
+            },
+            {
+              "rank": 29,
+              "player": "Bill Laimbeer",
+              "team": null,
+              "ted": 28.3,
+              "tap": 28.7
+            },
+            {
+              "rank": 30,
+              "player": "Fat Lever",
+              "team": null,
+              "ted": 28.3,
+              "tap": 28.4
             }
           ]
         },
         {
           "year": 1983,
           "season_label": "1983-84",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -8632,13 +10802,83 @@
               "team": null,
               "ted": 28.8,
               "tap": 30.7
+            },
+            {
+              "rank": 21,
+              "player": "Bill Laimbeer",
+              "team": null,
+              "ted": 27.6,
+              "tap": 27.8
+            },
+            {
+              "rank": 22,
+              "player": "Dominique Wilkins",
+              "team": null,
+              "ted": 27.0,
+              "tap": 28.8
+            },
+            {
+              "rank": 23,
+              "player": "Robert Parish",
+              "team": null,
+              "ted": 25.9,
+              "tap": 25.9
+            },
+            {
+              "rank": 24,
+              "player": "George Gervin",
+              "team": null,
+              "ted": 25.1,
+              "tap": 27.4
+            },
+            {
+              "rank": 25,
+              "player": "Jim Paxson",
+              "team": null,
+              "ted": 24.3,
+              "tap": 27.2
+            },
+            {
+              "rank": 26,
+              "player": "Terry Cummings",
+              "team": null,
+              "ted": 24.0,
+              "tap": 26.2
+            },
+            {
+              "rank": 27,
+              "player": "Larry Drew",
+              "team": null,
+              "ted": 23.7,
+              "tap": 24.8
+            },
+            {
+              "rank": 28,
+              "player": "Rolando Blackman",
+              "team": null,
+              "ted": 23.7,
+              "tap": 25.7
+            },
+            {
+              "rank": 29,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 30,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
             }
           ]
         },
         {
           "year": 1982,
           "season_label": "1982-83",
-          "top_n": 20,
+          "top_n": 30,
           "players": [
             {
               "rank": 1,
@@ -8779,6 +11019,76 @@
               "team": null,
               "ted": 25.0,
               "tap": 28.1
+            },
+            {
+              "rank": 21,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 22,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 23,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 24,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 25,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 26,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 27,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 28,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 29,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
+            },
+            {
+              "rank": 30,
+              "player": null,
+              "team": null,
+              "ted": null,
+              "tap": null
             }
           ]
         },
