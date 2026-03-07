@@ -8424,6 +8424,10 @@
       closeCareer();
       var info = findVisibleYear();
       var savedScroll = window.scrollY;
+      /* Capture weekly/daily state from old view before switching */
+      var oldView = stat === 'ted' ? '.view-ted' : '.view-tap';
+      var oldSlot = document.querySelector(oldView + ' .weekly-daily-slot');
+      var showingDaily = oldSlot && oldSlot.querySelector('.daily-table').style.display !== 'none';
       stat = stat === 'ted' ? 'tap' : 'ted';
       document.querySelectorAll('.view-ted').forEach(function(el) {
         el.style.display = stat === 'ted' ? '' : 'none';
@@ -8431,6 +8435,13 @@
       document.querySelectorAll('.view-tap').forEach(function(el) {
         el.style.display = stat === 'tap' ? '' : 'none';
       });
+      /* Sync weekly/daily state to new view */
+      var newView = stat === 'ted' ? '.view-ted' : '.view-tap';
+      var newSlot = document.querySelector(newView + ' .weekly-daily-slot');
+      if (newSlot) {
+        newSlot.querySelector('.weekly-table').style.display = showingDaily ? 'none' : '';
+        newSlot.querySelector('.daily-table').style.display = showingDaily ? '' : 'none';
+      }
       document.querySelector('.desc-ted').style.display = stat === 'ted' ? '' : 'none';
       document.querySelector('.desc-tap').style.display = stat === 'tap' ? '' : 'none';
       toggleLink.textContent = stat === 'ted' ? 'TAP Click Here' : 'TED Click Here';
