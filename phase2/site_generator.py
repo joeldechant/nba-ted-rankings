@@ -986,6 +986,7 @@ def generate_html(weekly, season, daily, updated_at):
     function doToggle() {{
       closeCareer();
       var info = findVisibleYear();
+      var savedScroll = window.scrollY;
       stat = stat === 'ted' ? 'tap' : 'ted';
       document.querySelectorAll('.view-ted').forEach(function(el) {{
         el.style.display = stat === 'ted' ? '' : 'none';
@@ -1005,7 +1006,11 @@ def generate_html(weekly, season, daily, updated_at):
         if (target) {{
           var targetTop = target.getBoundingClientRect().top + window.scrollY;
           window.scrollTo(0, targetTop - info.offset);
+        }} else {{
+          window.scrollTo(0, savedScroll);
         }}
+      }} else {{
+        window.scrollTo(0, savedScroll);
       }}
     }}
 
