@@ -264,14 +264,20 @@ def build_career_js(historical, season_all):
     return f'<script>window.CAREER={career_json};window.SEASON_STATS={stats_json};</script>'
 
 
-def generate_html(weekly, season, updated_at):
+def generate_html(weekly, season, daily, updated_at):
     """Generate the full HTML page — TED only."""
     season_label = f"{config.CURRENT_SEASON_YEAR}-{str(config.CURRENT_SEASON_YEAR + 1)[-2:]}"
+
+    # Yesterday's date for daily table subtitle
+    yesterday = date.today() - timedelta(days=1)
+    daily_label = yesterday.strftime("%B %d, %Y").replace(" 0", " ")  # "March 5, 2026" not "March 05"
 
     weekly_ted_table = render_table(weekly['ted'], 'ted', 'WEEKLY TED TOP 100')
     season_ted_table = render_table(season['ted'], 'ted', 'SEASON-TO-DATE TED TOP 100')
     weekly_tap_table = render_table(weekly['tap'], 'tap', 'WEEKLY TAP TOP 100')
     season_tap_table = render_table(season['tap'], 'tap', 'SEASON-TO-DATE TAP TOP 100')
+    daily_ted_table = render_table(daily['ted'], 'ted', 'DAILY TED TOP 20', week_label=daily_label)
+    daily_tap_table = render_table(daily['tap'], 'tap', 'DAILY TAP TOP 20', week_label=daily_label)
 
     # Build career popup data
     career_js = build_career_js(
@@ -284,9 +290,9 @@ def generate_html(weekly, season, updated_at):
         decade_nav_links, historical_ted_html = render_historical_section(historical, 'ted')
         _, historical_tap_html = render_historical_section(historical, 'tap')
         decade_nav_html = f'<nav class="decade-nav">{decade_nav_links}</nav>'
-        historical_html = f"""<div class="view-ted">
+        historical_html = f"""<div class="view-ted" style="display:none">
 {historical_ted_html}</div>
-<div class="view-tap" style="display:none">
+<div class="view-tap">
 {historical_tap_html}</div>"""
     else:
         decade_nav_html = ''
@@ -297,7 +303,7 @@ def generate_html(weekly, season, updated_at):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NBA TED Rankings &mdash; {season_label} Season</title>
+  <title>NBA TAP Rankings &mdash; {season_label} Season</title>
   <style>
     * {{ margin: 0; padding: 0; box-sizing: border-box; }}
 
@@ -432,6 +438,14 @@ def generate_html(weekly, season, updated_at):
       border: 2px solid #000;
       padding: 10px 12px;
       text-align: center;
+    }}
+
+    .weekly-daily-slot .table-header {{
+      cursor: pointer;
+    }}
+
+    .weekly-daily-slot .table-header:hover {{
+      background: #eee;
     }}
 
     .table-section h2 {{
@@ -870,7 +884,7 @@ def generate_html(weekly, season, updated_at):
 <body>
   <div class="container">
     <header>
-      <h1 data-ted-text="NBA TED Rankings" data-tap-text="NBA TAP Rankings">NBA TED Rankings</h1>
+      <h1 data-ted-text="NBA TED Rankings" data-tap-text="NBA TAP Rankings">NBA TAP Rankings</h1>
       <svg class="basketball" width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="46" fill="#ee7623" stroke="#000" stroke-width="3"/>
         <path d="M4 50 C4 50 96 50 96 50" stroke="#000" stroke-width="2.5"/>
@@ -878,15 +892,15 @@ def generate_html(weekly, season, updated_at):
         <path d="M10 18 C30 38 30 62 10 82" stroke="#000" stroke-width="2.5" fill="none"/>
         <path d="M90 18 C70 38 70 62 90 82" stroke="#000" stroke-width="2.5" fill="none"/>
       </svg>
-      <div class="toggle-link" id="toggle-link">TAP Click Here</div>
+      <div class="toggle-link" id="toggle-link">TED Click Here</div>
     </header>
 
     <div class="description">
-      <div class="stat-desc desc-ted">
+      <div class="stat-desc desc-ted" style="display:none">
         <h3>TED &mdash; Total Earned Differential</h3>
         <p>TED estimates total player production per game as a single points-equivalent number. It relies primarily on box score stats, converting all box-score contributions &mdash; points scored, scoring efficiency, rebounds, assists, steals, turnovers, blocks &mdash; along with a defensive adjustment (using DBPM and DWS) into one value. TED is meant to capture a player&rsquo;s full impact on points scored in a game, both directly and indirectly &mdash; his Total Earned Differential. For example, if a player scored 30 points with a TED of 52 in last night&rsquo;s game &mdash; he actually contributed 52 points worth of total offensive/defensive production across all facets of the game, not 30. TED is normalized to per 36 minutes and 71 possessions for cleaner cross-player and cross-era comparisons.</p>
       </div>
-      <div class="stat-desc desc-tap" style="display:none">
+      <div class="stat-desc desc-tap">
         <h3>TAP &mdash; Total Adjusted Production</h3>
         <p>TAP estimates total player production per game as a single points-equivalent number. It builds on TED (Total Earned Differential), which converts all box-score contributions &mdash; points scored, scoring efficiency, rebounds, assists, steals, turnovers, blocks &mdash; plus a defensive adjustment (using DBPM and DWS) into one value. TAP takes this approach one step further, overlaying an additional offensive adjustment (using OBPM and OWS) to capture the residual offensive impact that box-score stats miss &mdash; for example, shooting gravity that warps defenses, or anti-gravity. TAP is normalized to per 36 minutes and 71 possessions for cleaner cross-player and cross-era comparisons.</p>
       </div>
@@ -894,15 +908,21 @@ def generate_html(weekly, season, updated_at):
 
 {decade_nav_html}
     <div class="season-header"><h3>{season_label} Season</h3></div>
-    <div class="view-ted">
+    <div class="view-ted" style="display:none">
       <div class="tables-grid">
-{weekly_ted_table}
+        <div class="weekly-daily-slot">
+          <div class="weekly-table">{weekly_ted_table}</div>
+          <div class="daily-table" style="display:none">{daily_ted_table}</div>
+        </div>
 {season_ted_table}
       </div>
     </div>
-    <div class="view-tap" style="display:none">
+    <div class="view-tap">
       <div class="tables-grid">
-{weekly_tap_table}
+        <div class="weekly-daily-slot">
+          <div class="weekly-table">{weekly_tap_table}</div>
+          <div class="daily-table" style="display:none">{daily_tap_table}</div>
+        </div>
 {season_tap_table}
       </div>
     </div>
@@ -946,7 +966,7 @@ def generate_html(weekly, season, updated_at):
 {career_js}
   <script>
   (function() {{
-    var stat = 'ted';
+    var stat = 'tap';
     var toggleLink = document.getElementById('toggle-link');
     var floatToggle = document.getElementById('float-toggle');
 
@@ -1066,6 +1086,23 @@ def generate_html(weekly, season, updated_at):
     document.addEventListener('keydown', function(e) {{
       if (e.key === 'Escape') closeCareer();
     }});
+
+    /* Weekly / Daily toggle — click header to swap */
+    document.querySelectorAll('.weekly-daily-slot').forEach(function(slot) {{
+      slot.addEventListener('click', function(e) {{
+        var header = e.target.closest('.table-header');
+        if (!header) return;
+        var weekly = slot.querySelector('.weekly-table');
+        var daily = slot.querySelector('.daily-table');
+        if (weekly.style.display === 'none') {{
+          weekly.style.display = '';
+          daily.style.display = 'none';
+        }} else {{
+          weekly.style.display = 'none';
+          daily.style.display = '';
+        }}
+      }});
+    }});
   }})();
   </script>
 </body>
@@ -1087,13 +1124,23 @@ def generate_site():
     print(f"  Weekly TED: {len(weekly['ted'])} players")
     print(f"  Weekly TAP: {len(weekly['tap'])} players")
 
+    # Daily rankings = yesterday only (top 20)
+    yesterday = week_end  # already = today - 1 day
+    daily_full = calculate_weekly_rankings(yesterday, yesterday)
+    daily = {
+        'ted': daily_full['ted'][:20],
+        'tap': daily_full['tap'][:20],
+    }
+    print(f"  Daily TED: {len(daily['ted'])} players")
+    print(f"  Daily TAP: {len(daily['tap'])} players")
+
     season = calculate_season_rankings()
     print(f"  Season TED: {len(season['ted'])} players")
     print(f"  Season TAP: {len(season['tap'])} players")
 
     # Generate HTML
     updated_at = date.today().strftime("%B %d, %Y")
-    html = generate_html(weekly, season, updated_at)
+    html = generate_html(weekly, season, daily, updated_at)
 
     # Write output
     os.makedirs(DOCS_DIR, exist_ok=True)
