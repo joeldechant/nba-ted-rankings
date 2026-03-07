@@ -1120,15 +1120,18 @@ def generate_site():
     print(f"  Weekly TED: {len(weekly['ted'])} players")
     print(f"  Weekly TAP: {len(weekly['tap'])} players")
 
-    # Daily rankings = yesterday only (top 20)
-    yesterday = week_end  # already = today - 1 day
-    daily_full = calculate_weekly_rankings(yesterday, yesterday)
-    daily = {
-        'ted': daily_full['ted'][:20],
-        'tap': daily_full['tap'][:20],
-    }
-    print(f"  Daily TED: {len(daily['ted'])} players")
-    print(f"  Daily TAP: {len(daily['tap'])} players")
+    # Daily rankings = most recent game day (top 20)
+    last_game_date = db.get_last_game_date(config.CURRENT_SEASON_YEAR)
+    if last_game_date:
+        daily_full = calculate_weekly_rankings(last_game_date, last_game_date)
+        daily = {
+            'ted': daily_full['ted'][:20],
+            'tap': daily_full['tap'][:20],
+        }
+        print(f"  Daily ({last_game_date}): TED {len(daily['ted'])}, TAP {len(daily['tap'])} players")
+    else:
+        daily = {'ted': [], 'tap': []}
+        print(f"  Daily: no games in DB")
 
     season = calculate_season_rankings()
     print(f"  Season TED: {len(season['ted'])} players")
