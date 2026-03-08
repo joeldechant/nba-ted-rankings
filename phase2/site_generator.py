@@ -434,6 +434,9 @@ def generate_html(weekly, season, daily, updated_at):
       border: 2px solid #000;
       padding: 10px 12px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }}
 
     .weekly-daily-slot .table-header {{
