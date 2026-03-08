@@ -694,6 +694,12 @@ def generate_html(weekly, season, daily, updated_at):
     .all-time-table .table-header,
     .decade-top100 .table-header {{
       background: #fff;
+      cursor: pointer;
+    }}
+
+    .all-time-table .table-header:hover,
+    .decade-top100 .table-header:hover {{
+      background: #eee;
     }}
 
     .all-time-table .player,
@@ -1268,6 +1274,11 @@ def generate_html(weekly, season, daily, updated_at):
       header.addEventListener('click', function() {{
         allTime.style.display = allTime.style.display === 'none' ? '' : 'none';
       }});
+      /* Also collapse via the table's own header */
+      var tableHeader = allTime.querySelector('.table-header');
+      if (tableHeader) tableHeader.addEventListener('click', function() {{
+        allTime.style.display = 'none';
+      }});
     }});
 
     /* Decade top 100 toggle — click decade header to show/hide */
@@ -1277,6 +1288,11 @@ def generate_html(weekly, season, daily, updated_at):
       if (!header || !top100) return;
       header.addEventListener('click', function() {{
         top100.style.display = top100.style.display === 'none' ? '' : 'none';
+      }});
+      /* Also collapse via the table's own header */
+      var tableHeader = top100.querySelector('.table-header');
+      if (tableHeader) tableHeader.addEventListener('click', function() {{
+        top100.style.display = 'none';
       }});
     }});
   }})();
