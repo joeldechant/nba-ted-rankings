@@ -704,7 +704,7 @@ def generate_html(weekly, season, daily, updated_at):
 
     .decade-top100 .year-table .table-header h2 .decade-label {{
       font-size: 1.22em;
-      font-weight: 900;
+      font-weight: 700;
     }}
 
     .all-time-table .player,
