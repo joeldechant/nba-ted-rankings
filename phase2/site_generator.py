@@ -702,15 +702,15 @@ def generate_html(weekly, season, daily, updated_at):
       background: #eee;
     }}
 
-    .decade-top100 .table-header {{
+    .decade-top100 .year-table .table-header {{
       background: #222;
     }}
 
-    .decade-top100 .table-header:hover {{
+    .decade-top100 .year-table .table-header:hover {{
       background: #333;
     }}
 
-    .decade-top100 .table-header h2 {{
+    .decade-top100 .year-table .table-header h2 {{
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 1.1em;
       font-weight: 900;
