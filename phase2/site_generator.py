@@ -696,6 +696,14 @@ def generate_html(weekly, season, daily, updated_at):
       background: #fff;
     }}
 
+    .all-time-table .player,
+    .decade-top100 .player {{
+      max-width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }}
+
     .historical-header h2 {{
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 1.2em;
