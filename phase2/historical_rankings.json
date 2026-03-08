@@ -26759,10 +26759,10 @@
             },
             {
               "rank": 7,
-              "player": "Dick McGuire",
+              "player": null,
               "team": null,
-              "ted": 14.6,
-              "tap": 11.4
+              "ted": null,
+              "tap": null
             },
             {
               "rank": 8,
@@ -27607,15 +27607,6 @@
           "season_label": "1955-56",
           "ted": 15.2,
           "tap": 14.6
-        },
-        {
-          "rank": 92,
-          "player": "Dick McGuire",
-          "team": null,
-          "year": 1950,
-          "season_label": "1950-51",
-          "ted": 14.6,
-          "tap": 11.4
         }
       ],
       "decade_top_n": 100
@@ -42974,14 +42965,6 @@
         "tap": 25.5
       }
     ],
-    "Dick McGuire": [
-      {
-        "y": 1950,
-        "tm": "",
-        "ted": 14.6,
-        "tap": 11.4
-      }
-    ],
     "Zach LaVine": [
       {
         "y": 2018,
@@ -50629,8 +50612,8 @@
       "ldr_tap_val": 43.4
     },
     "1950": {
-      "top10_ted": 25.4,
-      "top10_tap": 26.7,
+      "top10_ted": 27.2,
+      "top10_tap": 29.3,
       "ldr_ted": "George Mikan",
       "ldr_ted_val": 41.3,
       "ldr_tap": "George Mikan",
