@@ -195,10 +195,10 @@ def get_last_name(name):
 
 
 def render_all_time_html(data, stat_key='ted', season_all=None):
-    """Generate HTML for the all-time top 200 table.
+    """Generate HTML for the all-time top 400 table.
 
     Merges current season-to-date players into the historical
-    all-time list, re-sorts by stat_key, and takes the top 200.
+    all-time list, re-sorts by stat_key, and takes the top 400.
     """
     if not data or 'all_time_top_200' not in data:
         return ''
@@ -223,12 +223,12 @@ def render_all_time_html(data, stat_key='ted', season_all=None):
                     'tap': round(p['tap'], 1),
                 })
 
-    # Re-sort by chosen stat, take top 200, and re-rank
+    # Re-sort by chosen stat, take top 400, and re-rank
     players_sorted = sorted(
         all_entries,
         key=lambda p: p.get(stat_key, 0),
         reverse=True
-    )[:200]
+    )[:400]
 
     rows = ''
     for rank, p in enumerate(players_sorted, 1):
@@ -239,7 +239,7 @@ def render_all_time_html(data, stat_key='ted', season_all=None):
 
     return f"""    <div class="year-pair single">
       <div class="year-table">
-        <div class="table-header"><h2>ALL-TIME {stat_upper} TOP 200</h2></div>
+        <div class="table-header"><h2>ALL-TIME {stat_upper} TOP 400</h2></div>
         <table>
           <thead><tr><th class="rank">Rank</th><th class="player">Player</th><th class="season">Season</th><th class="num stat">{stat_upper}</th></tr></thead>
           <tbody>
@@ -716,7 +716,7 @@ def generate_html(weekly, season, daily, updated_at):
 
     .all-time-table .year-pair > :first-child,
     .decade-top100 .year-pair > :first-child {{
-      border-right: none;
+      border-right: 1px solid #555;
     }}
 
     .all-time-table .player,

@@ -1800,6 +1800,1806 @@
       "season_label": "2018-19",
       "ted": 41.2,
       "tap": 42.9
+    },
+    {
+      "rank": 201,
+      "player": "David Robinson",
+      "team": null,
+      "year": 1992,
+      "season_label": "1992-93",
+      "ted": 41.2,
+      "tap": 42.9
+    },
+    {
+      "rank": 202,
+      "player": "Karl-Anthony Towns",
+      "team": "MIN",
+      "year": 2018,
+      "season_label": "2018-19",
+      "ted": 41.1,
+      "tap": 40.7
+    },
+    {
+      "rank": 203,
+      "player": "Donovan Mitchell",
+      "team": "CLE",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 41.1,
+      "tap": 43.2
+    },
+    {
+      "rank": 204,
+      "player": "Chris Paul",
+      "team": null,
+      "year": 2017,
+      "season_label": "2017-18",
+      "ted": 41.0,
+      "tap": 43.0
+    },
+    {
+      "rank": 205,
+      "player": "Dirk Nowitzki",
+      "team": null,
+      "year": 2006,
+      "season_label": "2006-07",
+      "ted": 41.0,
+      "tap": 43.9
+    },
+    {
+      "rank": 206,
+      "player": "Kyrie Irving",
+      "team": null,
+      "year": 2017,
+      "season_label": "2017-18",
+      "ted": 40.9,
+      "tap": 43.7
+    },
+    {
+      "rank": 207,
+      "player": "DeMarcus Cousins",
+      "team": null,
+      "year": 2014,
+      "season_label": "2014-15",
+      "ted": 40.9,
+      "tap": 41.6
+    },
+    {
+      "rank": 208,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1990,
+      "season_label": "1990-91",
+      "ted": 40.9,
+      "tap": 39.4
+    },
+    {
+      "rank": 209,
+      "player": "Kareem Abdul-Jabbar",
+      "team": null,
+      "year": 1970,
+      "season_label": "1970-71",
+      "ted": 40.8,
+      "tap": 42.9
+    },
+    {
+      "rank": 210,
+      "player": "Wilt Chamberlain",
+      "team": null,
+      "year": 1967,
+      "season_label": "1967-68",
+      "ted": 40.8,
+      "tap": 42.4
+    },
+    {
+      "rank": 211,
+      "player": "Kevin Love",
+      "team": null,
+      "year": 2013,
+      "season_label": "2013-14",
+      "ted": 40.8,
+      "tap": 42.8
+    },
+    {
+      "rank": 212,
+      "player": "DeMarcus Cousins",
+      "team": null,
+      "year": 2013,
+      "season_label": "2013-14",
+      "ted": 40.8,
+      "tap": 41.9
+    },
+    {
+      "rank": 213,
+      "player": "Stephen Curry",
+      "team": "GSW",
+      "year": 2018,
+      "season_label": "2018-19",
+      "ted": 40.8,
+      "tap": 41.0
+    },
+    {
+      "rank": 214,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 2007,
+      "season_label": "2007-08",
+      "ted": 40.8,
+      "tap": 43.7
+    },
+    {
+      "rank": 215,
+      "player": "Shaquille O'Neal",
+      "team": null,
+      "year": 1998,
+      "season_label": "1998-99",
+      "ted": 40.8,
+      "tap": 42.8
+    },
+    {
+      "rank": 216,
+      "player": "Kobe Bryant",
+      "team": null,
+      "year": 2005,
+      "season_label": "2005-06",
+      "ted": 40.8,
+      "tap": 44.5
+    },
+    {
+      "rank": 217,
+      "player": "Karl Malone",
+      "team": null,
+      "year": 1998,
+      "season_label": "1998-99",
+      "ted": 40.8,
+      "tap": 44.4
+    },
+    {
+      "rank": 218,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1987,
+      "season_label": "1987-88",
+      "ted": 40.7,
+      "tap": 38.8
+    },
+    {
+      "rank": 219,
+      "player": "Kristaps Porziņģis",
+      "team": "BOS",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 40.7,
+      "tap": 41.8
+    },
+    {
+      "rank": 220,
+      "player": "Cade Cunningham",
+      "team": "DET",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 40.7,
+      "tap": 41.1
+    },
+    {
+      "rank": 221,
+      "player": "Chris Paul",
+      "team": null,
+      "year": 2014,
+      "season_label": "2014-15",
+      "ted": 40.7,
+      "tap": 41.8
+    },
+    {
+      "rank": 222,
+      "player": "Julius Erving",
+      "team": null,
+      "year": 1980,
+      "season_label": "1980-81",
+      "ted": 40.6,
+      "tap": 43.8
+    },
+    {
+      "rank": 223,
+      "player": "Hakeem Olajuwon",
+      "team": null,
+      "year": 1991,
+      "season_label": "1991-92",
+      "ted": 40.6,
+      "tap": 42.0
+    },
+    {
+      "rank": 224,
+      "player": "Hakeem Olajuwon",
+      "team": null,
+      "year": 1986,
+      "season_label": "1986-87",
+      "ted": 40.6,
+      "tap": 43.0
+    },
+    {
+      "rank": 225,
+      "player": "Scottie Pippen",
+      "team": null,
+      "year": 1993,
+      "season_label": "1993-94",
+      "ted": 40.6,
+      "tap": 44.5
+    },
+    {
+      "rank": 226,
+      "player": "Robert Parish",
+      "team": null,
+      "year": 1980,
+      "season_label": "1980-81",
+      "ted": 40.5,
+      "tap": 42.0
+    },
+    {
+      "rank": 227,
+      "player": "Karl Malone",
+      "team": null,
+      "year": 1991,
+      "season_label": "1991-92",
+      "ted": 40.5,
+      "tap": 42.2
+    },
+    {
+      "rank": 228,
+      "player": "Dejounte Murray",
+      "team": "SAS",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 40.5,
+      "tap": 42.0
+    },
+    {
+      "rank": 229,
+      "player": "Patrick Ewing",
+      "team": null,
+      "year": 1990,
+      "season_label": "1990-91",
+      "ted": 40.5,
+      "tap": 41.3
+    },
+    {
+      "rank": 230,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1989,
+      "season_label": "1989-90",
+      "ted": 40.5,
+      "tap": 39.2
+    },
+    {
+      "rank": 231,
+      "player": "Wilt Chamberlain",
+      "team": null,
+      "year": 1965,
+      "season_label": "1965-66",
+      "ted": 40.5,
+      "tap": 42.5
+    },
+    {
+      "rank": 232,
+      "player": "Dwyane Wade",
+      "team": null,
+      "year": 2011,
+      "season_label": "2011-12",
+      "ted": 40.5,
+      "tap": 44.2
+    },
+    {
+      "rank": 233,
+      "player": "Dwyane Wade",
+      "team": null,
+      "year": 2010,
+      "season_label": "2010-11",
+      "ted": 40.4,
+      "tap": 43.0
+    },
+    {
+      "rank": 234,
+      "player": "Stephen Curry",
+      "team": "GSW",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 40.4,
+      "tap": 42.3
+    },
+    {
+      "rank": 235,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 2008,
+      "season_label": "2008-09",
+      "ted": 40.4,
+      "tap": 42.4
+    },
+    {
+      "rank": 236,
+      "player": "Stephen Curry",
+      "team": "GSW",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 40.4,
+      "tap": 41.5
+    },
+    {
+      "rank": 237,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1991,
+      "season_label": "1991-92",
+      "ted": 40.4,
+      "tap": 39.5
+    },
+    {
+      "rank": 238,
+      "player": "Karl Malone",
+      "team": null,
+      "year": 1988,
+      "season_label": "1988-89",
+      "ted": 40.4,
+      "tap": 43.2
+    },
+    {
+      "rank": 239,
+      "player": "Karl Malone",
+      "team": null,
+      "year": 1990,
+      "season_label": "1990-91",
+      "ted": 40.4,
+      "tap": 42.0
+    },
+    {
+      "rank": 240,
+      "player": "Bill Walton",
+      "team": null,
+      "year": 1977,
+      "season_label": "1977-78",
+      "ted": 40.3,
+      "tap": 42.5
+    },
+    {
+      "rank": 241,
+      "player": "Kevin Durant",
+      "team": "GSW",
+      "year": 2018,
+      "season_label": "2018-19",
+      "ted": 40.3,
+      "tap": 40.1
+    },
+    {
+      "rank": 242,
+      "player": "Nikola Jokić",
+      "team": null,
+      "year": 2016,
+      "season_label": "2016-17",
+      "ted": 40.3,
+      "tap": 40.1
+    },
+    {
+      "rank": 243,
+      "player": "David Robinson",
+      "team": null,
+      "year": 1999,
+      "season_label": "1999-00",
+      "ted": 40.2,
+      "tap": 43.7
+    },
+    {
+      "rank": 244,
+      "player": "Tyrese Haliburton",
+      "team": "IND",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 40.2,
+      "tap": 39.7
+    },
+    {
+      "rank": 245,
+      "player": "Karl-Anthony Towns",
+      "team": "NYK",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 40.2,
+      "tap": 39.9
+    },
+    {
+      "rank": 246,
+      "player": "Julius Erving",
+      "team": null,
+      "year": 1981,
+      "season_label": "1981-82",
+      "ted": 40.2,
+      "tap": 42.2
+    },
+    {
+      "rank": 247,
+      "player": "James Harden",
+      "team": "PHI",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 40.2,
+      "tap": 39.8
+    },
+    {
+      "rank": 248,
+      "player": "Kareem Abdul-Jabbar",
+      "team": null,
+      "year": 1978,
+      "season_label": "1978-79",
+      "ted": 40.2,
+      "tap": 40.6
+    },
+    {
+      "rank": 249,
+      "player": "Kyrie Irving",
+      "team": "BRK",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 40.2,
+      "tap": 40.9
+    },
+    {
+      "rank": 250,
+      "player": "Damian Lillard",
+      "team": "POR",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 40.2,
+      "tap": 40.5
+    },
+    {
+      "rank": 251,
+      "player": "Wilt Chamberlain",
+      "team": null,
+      "year": 1961,
+      "season_label": "1961-62",
+      "ted": 40.1,
+      "tap": 40.6
+    },
+    {
+      "rank": 252,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1994,
+      "season_label": "1994-95",
+      "ted": 40.1,
+      "tap": 38.6
+    },
+    {
+      "rank": 253,
+      "player": "Scottie Pippen",
+      "team": null,
+      "year": 1994,
+      "season_label": "1994-95",
+      "ted": 40.1,
+      "tap": 43.4
+    },
+    {
+      "rank": 254,
+      "player": "Zion Williamson",
+      "team": "NOP",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 40.0,
+      "tap": 40.0
+    },
+    {
+      "rank": 255,
+      "player": "James Harden",
+      "team": "LAC",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 40.0,
+      "tap": 40.4
+    },
+    {
+      "rank": 256,
+      "player": "Clyde Drexler",
+      "team": null,
+      "year": 1991,
+      "season_label": "1991-92",
+      "ted": 40.0,
+      "tap": 43.4
+    },
+    {
+      "rank": 257,
+      "player": "Damian Lillard",
+      "team": "POR",
+      "year": 2019,
+      "season_label": "2019-20",
+      "ted": 40.0,
+      "tap": 40.1
+    },
+    {
+      "rank": 258,
+      "player": "Patrick Ewing",
+      "team": null,
+      "year": 1994,
+      "season_label": "1994-95",
+      "ted": 40.0,
+      "tap": 41.3
+    },
+    {
+      "rank": 259,
+      "player": "Julius Erving",
+      "team": null,
+      "year": 1979,
+      "season_label": "1979-80",
+      "ted": 40.0,
+      "tap": 42.7
+    },
+    {
+      "rank": 260,
+      "player": "Zion Williamson",
+      "team": "NOP",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 40.0,
+      "tap": 39.9
+    },
+    {
+      "rank": 261,
+      "player": "LeBron James",
+      "team": null,
+      "year": 2004,
+      "season_label": "2004-05",
+      "ted": 40.0,
+      "tap": 43.2
+    },
+    {
+      "rank": 262,
+      "player": "Isaiah Thomas",
+      "team": null,
+      "year": 2016,
+      "season_label": "2016-17",
+      "ted": 39.9,
+      "tap": 40.6
+    },
+    {
+      "rank": 263,
+      "player": "Chris Paul",
+      "team": null,
+      "year": 2011,
+      "season_label": "2011-12",
+      "ted": 39.9,
+      "tap": 42.3
+    },
+    {
+      "rank": 264,
+      "player": "Charles Barkley",
+      "team": null,
+      "year": 1987,
+      "season_label": "1987-88",
+      "ted": 39.9,
+      "tap": 40.2
+    },
+    {
+      "rank": 265,
+      "player": "Manu Ginóbili",
+      "team": null,
+      "year": 2006,
+      "season_label": "2006-07",
+      "ted": 39.9,
+      "tap": 43.2
+    },
+    {
+      "rank": 266,
+      "player": "Larry Bird",
+      "team": null,
+      "year": 1983,
+      "season_label": "1983-84",
+      "ted": 39.8,
+      "tap": 42.9
+    },
+    {
+      "rank": 267,
+      "player": "Michael Jordan",
+      "team": null,
+      "year": 1984,
+      "season_label": "1984-85",
+      "ted": 39.8,
+      "tap": 41.7
+    },
+    {
+      "rank": 268,
+      "player": "LeBron James",
+      "team": null,
+      "year": 2006,
+      "season_label": "2006-07",
+      "ted": 39.8,
+      "tap": 43.9
+    },
+    {
+      "rank": 269,
+      "player": "Dirk Nowitzki",
+      "team": null,
+      "year": 2004,
+      "season_label": "2004-05",
+      "ted": 39.8,
+      "tap": 42.6
+    },
+    {
+      "rank": 270,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 2005,
+      "season_label": "2005-06",
+      "ted": 39.8,
+      "tap": 43.1
+    },
+    {
+      "rank": 271,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1988,
+      "season_label": "1988-89",
+      "ted": 39.7,
+      "tap": 39.2
+    },
+    {
+      "rank": 272,
+      "player": "Kristaps Porziņģis",
+      "team": "BOS",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 39.7,
+      "tap": 41.3
+    },
+    {
+      "rank": 273,
+      "player": "Kareem Abdul-Jabbar",
+      "team": null,
+      "year": 1979,
+      "season_label": "1979-80",
+      "ted": 39.7,
+      "tap": 39.7
+    },
+    {
+      "rank": 274,
+      "player": "Devin Booker",
+      "team": "PHO",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 39.7,
+      "tap": 40.5
+    },
+    {
+      "rank": 275,
+      "player": "Dirk Nowitzki",
+      "team": null,
+      "year": 2005,
+      "season_label": "2005-06",
+      "ted": 39.7,
+      "tap": 42.9
+    },
+    {
+      "rank": 276,
+      "player": "Patrick Ewing",
+      "team": null,
+      "year": 1991,
+      "season_label": "1991-92",
+      "ted": 39.7,
+      "tap": 42.0
+    },
+    {
+      "rank": 277,
+      "player": "Charles Barkley",
+      "team": null,
+      "year": 1994,
+      "season_label": "1994-95",
+      "ted": 39.6,
+      "tap": 41.1
+    },
+    {
+      "rank": 278,
+      "player": "Hassan Whiteside",
+      "team": null,
+      "year": 2015,
+      "season_label": "2015-16",
+      "ted": 39.6,
+      "tap": 39.6
+    },
+    {
+      "rank": 279,
+      "player": "Tracy McGrady",
+      "team": null,
+      "year": 2006,
+      "season_label": "2006-07",
+      "ted": 39.6,
+      "tap": 43.9
+    },
+    {
+      "rank": 280,
+      "player": "Charles Barkley",
+      "team": null,
+      "year": 1989,
+      "season_label": "1989-90",
+      "ted": 39.6,
+      "tap": 41.0
+    },
+    {
+      "rank": 281,
+      "player": "Domantas Sabonis",
+      "team": "SAC",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 39.6,
+      "tap": 38.1
+    },
+    {
+      "rank": 282,
+      "player": "James Harden",
+      "team": null,
+      "year": 2015,
+      "season_label": "2015-16",
+      "ted": 39.6,
+      "tap": 40.0
+    },
+    {
+      "rank": 283,
+      "player": "Karl-Anthony Towns",
+      "team": "MIN",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 39.6,
+      "tap": 39.6
+    },
+    {
+      "rank": 284,
+      "player": "Jayson Tatum",
+      "team": "BOS",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 39.6,
+      "tap": 42.3
+    },
+    {
+      "rank": 285,
+      "player": "Elton Brand",
+      "team": null,
+      "year": 2005,
+      "season_label": "2005-06",
+      "ted": 39.5,
+      "tap": 42.3
+    },
+    {
+      "rank": 286,
+      "player": "Trae Young",
+      "team": "ATL",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 39.5,
+      "tap": 39.2
+    },
+    {
+      "rank": 287,
+      "player": "Alonzo Mourning",
+      "team": null,
+      "year": 1998,
+      "season_label": "1998-99",
+      "ted": 39.5,
+      "tap": 42.4
+    },
+    {
+      "rank": 288,
+      "player": "Shawn Kemp",
+      "team": null,
+      "year": 1993,
+      "season_label": "1993-94",
+      "ted": 39.4,
+      "tap": 41.6
+    },
+    {
+      "rank": 289,
+      "player": "Manu Ginóbili",
+      "team": null,
+      "year": 2008,
+      "season_label": "2008-09",
+      "ted": 39.4,
+      "tap": 41.6
+    },
+    {
+      "rank": 290,
+      "player": "Kevin Durant",
+      "team": null,
+      "year": 2009,
+      "season_label": "2009-10",
+      "ted": 39.4,
+      "tap": 41.5
+    },
+    {
+      "rank": 291,
+      "player": "Stephen Curry",
+      "team": null,
+      "year": 2013,
+      "season_label": "2013-14",
+      "ted": 39.4,
+      "tap": 41.0
+    },
+    {
+      "rank": 292,
+      "player": "Chris Paul",
+      "team": null,
+      "year": 2010,
+      "season_label": "2010-11",
+      "ted": 39.4,
+      "tap": 40.5
+    },
+    {
+      "rank": 293,
+      "player": "Jimmy Butler",
+      "team": "MIA",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 39.4,
+      "tap": 42.0
+    },
+    {
+      "rank": 294,
+      "player": "Charles Barkley",
+      "team": null,
+      "year": 1986,
+      "season_label": "1986-87",
+      "ted": 39.4,
+      "tap": 39.7
+    },
+    {
+      "rank": 295,
+      "player": "Kareem Abdul-Jabbar",
+      "team": null,
+      "year": 1974,
+      "season_label": "1974-75",
+      "ted": 39.3,
+      "tap": 41.5
+    },
+    {
+      "rank": 296,
+      "player": "Paul George",
+      "team": "OKC",
+      "year": 2018,
+      "season_label": "2018-19",
+      "ted": 39.3,
+      "tap": 42.5
+    },
+    {
+      "rank": 297,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 2009,
+      "season_label": "2009-10",
+      "ted": 39.3,
+      "tap": 41.5
+    },
+    {
+      "rank": 298,
+      "player": "Magic Johnson",
+      "team": null,
+      "year": 1985,
+      "season_label": "1985-86",
+      "ted": 39.2,
+      "tap": 38.4
+    },
+    {
+      "rank": 299,
+      "player": "Derrick Rose",
+      "team": null,
+      "year": 2010,
+      "season_label": "2010-11",
+      "ted": 39.2,
+      "tap": 42.6
+    },
+    {
+      "rank": 300,
+      "player": "Kawhi Leonard",
+      "team": "LAC",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 39.1,
+      "tap": 40.5
+    },
+    {
+      "rank": 301,
+      "player": "Patrick Ewing",
+      "team": null,
+      "year": 1992,
+      "season_label": "1992-93",
+      "ted": 39.1,
+      "tap": 41.8
+    },
+    {
+      "rank": 302,
+      "player": "Chris Webber",
+      "team": null,
+      "year": 2001,
+      "season_label": "2001-02",
+      "ted": 39.1,
+      "tap": 42.4
+    },
+    {
+      "rank": 303,
+      "player": "Chris Paul",
+      "team": "PHO",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 39.1,
+      "tap": 40.0
+    },
+    {
+      "rank": 304,
+      "player": "Alperen Şengün",
+      "team": "HOU",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 39.1,
+      "tap": 40.0
+    },
+    {
+      "rank": 305,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 1999,
+      "season_label": "1999-00",
+      "ted": 39.1,
+      "tap": 42.6
+    },
+    {
+      "rank": 306,
+      "player": "Nikola Jokić",
+      "team": null,
+      "year": 2017,
+      "season_label": "2017-18",
+      "ted": 39.1,
+      "tap": 39.3
+    },
+    {
+      "rank": 307,
+      "player": "Jonas Valančiūnas",
+      "team": "TOT",
+      "year": 2018,
+      "season_label": "2018-19",
+      "ted": 39.0,
+      "tap": 38.4
+    },
+    {
+      "rank": 308,
+      "player": "Dwight Howard",
+      "team": null,
+      "year": 2011,
+      "season_label": "2011-12",
+      "ted": 39.0,
+      "tap": 39.8
+    },
+    {
+      "rank": 309,
+      "player": "Magic Johnson",
+      "team": null,
+      "year": 1987,
+      "season_label": "1987-88",
+      "ted": 39.0,
+      "tap": 38.2
+    },
+    {
+      "rank": 310,
+      "player": "DeMarcus Cousins",
+      "team": null,
+      "year": 2015,
+      "season_label": "2015-16",
+      "ted": 39.0,
+      "tap": 39.4
+    },
+    {
+      "rank": 311,
+      "player": "Russell Westbrook",
+      "team": "WAS",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 39.0,
+      "tap": 38.8
+    },
+    {
+      "rank": 312,
+      "player": "Devin Booker",
+      "team": "PHO",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 39.0,
+      "tap": 38.8
+    },
+    {
+      "rank": 313,
+      "player": "Shawn Kemp",
+      "team": null,
+      "year": 1995,
+      "season_label": "1995-96",
+      "ted": 39.0,
+      "tap": 39.5
+    },
+    {
+      "rank": 314,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 2000,
+      "season_label": "2000-01",
+      "ted": 39.0,
+      "tap": 42.6
+    },
+    {
+      "rank": 315,
+      "player": "Damian Lillard",
+      "team": null,
+      "year": 2017,
+      "season_label": "2017-18",
+      "ted": 39.0,
+      "tap": 41.6
+    },
+    {
+      "rank": 316,
+      "player": "Karl Malone",
+      "team": null,
+      "year": 2000,
+      "season_label": "2000-01",
+      "ted": 39.0,
+      "tap": 41.2
+    },
+    {
+      "rank": 317,
+      "player": "Hakeem Olajuwon",
+      "team": null,
+      "year": 1996,
+      "season_label": "1996-97",
+      "ted": 38.9,
+      "tap": 40.4
+    },
+    {
+      "rank": 318,
+      "player": "Kareem Abdul-Jabbar",
+      "team": null,
+      "year": 1980,
+      "season_label": "1980-81",
+      "ted": 38.9,
+      "tap": 39.1
+    },
+    {
+      "rank": 319,
+      "player": "Alonzo Mourning",
+      "team": null,
+      "year": 1996,
+      "season_label": "1996-97",
+      "ted": 38.9,
+      "tap": 40.3
+    },
+    {
+      "rank": 320,
+      "player": "Alonzo Mourning",
+      "team": null,
+      "year": 1995,
+      "season_label": "1995-96",
+      "ted": 38.9,
+      "tap": 40.3
+    },
+    {
+      "rank": 321,
+      "player": "Wilt Chamberlain",
+      "team": null,
+      "year": 1966,
+      "season_label": "1966-67",
+      "ted": 38.8,
+      "tap": 38.0
+    },
+    {
+      "rank": 322,
+      "player": "Kristaps Porziņģis",
+      "team": "WAS",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 38.8,
+      "tap": 38.8
+    },
+    {
+      "rank": 323,
+      "player": "Karl Malone",
+      "team": null,
+      "year": 1993,
+      "season_label": "1993-94",
+      "ted": 38.8,
+      "tap": 41.6
+    },
+    {
+      "rank": 324,
+      "player": "Amar'e Stoudemire",
+      "team": null,
+      "year": 2004,
+      "season_label": "2004-05",
+      "ted": 38.8,
+      "tap": 39.1
+    },
+    {
+      "rank": 325,
+      "player": "John Wall",
+      "team": null,
+      "year": 2016,
+      "season_label": "2016-17",
+      "ted": 38.8,
+      "tap": 39.3
+    },
+    {
+      "rank": 326,
+      "player": "Yao Ming",
+      "team": null,
+      "year": 2005,
+      "season_label": "2005-06",
+      "ted": 38.8,
+      "tap": 39.8
+    },
+    {
+      "rank": 327,
+      "player": "Kareem Abdul-Jabbar",
+      "team": null,
+      "year": 1973,
+      "season_label": "1973-74",
+      "ted": 38.7,
+      "tap": 41.5
+    },
+    {
+      "rank": 328,
+      "player": "Kevin Durant",
+      "team": null,
+      "year": 2011,
+      "season_label": "2011-12",
+      "ted": 38.7,
+      "tap": 40.5
+    },
+    {
+      "rank": 329,
+      "player": "Jaren Jackson Jr.",
+      "team": "MEM",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 38.7,
+      "tap": 39.6
+    },
+    {
+      "rank": 330,
+      "player": "Jamal Murray",
+      "team": "DEN",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 38.7,
+      "tap": 39.2
+    },
+    {
+      "rank": 331,
+      "player": "Anthony Edwards",
+      "team": "MIN",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 38.7,
+      "tap": 40.4
+    },
+    {
+      "rank": 332,
+      "player": "Rudy Gobert",
+      "team": "UTA",
+      "year": 2018,
+      "season_label": "2018-19",
+      "ted": 38.7,
+      "tap": 39.0
+    },
+    {
+      "rank": 333,
+      "player": "Chris Paul",
+      "team": "PHO",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 38.7,
+      "tap": 38.9
+    },
+    {
+      "rank": 334,
+      "player": "Evan Mobley",
+      "team": "CLE",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.6,
+      "tap": 39.1
+    },
+    {
+      "rank": 335,
+      "player": "Karl-Anthony Towns",
+      "team": "MIN",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 38.6,
+      "tap": 37.9
+    },
+    {
+      "rank": 336,
+      "player": "Magic Johnson",
+      "team": null,
+      "year": 1984,
+      "season_label": "1984-85",
+      "ted": 38.6,
+      "tap": 36.9
+    },
+    {
+      "rank": 337,
+      "player": "Magic Johnson",
+      "team": null,
+      "year": 1983,
+      "season_label": "1983-84",
+      "ted": 38.6,
+      "tap": 37.0
+    },
+    {
+      "rank": 338,
+      "player": "Andrei Kirilenko",
+      "team": null,
+      "year": 2004,
+      "season_label": "2004-05",
+      "ted": 38.6,
+      "tap": 40.3
+    },
+    {
+      "rank": 339,
+      "player": "Paolo Banchero",
+      "team": "ORL",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.6,
+      "tap": 40.4
+    },
+    {
+      "rank": 340,
+      "player": "Kristaps Porziņģis",
+      "team": "TOT",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 38.6,
+      "tap": 40.4
+    },
+    {
+      "rank": 341,
+      "player": "Kobe Bryant",
+      "team": null,
+      "year": 2007,
+      "season_label": "2007-08",
+      "ted": 38.6,
+      "tap": 40.6
+    },
+    {
+      "rank": 342,
+      "player": "Kobe Bryant",
+      "team": null,
+      "year": 2002,
+      "season_label": "2002-03",
+      "ted": 38.6,
+      "tap": 41.8
+    },
+    {
+      "rank": 343,
+      "player": "Bill Russell",
+      "team": null,
+      "year": 1963,
+      "season_label": "1963-64",
+      "ted": 38.5,
+      "tap": 45.5
+    },
+    {
+      "rank": 344,
+      "player": "James Harden",
+      "team": "TOT",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 38.5,
+      "tap": 37.8
+    },
+    {
+      "rank": 345,
+      "player": "Bam Adebayo",
+      "team": "MIA",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 38.5,
+      "tap": 38.6
+    },
+    {
+      "rank": 346,
+      "player": "John Stockton",
+      "team": null,
+      "year": 1993,
+      "season_label": "1993-94",
+      "ted": 38.5,
+      "tap": 37.3
+    },
+    {
+      "rank": 347,
+      "player": "Hakeem Olajuwon",
+      "team": null,
+      "year": 1987,
+      "season_label": "1987-88",
+      "ted": 38.5,
+      "tap": 40.6
+    },
+    {
+      "rank": 348,
+      "player": "Trae Young",
+      "team": "ATL",
+      "year": 2019,
+      "season_label": "2019-20",
+      "ted": 38.5,
+      "tap": 36.9
+    },
+    {
+      "rank": 349,
+      "player": "Russell Westbrook",
+      "team": null,
+      "year": 2012,
+      "season_label": "2012-13",
+      "ted": 38.5,
+      "tap": 41.2
+    },
+    {
+      "rank": 350,
+      "player": "Jalen Williams",
+      "team": "OKC",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.5,
+      "tap": 40.7
+    },
+    {
+      "rank": 351,
+      "player": "Charles Barkley",
+      "team": null,
+      "year": 1988,
+      "season_label": "1988-89",
+      "ted": 38.4,
+      "tap": 39.0
+    },
+    {
+      "rank": 352,
+      "player": "Kawhi Leonard",
+      "team": "LAC",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 38.4,
+      "tap": 39.3
+    },
+    {
+      "rank": 353,
+      "player": "Dirk Nowitzki",
+      "team": null,
+      "year": 2007,
+      "season_label": "2007-08",
+      "ted": 38.4,
+      "tap": 40.3
+    },
+    {
+      "rank": 354,
+      "player": "Shaquille O'Neal",
+      "team": null,
+      "year": 1992,
+      "season_label": "1992-93",
+      "ted": 38.4,
+      "tap": 38.5
+    },
+    {
+      "rank": 355,
+      "player": "Jimmy Butler",
+      "team": null,
+      "year": 2016,
+      "season_label": "2016-17",
+      "ted": 38.4,
+      "tap": 41.2
+    },
+    {
+      "rank": 356,
+      "player": "Donovan Mitchell",
+      "team": "CLE",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.4,
+      "tap": 40.2
+    },
+    {
+      "rank": 357,
+      "player": "Bam Adebayo",
+      "team": "MIA",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 38.3,
+      "tap": 39.2
+    },
+    {
+      "rank": 358,
+      "player": "Stephen Curry",
+      "team": "GSW",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 38.3,
+      "tap": 38.7
+    },
+    {
+      "rank": 359,
+      "player": "Kevin Johnson",
+      "team": null,
+      "year": 1990,
+      "season_label": "1990-91",
+      "ted": 38.3,
+      "tap": 38.3
+    },
+    {
+      "rank": 360,
+      "player": "Victor Oladipo",
+      "team": null,
+      "year": 2017,
+      "season_label": "2017-18",
+      "ted": 38.3,
+      "tap": 40.4
+    },
+    {
+      "rank": 361,
+      "player": "Kevin Garnett",
+      "team": null,
+      "year": 2006,
+      "season_label": "2006-07",
+      "ted": 38.3,
+      "tap": 39.6
+    },
+    {
+      "rank": 362,
+      "player": "David Robinson",
+      "team": null,
+      "year": 2000,
+      "season_label": "2000-01",
+      "ted": 38.3,
+      "tap": 42.0
+    },
+    {
+      "rank": 363,
+      "player": "George Mikan",
+      "team": null,
+      "year": 1952,
+      "season_label": "1952-53",
+      "ted": 38.2,
+      "tap": 42.8
+    },
+    {
+      "rank": 364,
+      "player": "Michael Jordan",
+      "team": null,
+      "year": 1997,
+      "season_label": "1997-98",
+      "ted": 38.2,
+      "tap": 43.7
+    },
+    {
+      "rank": 365,
+      "player": "Kevin Durant",
+      "team": "PHO",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 38.2,
+      "tap": 37.8
+    },
+    {
+      "rank": 366,
+      "player": "LaMelo Ball",
+      "team": "CHO",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.2,
+      "tap": 38.8
+    },
+    {
+      "rank": 367,
+      "player": "Kevin Garnett",
+      "team": null,
+      "year": 1999,
+      "season_label": "1999-00",
+      "ted": 38.2,
+      "tap": 40.4
+    },
+    {
+      "rank": 368,
+      "player": "Kobe Bryant",
+      "team": null,
+      "year": 2008,
+      "season_label": "2008-09",
+      "ted": 38.2,
+      "tap": 40.8
+    },
+    {
+      "rank": 369,
+      "player": "Domantas Sabonis",
+      "team": "SAC",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.2,
+      "tap": 36.7
+    },
+    {
+      "rank": 370,
+      "player": "Tyrese Haliburton",
+      "team": "IND",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.2,
+      "tap": 38.2
+    },
+    {
+      "rank": 371,
+      "player": "Nikola Vučević",
+      "team": "TOT",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 38.1,
+      "tap": 39.4
+    },
+    {
+      "rank": 372,
+      "player": "Chris Webber",
+      "team": null,
+      "year": 2000,
+      "season_label": "2000-01",
+      "ted": 38.1,
+      "tap": 42.1
+    },
+    {
+      "rank": 373,
+      "player": "Mark Williams",
+      "team": "CHO",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.1,
+      "tap": 36.6
+    },
+    {
+      "rank": 374,
+      "player": "Dirk Nowitzki",
+      "team": null,
+      "year": 2002,
+      "season_label": "2002-03",
+      "ted": 38.1,
+      "tap": 41.0
+    },
+    {
+      "rank": 375,
+      "player": "Bob Lanier",
+      "team": null,
+      "year": 1973,
+      "season_label": "1973-74",
+      "ted": 38.1,
+      "tap": 40.9
+    },
+    {
+      "rank": 376,
+      "player": "Rudy Gobert",
+      "team": "UTA",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 38.1,
+      "tap": 38.6
+    },
+    {
+      "rank": 377,
+      "player": "Devin Booker",
+      "team": "PHO",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 38.1,
+      "tap": 40.4
+    },
+    {
+      "rank": 378,
+      "player": "Patrick Ewing",
+      "team": null,
+      "year": 1996,
+      "season_label": "1996-97",
+      "ted": 38.1,
+      "tap": 40.1
+    },
+    {
+      "rank": 379,
+      "player": "Manu Ginóbili",
+      "team": null,
+      "year": 2004,
+      "season_label": "2004-05",
+      "ted": 38.0,
+      "tap": 41.4
+    },
+    {
+      "rank": 380,
+      "player": "Larry Bird",
+      "team": null,
+      "year": 1982,
+      "season_label": "1982-83",
+      "ted": 38.0,
+      "tap": 41.1
+    },
+    {
+      "rank": 381,
+      "player": "Tim Duncan",
+      "team": null,
+      "year": 2014,
+      "season_label": "2014-15",
+      "ted": 38.0,
+      "tap": 41.4
+    },
+    {
+      "rank": 382,
+      "player": "Rudy Gobert",
+      "team": "UTA",
+      "year": 2021,
+      "season_label": "2021-22",
+      "ted": 38.0,
+      "tap": 37.3
+    },
+    {
+      "rank": 383,
+      "player": "Alperen Şengün",
+      "team": "HOU",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.0,
+      "tap": 40.0
+    },
+    {
+      "rank": 384,
+      "player": "Franz Wagner",
+      "team": "ORL",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 38.0,
+      "tap": 40.2
+    },
+    {
+      "rank": 385,
+      "player": "Trae Young",
+      "team": "ATL",
+      "year": 2022,
+      "season_label": "2022-23",
+      "ted": 38.0,
+      "tap": 37.5
+    },
+    {
+      "rank": 386,
+      "player": "Michael Adams",
+      "team": null,
+      "year": 1990,
+      "season_label": "1990-91",
+      "ted": 37.9,
+      "tap": 37.3
+    },
+    {
+      "rank": 387,
+      "player": "George Mikan",
+      "team": null,
+      "year": 1953,
+      "season_label": "1953-54",
+      "ted": 37.9,
+      "tap": 42.3
+    },
+    {
+      "rank": 388,
+      "player": "Kyrie Irving",
+      "team": "DAL",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 37.9,
+      "tap": 38.7
+    },
+    {
+      "rank": 389,
+      "player": "Larry Bird",
+      "team": null,
+      "year": 1981,
+      "season_label": "1981-82",
+      "ted": 37.8,
+      "tap": 40.5
+    },
+    {
+      "rank": 390,
+      "player": "Donovan Mitchell",
+      "team": "UTA",
+      "year": 2020,
+      "season_label": "2020-21",
+      "ted": 37.8,
+      "tap": 40.8
+    },
+    {
+      "rank": 391,
+      "player": "Kevin Garnett",
+      "team": null,
+      "year": 2001,
+      "season_label": "2001-02",
+      "ted": 37.8,
+      "tap": 40.3
+    },
+    {
+      "rank": 392,
+      "player": "Tracy McGrady",
+      "team": null,
+      "year": 2004,
+      "season_label": "2004-05",
+      "ted": 37.8,
+      "tap": 42.2
+    },
+    {
+      "rank": 393,
+      "player": "Anthony Edwards",
+      "team": "MIN",
+      "year": 2024,
+      "season_label": "2024-25",
+      "ted": 37.8,
+      "tap": 39.3
+    },
+    {
+      "rank": 394,
+      "player": "De'Aaron Fox",
+      "team": "SAC",
+      "year": 2023,
+      "season_label": "2023-24",
+      "ted": 37.7,
+      "tap": 38.6
+    },
+    {
+      "rank": 395,
+      "player": "Anfernee Hardaway",
+      "team": null,
+      "year": 1995,
+      "season_label": "1995-96",
+      "ted": 37.7,
+      "tap": 38.8
+    },
+    {
+      "rank": 396,
+      "player": "Paul George",
+      "team": "LAC",
+      "year": 2019,
+      "season_label": "2019-20",
+      "ted": 37.7,
+      "tap": 39.3
+    },
+    {
+      "rank": 397,
+      "player": "Charles Barkley",
+      "team": null,
+      "year": 1996,
+      "season_label": "1996-97",
+      "ted": 37.7,
+      "tap": 39.7
+    },
+    {
+      "rank": 398,
+      "player": "Scottie Pippen",
+      "team": null,
+      "year": 1991,
+      "season_label": "1991-92",
+      "ted": 37.6,
+      "tap": 40.0
+    },
+    {
+      "rank": 399,
+      "player": "Larry Bird",
+      "team": null,
+      "year": 1989,
+      "season_label": "1989-90",
+      "ted": 37.6,
+      "tap": 39.0
+    },
+    {
+      "rank": 400,
+      "player": "Shaquille O'Neal",
+      "team": null,
+      "year": 2003,
+      "season_label": "2003-04",
+      "ted": 37.6,
+      "tap": 38.7
     }
   ],
   "decades": {
