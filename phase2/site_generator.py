@@ -248,7 +248,7 @@ def render_all_time_html(data, stat_key='ted', season_all=None):
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
-        <table><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
+        <table style="visibility:hidden"><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
       </div>
     </div>
 """
@@ -309,7 +309,7 @@ def render_decade_top100_html(decade_label, decade_data, stat_key='ted', season_
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
-        <table><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
+        <table style="visibility:hidden"><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
       </div>
     </div>
 """
