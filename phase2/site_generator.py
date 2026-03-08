@@ -92,10 +92,11 @@ def load_historical_rankings():
         return json.load(f)
 
 
-def render_historical_section(data, stat_key='ted'):
+def render_historical_section(data, stat_key='ted', season_all=None):
     """Generate full HTML for the historical rankings section.
 
     stat_key: 'ted' or 'tap' — determines sort order and displayed stat.
+    season_all: current season results to merge into all-time top 200.
     """
     if not data or 'decades' not in data:
         return '', ''
@@ -172,7 +173,7 @@ def render_historical_section(data, stat_key='ted'):
       <nav class="decade-nav">{nav_links}</nav>
 {decades_html}    </div>
     <div class="all-time-table" style="display:none">
-{render_all_time_html(data, stat_key)}    </div>
+{render_all_time_html(data, stat_key, season_all)}    </div>
   </div>
 """
 
@@ -190,19 +191,41 @@ def get_last_name(name):
     return parts[-1]
 
 
-def render_all_time_html(data, stat_key='ted'):
-    """Generate HTML for the all-time top 200 table."""
+def render_all_time_html(data, stat_key='ted', season_all=None):
+    """Generate HTML for the all-time top 200 table.
+
+    Merges current season-to-date players into the historical
+    all-time list, re-sorts by stat_key, and takes the top 200.
+    """
     if not data or 'all_time_top_200' not in data:
         return ''
 
     stat_upper = stat_key.upper()
+    current_year = config.CURRENT_SEASON_YEAR
 
-    # Re-sort by chosen stat and re-rank
+    # Start with historical all-time entries
+    all_entries = list(data['all_time_top_200'])
+
+    # Merge current season players
+    if season_all:
+        season_label = f"{current_year}-{str(current_year + 1)[-2:]}"
+        for p in season_all:
+            if p.get('ted') is not None and p.get('tap') is not None:
+                all_entries.append({
+                    'player': p['player'],
+                    'team': p.get('team', ''),
+                    'year': current_year,
+                    'season_label': season_label,
+                    'ted': round(p['ted'], 1),
+                    'tap': round(p['tap'], 1),
+                })
+
+    # Re-sort by chosen stat, take top 200, and re-rank
     players_sorted = sorted(
-        data['all_time_top_200'],
+        all_entries,
         key=lambda p: p.get(stat_key, 0),
         reverse=True
-    )
+    )[:200]
 
     rows = ''
     for rank, p in enumerate(players_sorted, 1):
@@ -285,9 +308,10 @@ def generate_html(weekly, season, daily, updated_at):
     )
 
     historical = load_historical_rankings()
+    season_all = season.get('all', [])
     if historical:
-        decade_nav_links, historical_ted_html = render_historical_section(historical, 'ted')
-        _, historical_tap_html = render_historical_section(historical, 'tap')
+        decade_nav_links, historical_ted_html = render_historical_section(historical, 'ted', season_all)
+        _, historical_tap_html = render_historical_section(historical, 'tap', season_all)
         decade_nav_html = ''  # now embedded inside historical sections
         historical_html = f"""<div class="view-ted" style="display:none">
 {historical_ted_html}</div>
