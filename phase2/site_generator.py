@@ -488,14 +488,20 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .description {{
-      display: flex;
-      justify-content: center;
+      display: grid;
+      justify-items: center;
       padding: 16px 24px;
       border-bottom: 2px solid #fff;
     }}
 
     .stat-desc {{
       max-width: 620px;
+      grid-row: 1;
+      grid-column: 1;
+    }}
+
+    .stat-desc.desc-hidden {{
+      visibility: hidden;
     }}
 
     .stat-desc h3 {{
@@ -1051,7 +1057,7 @@ def generate_html(weekly, season, daily, updated_at):
     </header>
 
     <div class="description">
-      <div class="stat-desc desc-ted" style="display:none">
+      <div class="stat-desc desc-ted desc-hidden">
         <h3>TED &mdash; Total Earned Differential</h3>
         <p>TED estimates total player production per game as a single points-equivalent number. It relies primarily on box score stats, converting all box-score contributions &mdash; points scored, scoring efficiency, rebounds, assists, steals, turnovers, blocks &mdash; along with a defensive adjustment (using DBPM and DWS) into one value. TED is meant to capture a player&rsquo;s full impact on points scored in a game, both directly and indirectly &mdash; his Total Earned Differential. For example, if a player scored 30 points with a TED of 52 in last night&rsquo;s game &mdash; he actually contributed 52 points worth of total offensive/defensive production across all facets of the game, not 30. TED is normalized to per 36 minutes and 71 possessions for cleaner cross-player and cross-era comparisons.</p>
       </div>
@@ -1124,19 +1130,6 @@ def generate_html(weekly, season, daily, updated_at):
     var stat = 'tap';
     var toggleLink = document.getElementById('toggle-link');
     var floatToggle = document.getElementById('float-toggle');
-
-    /* Lock both description divs to the same min-height so toggling
-       TED/TAP never shifts content below */
-    (function() {{
-      var dt = document.querySelector('.desc-ted');
-      var dp = document.querySelector('.desc-tap');
-      var ot = dt.style.display, op = dp.style.display;
-      dt.style.display = ''; dp.style.display = '';
-      var h = Math.max(dt.offsetHeight, dp.offsetHeight) + 'px';
-      dt.style.minHeight = h;
-      dp.style.minHeight = h;
-      dt.style.display = ot; dp.style.display = op;
-    }})();
 
     /* Find the nearest visible anchor element for scroll preservation.
        Returns {{selector, offset}} where selector can find the matching
@@ -1212,8 +1205,8 @@ def generate_html(weekly, season, daily, updated_at):
           if (oldYears && newYears) newYears.style.display = oldYears.style.display;
         }}
       }}
-      document.querySelector('.desc-ted').style.display = stat === 'ted' ? '' : 'none';
-      document.querySelector('.desc-tap').style.display = stat === 'tap' ? '' : 'none';
+      document.querySelector('.desc-ted').classList.toggle('desc-hidden', stat !== 'ted');
+      document.querySelector('.desc-tap').classList.toggle('desc-hidden', stat !== 'tap');
       toggleLink.textContent = stat === 'ted' ? 'TAP Click Here' : 'TED Click Here';
       document.querySelectorAll('[data-ted-text]').forEach(function(el) {{
         el.textContent = el.getAttribute('data-' + stat + '-text');
