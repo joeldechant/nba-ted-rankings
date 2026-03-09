@@ -698,6 +698,7 @@ def generate_html(weekly, season, daily, updated_at):
     .all-time-table .table-header,
     .decade-top100 .table-header {{
       background: #fff;
+      color: #ee7623;
       cursor: pointer;
     }}
 
