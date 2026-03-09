@@ -12138,10 +12138,16 @@
       document.querySelectorAll(viewClass + ' .year-table[data-year]').forEach(function(el) {
         if (el.offsetParent !== null) candidates.push({el: el, sel: '.year-table[data-year="' + el.getAttribute('data-year') + '"]'});
       });
-      /* Decade headers */
-      document.querySelectorAll(viewClass + ' .decade').forEach(function(dec, i) {
+      /* Decade headers — use ID-based matching (decade-2020s ↔ decade-2020s-tap) */
+      document.querySelectorAll(viewClass + ' .decade').forEach(function(dec) {
         var h = dec.querySelector('.decade-header');
-        if (h && h.offsetParent !== null) candidates.push({el: h, sel: '.decade:nth-of-type(' + (i+1) + ') .decade-header'});
+        if (!h || h.offsetParent === null) return;
+        var decId = dec.id;
+        /* Build selector for matching decade in opposite view:
+           TED ids: decade-2020s  →  TAP: #decade-2020s-tap
+           TAP ids: decade-2020s-tap  →  TED: #decade-2020s */
+        var otherId = decId.endsWith('-tap') ? decId.slice(0, -4) : decId + '-tap';
+        candidates.push({el: h, sel: '#' + otherId + ' .decade-header'});
       });
       /* All-time table header */
       var ath = document.querySelector(viewClass + ' .all-time-table .table-header');
@@ -12150,8 +12156,11 @@
       var hh = document.querySelector(viewClass + ' .historical-header');
       if (hh && hh.offsetParent !== null) candidates.push({el: hh, sel: '.historical-header'});
       var best = null, bestDist = Infinity;
+      var vh = window.innerHeight;
       for (var i = 0; i < candidates.length; i++) {
         var rect = candidates[i].el.getBoundingClientRect();
+        /* Only consider elements at least partially visible in viewport */
+        if (rect.bottom < 0 || rect.top > vh) continue;
         var dist = Math.abs(rect.top);
         if (dist < bestDist) { bestDist = dist; best = {sel: candidates[i].sel, offset: rect.top}; }
       }
