@@ -143,6 +143,8 @@
       position: sticky;
       top: 0;
       z-index: 20;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .weekly-daily-slot .table-header {
@@ -12224,17 +12226,19 @@
       document.querySelectorAll('[data-ted-text]').forEach(function(el) {
         el.textContent = el.getAttribute('data-' + stat + '-text');
       });
+      /* Compute desired scroll position, then only scrollTo if it actually
+         changed — avoids unnecessary scrollTo calls that cause visual jiggle
+         on mobile browsers during DOM reflow */
+      var desiredScroll = savedScroll;
       if (anchor) {
         var viewClass = stat === 'ted' ? '.view-ted' : '.view-tap';
         var target = document.querySelector(viewClass + ' ' + anchor.sel);
         if (target) {
-          var targetTop = target.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo(0, targetTop - anchor.offset);
-        } else {
-          window.scrollTo(0, savedScroll);
+          desiredScroll = target.getBoundingClientRect().top + window.scrollY - anchor.offset;
         }
-      } else {
-        window.scrollTo(0, savedScroll);
+      }
+      if (Math.abs(desiredScroll - window.scrollY) > 2) {
+        window.scrollTo(0, desiredScroll);
       }
     }
 
