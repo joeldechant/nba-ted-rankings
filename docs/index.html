@@ -12298,7 +12298,10 @@
       header.addEventListener('click', function() {
         if (allTime.style.display !== 'none') {
           allTime.style.display = 'none';
-          header.scrollIntoView({block: 'start'});
+          /* Only scroll back if header is near viewport top (scrolled past it) */
+          if (header.getBoundingClientRect().top <= 5) {
+            header.scrollIntoView({block: 'start'});
+          }
         } else {
           allTime.style.display = '';
         }
@@ -12306,19 +12309,27 @@
       /* Also collapse via the table's own sticky header */
       var tableHeader = allTime.querySelector('.table-header');
       if (tableHeader) tableHeader.addEventListener('click', function() {
+        /* table-header is sticky; only scroll if it's stuck at viewport top */
+        var isStuck = tableHeader.getBoundingClientRect().top <= 5;
         allTime.style.display = 'none';
-        /* header is not sticky, so scrollIntoView works correctly */
-        header.scrollIntoView({block: 'start'});
+        if (isStuck) {
+          header.scrollIntoView({block: 'start'});
+        }
       });
     });
 
-    /* Scroll helper — scrolls to the .decade parent (not the sticky header).
-       The sticky header reports top:0 even when far from its DOM position,
-       so scrollIntoView on it is a no-op. Use the parent div instead. */
-    function collapseAndScroll(toHide, toShow, scrollTarget) {
+    /* Scroll helper — only scrolls when the sticky header is floating.
+       When the header is in its natural DOM position (not stuck), the user
+       can see where they are, so scrolling would be confusing. When the
+       header IS stuck at viewport top (getBoundingClientRect().top ≈ 0),
+       the user is deep in the list and needs to be scrolled back. */
+    function collapseAndScroll(toHide, toShow, stickyEl) {
+      var isStuck = stickyEl.getBoundingClientRect().top <= 5;
       toHide.style.display = 'none';
       toShow.style.display = '';
-      scrollTarget.closest('.decade').scrollIntoView({block: 'start'});
+      if (isStuck) {
+        stickyEl.closest('.decade').scrollIntoView({block: 'start'});
+      }
     }
     document.querySelectorAll('.decade').forEach(function(dec) {
       var header = dec.querySelector('.decade-header');
