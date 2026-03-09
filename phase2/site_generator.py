@@ -1125,21 +1125,39 @@ def generate_html(weekly, season, daily, updated_at):
     var toggleLink = document.getElementById('toggle-link');
     var floatToggle = document.getElementById('float-toggle');
 
-    function findVisibleYear() {{
+    /* Find the nearest visible anchor element for scroll preservation.
+       Returns {{selector, offset}} where selector can find the matching
+       element in the other view, and offset is the viewport-top distance. */
+    function findScrollAnchor() {{
       var viewClass = stat === 'ted' ? '.view-ted' : '.view-tap';
-      var tables = document.querySelectorAll(viewClass + ' .year-table[data-year]');
-      var best = null, bestDist = Infinity, bestOffset = 0;
-      for (var i = 0; i < tables.length; i++) {{
-        var rect = tables[i].getBoundingClientRect();
+      var candidates = [];
+      /* Year tables (data-year) */
+      document.querySelectorAll(viewClass + ' .year-table[data-year]').forEach(function(el) {{
+        if (el.offsetParent !== null) candidates.push({{el: el, sel: '.year-table[data-year="' + el.getAttribute('data-year') + '"]'}});
+      }});
+      /* Decade headers */
+      document.querySelectorAll(viewClass + ' .decade').forEach(function(dec, i) {{
+        var h = dec.querySelector('.decade-header');
+        if (h && h.offsetParent !== null) candidates.push({{el: h, sel: '.decade:nth-of-type(' + (i+1) + ') .decade-header'}});
+      }});
+      /* All-time table header */
+      var ath = document.querySelector(viewClass + ' .all-time-table .table-header');
+      if (ath && ath.offsetParent !== null) candidates.push({{el: ath, sel: '.all-time-table .table-header'}});
+      /* Historical section header */
+      var hh = document.querySelector(viewClass + ' .historical-header');
+      if (hh && hh.offsetParent !== null) candidates.push({{el: hh, sel: '.historical-header'}});
+      var best = null, bestDist = Infinity;
+      for (var i = 0; i < candidates.length; i++) {{
+        var rect = candidates[i].el.getBoundingClientRect();
         var dist = Math.abs(rect.top);
-        if (dist < bestDist) {{ bestDist = dist; best = tables[i].getAttribute('data-year'); bestOffset = rect.top; }}
+        if (dist < bestDist) {{ bestDist = dist; best = {{sel: candidates[i].sel, offset: rect.top}}; }}
       }}
-      return {{year: best, offset: bestOffset}};
+      return best;
     }}
 
     function doToggle() {{
       closeCareer();
-      var info = findVisibleYear();
+      var anchor = findScrollAnchor();
       var savedScroll = window.scrollY;
       /* Capture weekly/daily state from old view before switching */
       var oldView = stat === 'ted' ? '.view-ted' : '.view-tap';
@@ -1171,7 +1189,10 @@ def generate_html(weekly, season, daily, updated_at):
         for (var di = 0; di < oldDecs.length && di < newDecs.length; di++) {{
           var oldD100 = oldDecs[di].querySelector('.decade-top100');
           var newD100 = newDecs[di].querySelector('.decade-top100');
+          var oldYears = oldDecs[di].querySelector('.decade-years');
+          var newYears = newDecs[di].querySelector('.decade-years');
           if (oldD100 && newD100) newD100.style.display = oldD100.style.display;
+          if (oldYears && newYears) newYears.style.display = oldYears.style.display;
         }}
       }}
       document.querySelector('.desc-ted').style.display = stat === 'ted' ? '' : 'none';
@@ -1180,12 +1201,12 @@ def generate_html(weekly, season, daily, updated_at):
       document.querySelectorAll('[data-ted-text]').forEach(function(el) {{
         el.textContent = el.getAttribute('data-' + stat + '-text');
       }});
-      if (info.year) {{
+      if (anchor) {{
         var viewClass = stat === 'ted' ? '.view-ted' : '.view-tap';
-        var target = document.querySelector(viewClass + ' .year-table[data-year="' + info.year + '"]');
+        var target = document.querySelector(viewClass + ' ' + anchor.sel);
         if (target) {{
           var targetTop = target.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo(0, targetTop - info.offset);
+          window.scrollTo(0, targetTop - anchor.offset);
         }} else {{
           window.scrollTo(0, savedScroll);
         }}
