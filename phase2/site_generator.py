@@ -720,7 +720,7 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .decade-top100 .year-table .table-header h2 .decade-label {{
-      font-size: 1.1em;
+      font-size: 1.22em;
       font-weight: 700;
     }}
 
@@ -793,7 +793,7 @@ def generate_html(weekly, season, daily, updated_at):
 
     .decade-header h3 {{
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.1em;
+      font-size: 1.22em;
       font-weight: 900;
       letter-spacing: 0.1em;
       color: #ee7623;
