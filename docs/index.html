@@ -362,7 +362,8 @@
       cursor: pointer;
     }
 
-    .goat-sort-val {
+    .goat-sort-val,
+    .goat-sort-yr {
       cursor: pointer;
     }
 
@@ -4136,7 +4137,7 @@
       <div class="year-table">
         <div class="table-header"><h2>TOP TED BY SEASON</h2></div>
         <table>
-          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat goat-sort-val">TED</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
+          <thead><tr><th class="season goat-sort-yr">Yr</th><th class="player">Player</th><th class="num stat goat-sort-val">TED</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
           <tbody>
         <tr><td class="season">'26</td><td class="player" data-player="Nikola Jokić"><span class="fname">Nikola</span> <span class="lname">Jokić</span></td><td class="num stat">59.4</td><td class="num goat-avg">48</td><td class="num">+11.3</td></tr>
         <tr><td class="season">'25</td><td class="player" data-player="Nikola Jokić"><span class="fname">Nikola</span> <span class="lname">Jokić</span></td><td class="num stat">56.3</td><td class="num goat-avg">46</td><td class="num">+10.8</td></tr>
@@ -8434,7 +8435,7 @@
       <div class="year-table">
         <div class="table-header"><h2>TOP TAP BY SEASON</h2></div>
         <table>
-          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat goat-sort-val">TAP</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
+          <thead><tr><th class="season goat-sort-yr">Yr</th><th class="player">Player</th><th class="num stat goat-sort-val">TAP</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
           <tbody>
         <tr><td class="season">'26</td><td class="player" data-player="Nikola Jokić"><span class="fname">Nikola</span> <span class="lname">Jokić</span></td><td class="num stat">59.7</td><td class="num goat-avg">49</td><td class="num">+10.4</td></tr>
         <tr><td class="season">'25</td><td class="player" data-player="Shai Gilgeous-Alexander"><span class="fname">Shai Gilgeous-</span><span class="lname">Alexander</span></td><td class="num stat">58.1</td><td class="num goat-avg">46</td><td class="num">+11.8</td></tr>
@@ -12645,6 +12646,13 @@
       th.addEventListener('click', function(e) {
         e.stopPropagation();
         goatSortMode = goatSortMode === 'val' ? 'year' : 'val';
+        goatApplySort();
+      });
+    });
+    document.querySelectorAll('.goat-sort-yr').forEach(function(th) {
+      th.addEventListener('click', function(e) {
+        e.stopPropagation();
+        goatSortMode = 'year';
         goatApplySort();
       });
     });

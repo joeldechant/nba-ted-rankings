@@ -385,7 +385,7 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
       <div class="year-table">
         <div class="table-header"><h2>TOP {stat_upper} BY SEASON</h2></div>
         <table>
-          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat goat-sort-val">{stat_upper}</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
+          <thead><tr><th class="season goat-sort-yr">Yr</th><th class="player">Player</th><th class="num stat goat-sort-val">{stat_upper}</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
           <tbody>
 {rows}          </tbody>
         </table>
@@ -837,7 +837,8 @@ def generate_html(weekly, season, daily, updated_at):
       cursor: pointer;
     }}
 
-    .goat-sort-val {{
+    .goat-sort-val,
+    .goat-sort-yr {{
       cursor: pointer;
     }}
 
@@ -1555,6 +1556,13 @@ def generate_html(weekly, season, daily, updated_at):
       th.addEventListener('click', function(e) {{
         e.stopPropagation();
         goatSortMode = goatSortMode === 'val' ? 'year' : 'val';
+        goatApplySort();
+      }});
+    }});
+    document.querySelectorAll('.goat-sort-yr').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        goatSortMode = 'year';
         goatApplySort();
       }});
     }});
