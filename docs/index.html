@@ -12630,7 +12630,10 @@
           return by - ay;
         });
       }
-      rows.forEach(function(r) { tbody.appendChild(r); });
+      rows.forEach(function(r, i) {
+        r.style.borderTop = (mode === 'diff' && i === 30) ? '2px solid #ee7623' : '';
+        tbody.appendChild(r);
+      });
     }
     function goatApplySort() {
       document.querySelectorAll('.goat-table table').forEach(function(t) {
