@@ -1490,7 +1490,6 @@ def generate_html(weekly, season, daily, updated_at):
           goatDiv.style.display = 'none';
         }} else {{
           goatDiv.style.display = '';
-          goatDiv.scrollIntoView({{behavior: 'smooth'}});
         }}
       }});
     }});
