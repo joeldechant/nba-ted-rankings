@@ -182,9 +182,9 @@ def render_historical_section(data, stat_key='ted', season_all=None):
     <div class="historical-header"><h2>Historical {stat_upper} Rankings</h2></div>
     <div class="all-time-table" style="display:none">
 {render_all_time_html(data, stat_key, season_all)}    </div>
+    <nav class="decade-nav">{nav_links}</nav>
     <div class="goat-table" style="display:none">
 {goat_html}    </div>
-    <nav class="decade-nav">{nav_links}</nav>
 {decades_html}  </div>
 """
 
@@ -1490,8 +1490,7 @@ def generate_html(weekly, season, daily, updated_at):
           goatDiv.style.display = 'none';
         }} else {{
           goatDiv.style.display = '';
-          var nav = goatDiv.closest('.historical-section').querySelector('.decade-nav');
-          if (nav) nav.scrollIntoView({{behavior: 'smooth'}});
+          goatDiv.scrollIntoView({{behavior: 'smooth'}});
         }}
       }});
     }});
