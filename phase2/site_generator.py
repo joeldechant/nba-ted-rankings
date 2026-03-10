@@ -369,9 +369,9 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
         player_attr = html_module.escape(player_name, quote=True)
         rows += (f'        <tr>'
                  f'<td class="season">{season_label}</td>'
-                 f'<td class="player goat-player" data-player="{player_attr}">{name_html}</td>'
+                 f'<td class="player" data-player="{player_attr}">{name_html}</td>'
                  f'<td class="num goat-stat">{val:.1f}</td>'
-                 f'<td class="num goat-avg">{top10:.1f}</td>'
+                 f'<td class="num goat-avg">{round(top10)}</td>'
                  f'<td class="num">{diff_str}</td>'
                  f'</tr>\n')
 
@@ -795,24 +795,6 @@ def generate_html(weekly, season, daily, updated_at):
       background: #eee;
     }}
 
-    .goat-table table {{
-      table-layout: fixed;
-    }}
-
-    .goat-table .season {{
-      width: 36px;
-    }}
-
-    .goat-table .num {{
-      width: 44px;
-    }}
-
-    .goat-player {{
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }}
-
     .goat-stat {{
       font-weight: 900;
     }}
@@ -820,10 +802,6 @@ def generate_html(weekly, season, daily, updated_at):
     td.goat-avg,
     th.goat-avg {{
       text-align: center;
-    }}
-
-    .goat-table thead th.num {{
-      font-size: 0.85em;
     }}
 
     .decade-top100 .year-table .table-header h2 .decade-label {{
