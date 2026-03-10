@@ -805,6 +805,8 @@ def generate_html(weekly, season, daily, updated_at):
       position: sticky;
       top: 44px;
       z-index: 19;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }}
 
     .goat-table thead th {{
