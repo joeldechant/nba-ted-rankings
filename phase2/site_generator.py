@@ -720,7 +720,7 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .decade-top100 .year-table .table-header h2 .decade-label {{
-      font-size: 1.22em;
+      font-size: 1.1em;
       font-weight: 700;
     }}
 
