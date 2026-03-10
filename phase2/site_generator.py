@@ -798,6 +798,9 @@ def generate_html(weekly, season, daily, updated_at):
     td.num.goat-avg,
     thead th.num.goat-avg {{
       text-align: center !important;
+    }}
+
+    thead th.num.goat-avg {{
       white-space: nowrap;
       font-size: 0.78em;
     }}
