@@ -1522,10 +1522,11 @@ def generate_html(weekly, season, daily, updated_at):
         rows.sort(function(a, b) {{
           var ay = parseInt(a.cells[0].textContent.replace("'", '')) || 0;
           var by = parseInt(b.cells[0].textContent.replace("'", '')) || 0;
+          ay = ay >= 60 ? 1900 + ay : 2000 + ay;
+          by = by >= 60 ? 1900 + by : 2000 + by;
           return by - ay;
         }});
       }}
-      rows.forEach(function(r) {{ tbody.appendChild(r); }});
       rows.forEach(function(r) {{ tbody.appendChild(r); }});
     }}
     function goatApplySort() {{
