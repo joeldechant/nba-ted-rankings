@@ -351,8 +351,10 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
             'ldr_tap': tap_leader['player'], 'ldr_tap_val': round(tap_leader['tap'], 1),
         }
 
-    # Sort years descending
-    years_sorted = sorted(stats.keys(), key=lambda y: int(y), reverse=True)
+    # Sort years descending, exclude pre-1960 (small player pools skew DIFF)
+    years_sorted = sorted(
+        [y for y in stats.keys() if int(y) >= 1960],
+        key=lambda y: int(y), reverse=True)
 
     rows = ''
     for yr_str in years_sorted:
@@ -383,7 +385,7 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
       <div class="year-table">
         <div class="table-header"><h2>TOP {stat_upper} BY SEASON</h2></div>
         <table>
-          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat">{stat_upper}</th><th class="num goat-avg">TOP 9*</th><th class="num">DIFF</th></tr></thead>
+          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat">{stat_upper}</th><th class="num goat-avg">TOP 9*</th><th class="num goat-sort-diff">DIFF</th></tr></thead>
           <tbody>
 {rows}          </tbody>
         </table>
@@ -829,6 +831,12 @@ def generate_html(weekly, season, daily, updated_at):
       background: #000;
       border-bottom: 1px solid #fff;
     }}
+
+    .goat-sort-diff {{
+      color: #ee7623;
+      cursor: pointer;
+    }}
+
 
     .goat-table .year-pair > :first-child {{
       border-right: none;
@@ -1313,6 +1321,7 @@ def generate_html(weekly, season, daily, updated_at):
         var oldGoat = oldSec.querySelector('.goat-table');
         var newGoat = newSec.querySelector('.goat-table');
         if (oldGoat && newGoat) newGoat.style.display = oldGoat.style.display;
+        if (typeof goatApplySort === 'function') goatApplySort();
         var oldDecs = oldSec.querySelectorAll('.decade');
         var newDecs = newSec.querySelectorAll('.decade');
         for (var di = 0; di < oldDecs.length && di < newDecs.length; di++) {{
@@ -1494,6 +1503,42 @@ def generate_html(weekly, season, daily, updated_at):
           var nav = goat.closest('.historical-section').querySelector('.decade-nav');
           if (nav) nav.scrollIntoView({{block: 'start'}});
         }}
+      }});
+    }});
+
+    /* GOAT table sort — click DIFF to sort by diff desc, click Yr to sort by year desc */
+    var goatSortMode = 'year'; /* persists across TED/TAP toggle */
+    function goatSort(table, mode) {{
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      if (mode === 'diff') {{
+        rows.sort(function(a, b) {{
+          var ad = parseFloat(a.cells[4].textContent) || 0;
+          var bd = parseFloat(b.cells[4].textContent) || 0;
+          return bd - ad;
+        }});
+      }} else {{
+        rows.sort(function(a, b) {{
+          var ay = parseInt(a.cells[0].textContent.replace("'", '')) || 0;
+          var by = parseInt(b.cells[0].textContent.replace("'", '')) || 0;
+          return by - ay;
+        }});
+      }}
+      rows.forEach(function(r) {{ tbody.appendChild(r); }});
+      rows.forEach(function(r) {{ tbody.appendChild(r); }});
+    }}
+    function goatApplySort() {{
+      document.querySelectorAll('.goat-table table').forEach(function(t) {{
+        if (t.style.visibility === 'hidden') return;
+        goatSort(t, goatSortMode);
+      }});
+    }}
+    document.querySelectorAll('.goat-sort-diff').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        goatSortMode = goatSortMode === 'diff' ? 'year' : 'diff';
+        goatApplySort();
       }});
     }});
 
