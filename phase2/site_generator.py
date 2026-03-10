@@ -362,7 +362,11 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
         player_name = s.get(f'ldr_{stat_key}', '')
         val = s.get(f'ldr_{stat_key}_val', 0)
         top10 = s.get(f'top10_{stat_key}', 0)
-        diff = round(val - top10, 1)
+        # GOAT table uses "top 9" avg: standard top 10 minus the #1 player,
+        # divided by 9. This isolates how far above the field the leader is,
+        # without the leader inflating the comparison baseline.
+        top9 = round((top10 * 10 - val) / 9, 1) if top10 else 0
+        diff = round(val - top9, 1)
         diff_str = f'+{diff:.1f}' if diff >= 0 else f'{diff:.1f}'
 
         name_html = format_player_name(player_name)
@@ -371,7 +375,7 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
                  f'<td class="season">{season_label}</td>'
                  f'<td class="player" data-player="{player_attr}">{name_html}</td>'
                  f'<td class="num stat">{val:.1f}</td>'
-                 f'<td class="num goat-avg">{round(top10)}</td>'
+                 f'<td class="num goat-avg">{round(top9)}</td>'
                  f'<td class="num">{diff_str}</td>'
                  f'</tr>\n')
 
@@ -379,7 +383,7 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
       <div class="year-table">
         <div class="table-header"><h2>TOP {stat_upper} BY SEASON</h2></div>
         <table>
-          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat">{stat_upper}</th><th class="num goat-avg">TOP 10</th><th class="num">DIFF</th></tr></thead>
+          <thead><tr><th class="season">Yr</th><th class="player">Player</th><th class="num stat">{stat_upper}</th><th class="num goat-avg">TOP 9*</th><th class="num">DIFF</th></tr></thead>
           <tbody>
 {rows}          </tbody>
         </table>
@@ -798,15 +802,13 @@ def generate_html(weekly, season, daily, updated_at):
     td.num.goat-avg,
     thead th.num.goat-avg {{
       text-align: center !important;
+      padding-left: 2px;
+      padding-right: 2px;
     }}
 
     thead th.num.goat-avg {{
       white-space: nowrap;
       font-size: 0.78em;
-    }}
-
-    .goat-table td.num:not(.stat) {{
-      font-weight: 400;
     }}
 
     .goat-table thead {{
@@ -820,6 +822,11 @@ def generate_html(weekly, season, daily, updated_at):
 
     .goat-table thead th {{
       background: #000;
+      border-bottom: 1px solid #fff;
+    }}
+
+    .goat-table .year-pair > :first-child {{
+      border-right: none;
     }}
 
     .decade-top100 .year-table .table-header h2 .decade-label {{
@@ -834,8 +841,7 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .all-time-table .year-pair > :first-child,
-    .decade-top100 .year-pair > :first-child,
-    .goat-table .year-pair > :first-child {{
+    .decade-top100 .year-pair > :first-child {{
       border-right: 2px solid #fff;
     }}
 
