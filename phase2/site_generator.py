@@ -1885,7 +1885,7 @@ def generate_html(weekly, season, daily, updated_at):
 
     document.getElementById('career-popup-close').addEventListener('click', closeCareer);
     overlay.addEventListener('click', function(e) {{
-      if (!e.target.closest('.career-popup')) closeCareer();
+      closeCareer();
     }});
     document.addEventListener('keydown', function(e) {{
       if (e.key === 'Escape') closeCareer();
