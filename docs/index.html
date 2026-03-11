@@ -13301,24 +13301,24 @@
         });
       }
       function sortByCount(arr, countMap, intraCol) {
-        var bestDiff = {};
+        /* Build average DIFF per player for tiebreaking */
+        var totalDiff = {};
         arr.forEach(function(r) {
           var n = getName(r);
           var d = parseFloat(r.cells[4].textContent) || 0;
-          if (bestDiff[n] === undefined || d > bestDiff[n]) bestDiff[n] = d;
+          totalDiff[n] = (totalDiff[n] || 0) + d;
         });
+        var avgDiff = {};
+        for (var p in totalDiff) {
+          avgDiff[p] = totalDiff[p] / (countMap[p] || 1);
+        }
         arr.sort(function(a, b) {
           var na = getName(a);
           var nb = getName(b);
           var ca = countMap[na] || 0, cb = countMap[nb] || 0;
           if (cb !== ca) return cb - ca;
-          /* Same count: group by player (higher best-DIFF first).
-             When best-DIFF is also tied, group by name to prevent interleaving. */
-          if (na !== nb) {
-            var dd = (bestDiff[nb] || 0) - (bestDiff[na] || 0);
-            if (dd !== 0) return dd;
-            return na < nb ? -1 : 1;
-          }
+          /* Same count: group by player (higher avg DIFF first) */
+          if (na !== nb) return (avgDiff[nb] || 0) - (avgDiff[na] || 0);
           /* Same player: sort by intraCol desc */
           return (parseFloat(b.cells[intraCol].textContent) || 0) -
                  (parseFloat(a.cells[intraCol].textContent) || 0);
