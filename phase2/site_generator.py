@@ -160,7 +160,7 @@ def render_historical_section(data, stat_key='ted', season_all=None):
 """
             else:
                 years_html += f"""    <div class="year-pair single">
-{year_tables[i]}      <div class="year-table"><div class="table-header"><h2>&nbsp;</h2></div></div>
+{year_tables[i]}      <div class="year-table"><div class="table-header" style="visibility:hidden"><h2>&nbsp;</h2></div></div>
     </div>
 """
 
@@ -1395,6 +1395,7 @@ def generate_html(weekly, season, daily, updated_at):
       .g2-table .year-pair > :first-child {{
         border-bottom: none;
       }}
+      .year-pair.single > :last-child,
       .all-time-table .year-pair > :last-child,
       .decade-top100 .year-pair > :last-child,
       .goat-table .year-pair > :last-child,
