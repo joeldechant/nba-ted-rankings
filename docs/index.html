@@ -4501,7 +4501,7 @@
         <tr data-rank="2"><td class="season">'61</td><td class="player" data-player="Wilt Chamberlain"><span class="fname">Wilt</span> <span class="lname">Chamberlain</span></td><td class="num stat">34.1</td><td class="num g2-avg">28</td><td class="num">+5.7</td></tr>
           </tbody>
         </table>
-        <div class="g2-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 30 DIFF seasons and see the GOAT candidates!</p></div>
+        <div class="g2-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 40 DIFF seasons and see the GOAT candidates!</p></div>
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
@@ -8949,7 +8949,7 @@
         <tr data-rank="2"><td class="season">'61</td><td class="player" data-player="Wilt Chamberlain"><span class="fname">Wilt</span> <span class="lname">Chamberlain</span></td><td class="num stat">34.7</td><td class="num g2-avg">29</td><td class="num">+5.6</td></tr>
           </tbody>
         </table>
-        <div class="g2-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 30 DIFF seasons and see the GOAT candidates!</p></div>
+        <div class="g2-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 40 DIFF seasons and see the GOAT candidates!</p></div>
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
@@ -13328,15 +13328,15 @@
         sortByCount(rows, counts, 2);
       } else if (mode === 'diff-player') {
         sortByDiff(rows);
-        var top30 = rows.slice(0, 30);
-        var rest = rows.slice(30);
+        var top40 = rows.slice(0, 40);
+        var rest = rows.slice(40);
         var counts = {};
-        top30.forEach(function(r) {
+        top40.forEach(function(r) {
           var n = r.cells[1].textContent.trim();
           counts[n] = (counts[n] || 0) + 1;
         });
-        sortByCount(top30, counts, 4);
-        rows = top30.concat(rest);
+        sortByCount(top40, counts, 4);
+        rows = top40.concat(rest);
       } else {
         /* year sort — for G2 (two rows per year), sort by year desc then rank asc */
         rows.sort(function(a, b) {
@@ -13363,13 +13363,13 @@
       if (msgDiv) msgDiv.style.display = 'none';
       var showCutoff = (mode === 'diff-cutoff');
       rows.forEach(function(r, i) {
-        var bdrBot = ((mode === 'diff-player' || showCutoff) && i === 29) ? '3px solid #ee7623' : '';
-        var hide = ((mode === 'diff-player' || showCutoff) && i >= 30);
+        var bdrBot = ((mode === 'diff-player' || showCutoff) && i === 39) ? '3px solid #ee7623' : '';
+        var hide = ((mode === 'diff-player' || showCutoff) && i >= 40);
         r.style.display = hide ? 'none' : '';
         for (var c = 0; c < r.cells.length; c++) {
           r.cells[c].style.borderTop = '';
           r.cells[c].style.borderBottom = bdrBot;
-          r.cells[c].style.paddingBottom = ((mode === 'diff-player' || showCutoff) && i === 29) ? '8px' : '';
+          r.cells[c].style.paddingBottom = ((mode === 'diff-player' || showCutoff) && i === 39) ? '8px' : '';
         }
         tbody.appendChild(r);
       });
@@ -13377,7 +13377,7 @@
         var sep = document.createElement('tr');
         sep.className = 'g2-orange-sep';
         sep.innerHTML = '<td colspan="5">\u00a0</td>';
-        tbody.insertBefore(sep, tbody.children[30]);
+        tbody.insertBefore(sep, tbody.children[40]);
         sep.addEventListener('click', function() {
           g2SortMode = 'diff-cutoff';
           g2ApplySort();
