@@ -1878,6 +1878,10 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     document.querySelector('.container').addEventListener('click', function(e) {{
+      if (overlay.classList.contains('active')) {{
+        closeCareer();
+        return;
+      }}
       var td = e.target.closest('td.player[data-player]');
       if (td) {{
         e.stopPropagation();
