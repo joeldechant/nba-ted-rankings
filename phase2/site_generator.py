@@ -583,8 +583,8 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .season-hint.open {{
-      max-height: 60px;
-      padding: 8px 16px 12px;
+      max-height: 80px;
+      padding: 10px 16px 10px;
     }}
 
     .season-hint p {{
