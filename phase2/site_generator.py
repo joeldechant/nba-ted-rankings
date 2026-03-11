@@ -112,6 +112,7 @@ def render_historical_section(data, stat_key='ted', season_all=None):
     )
     nav_links += '<a href="#" data-goat="true" style="color:#ee7623">GOAT</a>'
     nav_links += '<a href="#" data-g2="true" style="color:#ee7623">G2</a>'
+    nav_links += '<a href="#" data-g3="true" style="color:#ee7623">G3</a>'
 
     # Build decade sections
     decades_html = ''
@@ -180,6 +181,8 @@ def render_historical_section(data, stat_key='ted', season_all=None):
     goat_html = render_goat_html(data.get('season_stats', {}), stat_key, season_all)
     # Build G2 table (top 2 players per year) from season_stats
     g2_html = render_g2_html(data.get('season_stats', {}), stat_key, season_all)
+    # Build G3 table (top 3 players per year) from season_stats
+    g3_html = render_g3_html(data.get('season_stats', {}), stat_key, season_all)
 
     return nav_links, f"""  <div class="historical-section">
     <div class="historical-header"><h2>Historical {stat_upper} Rankings</h2></div>
@@ -190,6 +193,8 @@ def render_historical_section(data, stat_key='ted', season_all=None):
 {goat_html}    </div>
     <div class="g2-table" style="display:none">
 {g2_html}    </div>
+    <div class="g3-table" style="display:none">
+{g3_html}    </div>
 {decades_html}  </div>
 """
 
@@ -351,6 +356,8 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
         tap_leader = tap_sorted[0]
         ted_second = ted_sorted[1] if len(ted_sorted) > 1 else None
         tap_second = tap_sorted[1] if len(tap_sorted) > 1 else None
+        ted_third = ted_sorted[2] if len(ted_sorted) > 2 else None
+        tap_third = tap_sorted[2] if len(tap_sorted) > 2 else None
         stats[str(current_year)] = {
             'top10_ted': round(sum(top10_teds) / len(top10_teds), 1),
             'top10_tap': round(sum(top10_taps) / len(top10_taps), 1),
@@ -360,6 +367,10 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
             'g2_ted_val': round(ted_second['ted'], 1) if ted_second else 0,
             'g2_tap': tap_second['player'] if tap_second else '',
             'g2_tap_val': round(tap_second['tap'], 1) if tap_second else 0,
+            'g3_ted': ted_third['player'] if ted_third else '',
+            'g3_ted_val': round(ted_third['ted'], 1) if ted_third else 0,
+            'g3_tap': tap_third['player'] if tap_third else '',
+            'g3_tap_val': round(tap_third['tap'], 1) if tap_third else 0,
         }
 
     # Sort years descending, exclude pre-1960 (small player pools skew DIFF)
@@ -432,6 +443,8 @@ def render_g2_html(season_stats, stat_key='ted', season_all=None):
         tap_leader = tap_sorted[0]
         ted_second = ted_sorted[1] if len(ted_sorted) > 1 else None
         tap_second = tap_sorted[1] if len(tap_sorted) > 1 else None
+        ted_third = ted_sorted[2] if len(ted_sorted) > 2 else None
+        tap_third = tap_sorted[2] if len(tap_sorted) > 2 else None
         stats[str(current_year)] = {
             'top10_ted': round(sum(top10_teds) / len(top10_teds), 1),
             'top10_tap': round(sum(top10_taps) / len(top10_taps), 1),
@@ -441,6 +454,10 @@ def render_g2_html(season_stats, stat_key='ted', season_all=None):
             'g2_ted_val': round(ted_second['ted'], 1) if ted_second else 0,
             'g2_tap': tap_second['player'] if tap_second else '',
             'g2_tap_val': round(tap_second['tap'], 1) if tap_second else 0,
+            'g3_ted': ted_third['player'] if ted_third else '',
+            'g3_ted_val': round(ted_third['ted'], 1) if ted_third else 0,
+            'g3_tap': tap_third['player'] if tap_third else '',
+            'g3_tap_val': round(tap_third['tap'], 1) if tap_third else 0,
         }
 
     # Sort years descending, exclude pre-1960 (small player pools skew DIFF)
@@ -505,6 +522,119 @@ def render_g2_html(season_stats, stat_key='ted', season_all=None):
 """
 
 
+def render_g3_html(season_stats, stat_key='ted', season_all=None):
+    """Generate HTML for the G3 table — top 3 players by season.
+
+    Same structure as G2 but with three rows per year (#1, #2, #3).
+    """
+    stat_upper = stat_key.upper()
+    current_year = config.CURRENT_SEASON_YEAR
+
+    # Copy and merge current season if needed
+    stats = dict(season_stats) if season_stats else {}
+    if season_all and str(current_year) not in stats:
+        ted_sorted = sorted(season_all, key=lambda r: r['ted'], reverse=True)
+        tap_sorted = sorted(season_all, key=lambda r: r['tap'], reverse=True)
+        top10_teds = [r['ted'] for r in ted_sorted[:10]]
+        top10_taps = [r['tap'] for r in tap_sorted[:10]]
+        ted_leader = ted_sorted[0]
+        tap_leader = tap_sorted[0]
+        ted_second = ted_sorted[1] if len(ted_sorted) > 1 else None
+        tap_second = tap_sorted[1] if len(tap_sorted) > 1 else None
+        ted_third = ted_sorted[2] if len(ted_sorted) > 2 else None
+        tap_third = tap_sorted[2] if len(tap_sorted) > 2 else None
+        stats[str(current_year)] = {
+            'top10_ted': round(sum(top10_teds) / len(top10_teds), 1),
+            'top10_tap': round(sum(top10_taps) / len(top10_taps), 1),
+            'ldr_ted': ted_leader['player'], 'ldr_ted_val': round(ted_leader['ted'], 1),
+            'ldr_tap': tap_leader['player'], 'ldr_tap_val': round(tap_leader['tap'], 1),
+            'g2_ted': ted_second['player'] if ted_second else '',
+            'g2_ted_val': round(ted_second['ted'], 1) if ted_second else 0,
+            'g2_tap': tap_second['player'] if tap_second else '',
+            'g2_tap_val': round(tap_second['tap'], 1) if tap_second else 0,
+            'g3_ted': ted_third['player'] if ted_third else '',
+            'g3_ted_val': round(ted_third['ted'], 1) if ted_third else 0,
+            'g3_tap': tap_third['player'] if tap_third else '',
+            'g3_tap_val': round(tap_third['tap'], 1) if tap_third else 0,
+        }
+
+    # Sort years descending, exclude pre-1960 (small player pools skew DIFF)
+    years_sorted = sorted(
+        [y for y in stats.keys() if int(y) >= 1960],
+        key=lambda y: int(y), reverse=True)
+
+    rows = ''
+    for yr_str in years_sorted:
+        s = stats[yr_str]
+        yr = int(yr_str)
+        season_label = f"'{str(yr + 1)[-2:]}"
+        # #1 player
+        player1 = s.get(f'ldr_{stat_key}', '')
+        val1 = s.get(f'ldr_{stat_key}_val', 0)
+        # #2 player
+        player2 = s.get(f'g2_{stat_key}', '')
+        val2 = s.get(f'g2_{stat_key}_val', 0)
+        # #3 player
+        player3 = s.get(f'g3_{stat_key}', '')
+        val3 = s.get(f'g3_{stat_key}_val', 0)
+        top10 = s.get(f'top10_{stat_key}', 0)
+        # TOP 9* = (top10 * 10 - #1 value) / 9 — same as GOAT
+        top9 = round((top10 * 10 - val1) / 9, 1) if top10 else 0
+        diff1 = round(val1 - top9, 1)
+        diff1_str = f'+{diff1:.1f}' if diff1 >= 0 else f'{diff1:.1f}'
+        diff2 = round(val2 - top9, 1) if val2 else 0
+        diff2_str = f'+{diff2:.1f}' if diff2 >= 0 else f'{diff2:.1f}'
+        diff3 = round(val3 - top9, 1) if val3 else 0
+        diff3_str = f'+{diff3:.1f}' if diff3 >= 0 else f'{diff3:.1f}'
+
+        name1_html = format_player_name(player1)
+        player1_attr = html_module.escape(player1, quote=True)
+        rows += (f'        <tr data-rank="1">'
+                 f'<td class="season">{season_label}</td>'
+                 f'<td class="player" data-player="{player1_attr}">{name1_html}</td>'
+                 f'<td class="num stat">{val1:.1f}</td>'
+                 f'<td class="num g3-avg">{round(top9)}</td>'
+                 f'<td class="num">{diff1_str}</td>'
+                 f'</tr>\n')
+        if player2:
+            name2_html = format_player_name(player2)
+            player2_attr = html_module.escape(player2, quote=True)
+            rows += (f'        <tr data-rank="2">'
+                     f'<td class="season">{season_label}</td>'
+                     f'<td class="player" data-player="{player2_attr}">{name2_html}</td>'
+                     f'<td class="num stat">{val2:.1f}</td>'
+                     f'<td class="num g3-avg">{round(top9)}</td>'
+                     f'<td class="num">{diff2_str}</td>'
+                     f'</tr>\n')
+        if player3:
+            name3_html = format_player_name(player3)
+            player3_attr = html_module.escape(player3, quote=True)
+            rows += (f'        <tr data-rank="3">'
+                     f'<td class="season">{season_label}</td>'
+                     f'<td class="player" data-player="{player3_attr}">{name3_html}</td>'
+                     f'<td class="num stat">{val3:.1f}</td>'
+                     f'<td class="num g3-avg">{round(top9)}</td>'
+                     f'<td class="num">{diff3_str}</td>'
+                     f'</tr>\n')
+
+    return f"""    <div class="year-pair single">
+      <div class="year-table">
+        <div class="table-header"><h2>TOP 3 {stat_upper} BY SEASON</h2></div>
+        <table>
+          <thead><tr><th class="season g3-sort-yr">Yr</th><th class="player g3-sort-player">Player</th><th class="num stat g3-sort-val">{stat_upper}</th><th class="num g3-avg">TOP 9*</th><th class="num g3-sort-diff">DIFF</th></tr></thead>
+          <tbody>
+{rows}          </tbody>
+        </table>
+        <div class="g3-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 40 DIFF seasons and see the GOAT candidates!</p></div>
+      </div>
+      <div class="year-table">
+        <div class="table-header"><h2>&nbsp;</h2></div>
+        <table style="visibility:hidden"><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
+      </div>
+    </div>
+"""
+
+
 def build_career_js(historical, season_all):
     """Build JS career data from historical JSON + current season results.
 
@@ -539,6 +669,8 @@ def build_career_js(historical, season_all):
         tap_leader = tap_sorted[0]
         ted_second = ted_sorted[1] if len(ted_sorted) > 1 else None
         tap_second = tap_sorted[1] if len(tap_sorted) > 1 else None
+        ted_third = ted_sorted[2] if len(ted_sorted) > 2 else None
+        tap_third = tap_sorted[2] if len(tap_sorted) > 2 else None
         season_stats[str(current_year)] = {
             'top10_ted': round(sum(top10_teds) / len(top10_teds), 1),
             'top10_tap': round(sum(top10_taps) / len(top10_taps), 1),
@@ -548,6 +680,10 @@ def build_career_js(historical, season_all):
             'g2_ted_val': round(ted_second['ted'], 1) if ted_second else 0,
             'g2_tap': tap_second['player'] if tap_second else '',
             'g2_tap_val': round(tap_second['tap'], 1) if tap_second else 0,
+            'g3_ted': ted_third['player'] if ted_third else '',
+            'g3_ted_val': round(ted_third['ted'], 1) if ted_third else 0,
+            'g3_tap': tap_third['player'] if tap_third else '',
+            'g3_tap_val': round(tap_third['tap'], 1) if tap_third else 0,
         }
 
     career_json = json.dumps(career, ensure_ascii=False, separators=(',', ':'))
@@ -943,7 +1079,8 @@ def generate_html(weekly, season, daily, updated_at):
     .all-time-table .table-header,
     .decade-top100 .table-header,
     .goat-table .table-header,
-    .g2-table .table-header {{
+    .g2-table .table-header,
+    .g3-table .table-header {{
       background: #fff;
       cursor: pointer;
     }}
@@ -951,40 +1088,48 @@ def generate_html(weekly, season, daily, updated_at):
     .all-time-table .year-table .table-header h2,
     .decade-top100 .year-table .table-header h2,
     .goat-table .year-table .table-header h2,
-    .g2-table .year-table .table-header h2 {{
+    .g2-table .year-table .table-header h2,
+    .g3-table .year-table .table-header h2 {{
       color: #ee7623;
     }}
 
     .all-time-table .table-header:hover,
     .decade-top100 .table-header:hover,
     .goat-table .table-header:hover,
-    .g2-table .table-header:hover {{
+    .g2-table .table-header:hover,
+    .g3-table .table-header:hover {{
       background: #eee;
     }}
 
     td.num.goat-avg,
     thead th.num.goat-avg,
     td.num.g2-avg,
-    thead th.num.g2-avg {{
+    thead th.num.g2-avg,
+    td.num.g3-avg,
+    thead th.num.g3-avg {{
       text-align: center !important;
       padding-left: 0;
       padding-right: 0;
     }}
 
     .goat-table thead,
-    .g2-table thead {{
+    .g2-table thead,
+    .g3-table thead {{
       box-shadow: 3px 0 0 #fff;
     }}
 
     .goat-table td.num:last-child,
     .goat-table thead th.num:last-child,
     .g2-table td.num:last-child,
-    .g2-table thead th.num:last-child {{
+    .g2-table thead th.num:last-child,
+    .g3-table td.num:last-child,
+    .g3-table thead th.num:last-child {{
       padding-left: 2px;
     }}
 
     thead th.num.goat-avg,
-    thead th.num.g2-avg {{
+    thead th.num.g2-avg,
+    thead th.num.g3-avg {{
       white-space: nowrap;
       font-size: 0.78em;
       cursor: pointer;
@@ -1012,7 +1157,8 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .goat-cutoff-msg,
-    .g2-cutoff-msg {{
+    .g2-cutoff-msg,
+    .g3-cutoff-msg {{
       background: #000;
       text-align: center;
       padding: 12px 16px;
@@ -1020,7 +1166,8 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .goat-cutoff-msg p,
-    .g2-cutoff-msg p {{
+    .g2-cutoff-msg p,
+    .g3-cutoff-msg p {{
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 0.85em;
       font-style: italic;
@@ -1029,14 +1176,16 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .goat-cutoff-msg .orange,
-    .g2-cutoff-msg .orange {{
+    .g2-cutoff-msg .orange,
+    .g3-cutoff-msg .orange {{
       color: #ee7623;
       font-weight: 700;
       font-style: normal;
     }}
 
     tr.goat-orange-sep td,
-    tr.g2-orange-sep td {{
+    tr.g2-orange-sep td,
+    tr.g3-orange-sep td {{
       height: 6px;
       font-size: 1px;
       line-height: 6px;
@@ -1049,7 +1198,8 @@ def generate_html(weekly, season, daily, updated_at):
     }}
 
     .goat-sort-diff,
-    .g2-sort-diff {{
+    .g2-sort-diff,
+    .g3-sort-diff {{
       color: #ee7623;
       cursor: pointer;
     }}
@@ -1057,12 +1207,15 @@ def generate_html(weekly, season, daily, updated_at):
     .goat-sort-val,
     .goat-sort-yr,
     .g2-sort-val,
-    .g2-sort-yr {{
+    .g2-sort-yr,
+    .g3-sort-val,
+    .g3-sort-yr {{
       cursor: pointer;
     }}
 
     .goat-sort-player,
-    .g2-sort-player {{
+    .g2-sort-player,
+    .g3-sort-player {{
       cursor: pointer;
       color: #ee7623;
     }}
@@ -1070,7 +1223,8 @@ def generate_html(weekly, season, daily, updated_at):
 
 
     .goat-table .player,
-    .g2-table .player {{
+    .g2-table .player,
+    .g3-table .player {{
       max-width: 160px;
       white-space: nowrap;
       overflow: hidden;
@@ -1085,7 +1239,8 @@ def generate_html(weekly, season, daily, updated_at):
     .all-time-table table,
     .decade-top100 table,
     .goat-table table,
-    .g2-table table {{
+    .g2-table table,
+    .g3-table table {{
       width: 100%;
     }}
 
@@ -1375,12 +1530,12 @@ def generate_html(weekly, season, daily, updated_at):
         text-align: center;
       }}
       .decade-nav {{
-        gap: 4px;
+        gap: 3px;
         padding: 10px 8px;
       }}
       .decade-nav a {{
-        font-size: 0.85em;
-        padding: 4px 8px;
+        font-size: 0.8em;
+        padding: 3px 6px;
       }}
       .year-pair {{
         grid-template-columns: 1fr;
@@ -1392,20 +1547,24 @@ def generate_html(weekly, season, daily, updated_at):
       .all-time-table .year-pair > :first-child,
       .decade-top100 .year-pair > :first-child,
       .goat-table .year-pair > :first-child,
-      .g2-table .year-pair > :first-child {{
+      .g2-table .year-pair > :first-child,
+      .g3-table .year-pair > :first-child {{
         border-bottom: none;
       }}
       .year-pair.single > :last-child,
       .all-time-table .year-pair > :last-child,
       .decade-top100 .year-pair > :last-child,
       .goat-table .year-pair > :last-child,
-      .g2-table .year-pair > :last-child {{
+      .g2-table .year-pair > :last-child,
+      .g3-table .year-pair > :last-child {{
         display: none;
       }}
       .goat-table td,
       .goat-table thead th,
       .g2-table td,
-      .g2-table thead th {{
+      .g2-table thead th,
+      .g3-table td,
+      .g3-table thead th {{
         padding-left: 3px;
         padding-right: 3px;
       }}
@@ -1592,6 +1751,10 @@ def generate_html(weekly, season, daily, updated_at):
         var newG2 = newSec.querySelector('.g2-table');
         if (oldG2 && newG2) newG2.style.display = oldG2.style.display;
         if (typeof g2ApplySort === 'function') g2ApplySort();
+        var oldG3 = oldSec.querySelector('.g3-table');
+        var newG3 = newSec.querySelector('.g3-table');
+        if (oldG3 && newG3) newG3.style.display = oldG3.style.display;
+        if (typeof g3ApplySort === 'function') g3ApplySort();
         var oldDecs = oldSec.querySelectorAll('.decade');
         var newDecs = newSec.querySelectorAll('.decade');
         for (var di = 0; di < oldDecs.length && di < newDecs.length; di++) {{
@@ -1762,12 +1925,14 @@ def generate_html(weekly, season, daily, updated_at):
         var viewClass = stat === 'ted' ? '.view-ted' : '.view-tap';
         var goatDiv = document.querySelector(viewClass + ' .goat-table');
         var g2Div = document.querySelector(viewClass + ' .g2-table');
+        var g3Div = document.querySelector(viewClass + ' .g3-table');
         if (!goatDiv) return;
         if (goatDiv.style.display !== 'none') {{
           goatDiv.style.display = 'none';
         }} else {{
           goatDiv.style.display = '';
           if (g2Div) g2Div.style.display = 'none';
+          if (g3Div) g3Div.style.display = 'none';
         }}
       }});
     }});
@@ -1991,12 +2156,14 @@ def generate_html(weekly, season, daily, updated_at):
         var viewClass = stat === 'ted' ? '.view-ted' : '.view-tap';
         var g2Div = document.querySelector(viewClass + ' .g2-table');
         var goatDiv = document.querySelector(viewClass + ' .goat-table');
+        var g3Div = document.querySelector(viewClass + ' .g3-table');
         if (!g2Div) return;
         if (g2Div.style.display !== 'none') {{
           g2Div.style.display = 'none';
         }} else {{
           g2Div.style.display = '';
           if (goatDiv) goatDiv.style.display = 'none';
+          if (g3Div) g3Div.style.display = 'none';
         }}
       }});
     }});
@@ -2206,6 +2373,230 @@ def generate_html(weekly, season, daily, updated_at):
 
     /* Assign sort-year to G2 rank-2 rows (they have empty year cells) */
     document.querySelectorAll('.g2-table tbody').forEach(function(tbody) {{
+      var lastYear = '';
+      Array.from(tbody.children).forEach(function(tr) {{
+        var yrCell = tr.cells && tr.cells[0] ? tr.cells[0].textContent.trim() : '';
+        if (yrCell) lastYear = yrCell.replace("'", '');
+        tr.setAttribute('data-sort-year', lastYear);
+      }});
+    }});
+
+    /* === G3 table toggle — click nav link or sticky header to show/hide === */
+    document.querySelectorAll('.decade-nav a[data-g3]').forEach(function(a) {{
+      a.addEventListener('click', function(e) {{
+        e.preventDefault();
+        var viewClass = stat === 'ted' ? '.view-ted' : '.view-tap';
+        var g3Div = document.querySelector(viewClass + ' .g3-table');
+        var goatDiv = document.querySelector(viewClass + ' .goat-table');
+        var g2Div = document.querySelector(viewClass + ' .g2-table');
+        if (!g3Div) return;
+        if (g3Div.style.display !== 'none') {{
+          g3Div.style.display = 'none';
+        }} else {{
+          g3Div.style.display = '';
+          if (goatDiv) goatDiv.style.display = 'none';
+          if (g2Div) g2Div.style.display = 'none';
+        }}
+      }});
+    }});
+    document.querySelectorAll('.g3-table').forEach(function(g3) {{
+      var tableHeader = g3.querySelector('.table-header');
+      if (tableHeader) tableHeader.addEventListener('click', function() {{
+        var isStuck = tableHeader.getBoundingClientRect().top <= 5;
+        g3.style.display = 'none';
+        if (isStuck) {{
+          var nav = g3.closest('.historical-section').querySelector('.decade-nav');
+          if (nav) nav.scrollIntoView({{block: 'start'}});
+        }}
+      }});
+    }});
+
+    /* G3 table sort modes — same 6 modes as G2 but independent state */
+    var g3SortMode = 'year';
+    function g3Sort(table, mode) {{
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      var rows = Array.from(tbody.querySelectorAll('tr:not(.g3-orange-sep)'));
+      function getName(row) {{
+        var td = row.cells[1];
+        return td ? (td.getAttribute('data-player') || td.textContent.trim()) : '';
+      }}
+      function sortByDiff(arr) {{
+        arr.sort(function(a, b) {{
+          return (parseFloat(b.cells[4].textContent) || 0) -
+                 (parseFloat(a.cells[4].textContent) || 0);
+        }});
+      }}
+      function sortByCount(arr, countMap, intraCol) {{
+        var totalDiff = {{}};
+        arr.forEach(function(r) {{
+          var n = getName(r);
+          var d = parseFloat(r.cells[4].textContent) || 0;
+          totalDiff[n] = (totalDiff[n] || 0) + d;
+        }});
+        var avgDiff = {{}};
+        for (var p in totalDiff) {{
+          avgDiff[p] = totalDiff[p] / (countMap[p] || 1);
+        }}
+        arr.sort(function(a, b) {{
+          var na = getName(a);
+          var nb = getName(b);
+          var ca = countMap[na] || 0, cb = countMap[nb] || 0;
+          if (cb !== ca) return cb - ca;
+          if (na !== nb) return (avgDiff[nb] || 0) - (avgDiff[na] || 0);
+          return (parseFloat(b.cells[intraCol].textContent) || 0) -
+                 (parseFloat(a.cells[intraCol].textContent) || 0);
+        }});
+      }}
+      if (mode === 'diff' || mode === 'diff-cutoff') {{
+        sortByDiff(rows);
+      }} else if (mode === 'val') {{
+        rows.sort(function(a, b) {{
+          return (parseFloat(b.cells[2].textContent) || 0) -
+                 (parseFloat(a.cells[2].textContent) || 0);
+        }});
+      }} else if (mode === 'player') {{
+        var counts = {{}};
+        rows.forEach(function(r) {{
+          var n = getName(r);
+          counts[n] = (counts[n] || 0) + 1;
+        }});
+        sortByCount(rows, counts, 2);
+      }} else if (mode === 'diff-player') {{
+        sortByDiff(rows);
+        var top40 = rows.slice(0, 40);
+        var rest = rows.slice(40);
+        var counts = {{}};
+        top40.forEach(function(r) {{
+          var n = getName(r);
+          counts[n] = (counts[n] || 0) + 1;
+        }});
+        sortByCount(top40, counts, 4);
+        rows = top40.concat(rest);
+      }} else {{
+        rows.sort(function(a, b) {{
+          var ayr = a.cells[0].textContent.replace("'", '').trim();
+          var byr = b.cells[0].textContent.replace("'", '').trim();
+          var ay = ayr ? parseInt(ayr) : -1;
+          var by = byr ? parseInt(byr) : -1;
+          if (ay === -1) ay = parseInt(a.getAttribute('data-sort-year') || '0');
+          if (by === -1) by = parseInt(b.getAttribute('data-sort-year') || '0');
+          ay = ay >= 60 ? 1900 + ay : 2000 + ay;
+          by = by >= 60 ? 1900 + by : 2000 + by;
+          if (by !== ay) return by - ay;
+          var ra = parseInt(a.getAttribute('data-rank') || '1');
+          var rb = parseInt(b.getAttribute('data-rank') || '1');
+          return ra - rb;
+        }});
+      }}
+      var oldSep = tbody.querySelector('.g3-orange-sep');
+      if (oldSep) oldSep.remove();
+      var msgDiv = table.closest('.year-table').querySelector('.g3-cutoff-msg');
+      if (msgDiv) msgDiv.style.display = 'none';
+      var showCutoff = (mode === 'diff-cutoff');
+      rows.forEach(function(r, i) {{
+        var bdrBot = ((mode === 'diff-player' || showCutoff) && i === 39) ? '3px solid #ee7623' : '';
+        var hide = ((mode === 'diff-player' || showCutoff) && i >= 40);
+        r.style.display = hide ? 'none' : '';
+        for (var c = 0; c < r.cells.length; c++) {{
+          r.cells[c].style.borderTop = '';
+          r.cells[c].style.borderBottom = bdrBot;
+          r.cells[c].style.paddingBottom = ((mode === 'diff-player' || showCutoff) && i === 39) ? '8px' : '';
+        }}
+        tbody.appendChild(r);
+      }});
+      if (mode === 'diff') {{
+        var sep = document.createElement('tr');
+        sep.className = 'g3-orange-sep';
+        sep.innerHTML = '<td colspan="5">\\u00a0</td>';
+        tbody.insertBefore(sep, tbody.children[40]);
+        sep.addEventListener('click', function() {{
+          g3SortMode = 'diff-cutoff';
+          g3ApplySort();
+        }});
+      }}
+      if (showCutoff && msgDiv) msgDiv.style.display = '';
+    }}
+    function g3ApplySort() {{
+      document.querySelectorAll('.g3-table table').forEach(function(t) {{
+        if (t.style.visibility === 'hidden') return;
+        g3Sort(t, g3SortMode);
+      }});
+      var hidePlaceholder = (g3SortMode === 'diff-player' || g3SortMode === 'diff-cutoff');
+      document.querySelectorAll('.g3-table table[style*="visibility:hidden"]').forEach(function(t) {{
+        t.closest('.year-table').style.display = hidePlaceholder ? 'none' : '';
+      }});
+    }}
+    function g3ScrollIfStuck(el) {{
+      var hdr = el.closest('.year-table').querySelector('.table-header');
+      if (hdr && hdr.getBoundingClientRect().top <= 5) {{
+        el.closest('.g3-table').scrollIntoView({{block: 'start'}});
+      }}
+    }}
+    document.querySelectorAll('.g3-sort-diff').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        if (g3SortMode === 'diff' || g3SortMode === 'diff-cutoff') g3SortMode = 'year';
+        else g3SortMode = 'diff';
+        g3ApplySort();
+        g3ScrollIfStuck(th);
+      }});
+    }});
+    document.querySelectorAll('.g3-sort-val').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        g3SortMode = g3SortMode === 'val' ? 'year' : 'val';
+        g3ApplySort();
+        g3ScrollIfStuck(th);
+      }});
+    }});
+    document.querySelectorAll('.g3-sort-yr').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        g3SortMode = 'year';
+        g3ApplySort();
+        g3ScrollIfStuck(th);
+      }});
+    }});
+    document.querySelectorAll('.g3-sort-player').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        if (g3SortMode === 'player') g3SortMode = 'year';
+        else if (g3SortMode === 'diff-player') g3SortMode = 'diff';
+        else if (g3SortMode === 'diff' || g3SortMode === 'diff-cutoff') g3SortMode = 'diff-player';
+        else g3SortMode = 'player';
+        g3ApplySort();
+        g3ScrollIfStuck(th);
+      }});
+    }});
+    document.querySelectorAll('.g3-cutoff-msg').forEach(function(msg) {{
+      msg.addEventListener('click', function() {{
+        g3SortMode = 'diff';
+        g3ApplySort();
+      }});
+    }});
+
+    /* G3 TOP 9* tooltip — reuse same tooltip element */
+    document.querySelectorAll('thead th.g3-avg').forEach(function(th) {{
+      th.addEventListener('click', function(e) {{
+        e.stopPropagation();
+        var isActive = avgTooltip.classList.contains('active');
+        avgTooltip.classList.remove('active');
+        if (isActive) return;
+        var activeStat = 'TAP';
+        document.querySelectorAll('.view-ted').forEach(function(v) {{
+          if (window.getComputedStyle(v).display !== 'none' && v.querySelector('.g3-table')) activeStat = 'TED';
+        }});
+        avgTooltip.textContent = '* average of top 9 ' + activeStat + ' scores that season excluding the winner (ie. avg of rank #2\u201310)';
+        var rect = th.getBoundingClientRect();
+        avgTooltip.style.left = Math.max(8, rect.left + rect.width / 2 - 130) + 'px';
+        avgTooltip.style.top = (rect.bottom + 6) + 'px';
+        avgTooltip.classList.add('active');
+      }});
+    }});
+
+    /* Assign sort-year to G3 rows */
+    document.querySelectorAll('.g3-table tbody').forEach(function(tbody) {{
       var lastYear = '';
       Array.from(tbody.children).forEach(function(tr) {{
         var yrCell = tr.cells && tr.cells[0] ? tr.cells[0].textContent.trim() : '';
