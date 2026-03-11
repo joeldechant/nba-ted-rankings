@@ -108,7 +108,7 @@
     }
 
     .season-hint.open {
-      max-height: 80px;
+      max-height: 110px;
       padding: 10px 16px 10px;
     }
 
@@ -383,6 +383,59 @@
     thead th.num.goat-avg {
       white-space: nowrap;
       font-size: 0.78em;
+      cursor: pointer;
+    }
+
+    .goat-avg-tooltip {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      background: #222;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 0.82em;
+      font-style: italic;
+      max-width: 260px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .goat-avg-tooltip.active {
+      display: block;
+    }
+
+    .goat-cutoff-msg {
+      background: #000;
+      text-align: center;
+      padding: 12px 16px;
+    }
+
+    .goat-cutoff-msg p {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 0.85em;
+      font-style: italic;
+      color: #ee7623;
+      margin: 0;
+    }
+
+    .goat-cutoff-msg .orange {
+      color: #ee7623;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    tr.goat-orange-sep td {
+      height: 6px;
+      font-size: 1px;
+      line-height: 6px;
+      color: #ee7623;
+      padding: 0;
+      background: #ee7623;
+      cursor: pointer;
+      border: none;
+      overflow: hidden;
     }
 
     .goat-sort-diff {
@@ -760,7 +813,7 @@
 
 
     <div class="season-header" id="season-header"><h3>2025-26 Season <span class="season-click-hint">Click here</span></h3></div>
-    <div class="season-hint" id="season-hint"><p>Everything you see in orange is CLICKABLE for added functionality&mdash;only NBA heads need apply!</p></div>
+    <div class="season-hint" id="season-hint"><p>Everything you see in ORANGE is CLICKABLE for added functionality!</p><p>&nbsp;</p></div>
     <div class="view-ted" style="display:none">
       <div class="tables-grid">
         <div class="weekly-daily-slot">
@@ -4245,6 +4298,7 @@
         <tr><td class="season">'61</td><td class="player" data-player="Elgin Baylor"><span class="fname">Elgin</span> <span class="lname">Baylor</span></td><td class="num stat">35.3</td><td class="num goat-avg">28</td><td class="num">+6.9</td></tr>
           </tbody>
         </table>
+        <div class="goat-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 30 DIFF seasons to see the top GOAT candidates!</p></div>
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
@@ -8543,6 +8597,7 @@
         <tr><td class="season">'61</td><td class="player" data-player="Elgin Baylor"><span class="fname">Elgin</span> <span class="lname">Baylor</span></td><td class="num stat">36.7</td><td class="num goat-avg">29</td><td class="num">+7.6</td></tr>
           </tbody>
         </table>
+        <div class="goat-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 30 DIFF seasons to see the top GOAT candidates!</p></div>
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
@@ -12360,6 +12415,7 @@
       <path d="M90 18 C70 38 70 62 90 82" stroke="#000" stroke-width="2.5" fill="none"/>
     </svg>
   </div>
+  <div class="goat-avg-tooltip" id="goat-avg-tooltip"></div>
   <div class="career-overlay" id="career-overlay">
     <div class="career-popup" id="career-popup">
       <div class="career-popup-header">
@@ -12652,7 +12708,7 @@
     function goatSort(table, mode) {
       var tbody = table.querySelector('tbody');
       if (!tbody) return;
-      var rows = Array.from(tbody.querySelectorAll('tr'));
+      var rows = Array.from(tbody.querySelectorAll('tr:not(.goat-orange-sep)'));
       /* Helper: sort by DIFF desc */
       function sortByDiff(arr) {
         arr.sort(function(a, b) {
@@ -12682,7 +12738,7 @@
                  (parseFloat(a.cells[intraCol].textContent) || 0);
         });
       }
-      if (mode === 'diff') {
+      if (mode === 'diff' || mode === 'diff-cutoff') {
         sortByDiff(rows);
       } else if (mode === 'val') {
         rows.sort(function(a, b) {
@@ -12720,34 +12776,54 @@
           return by - ay;
         });
       }
-      var showOrange = (mode === 'diff' || mode === 'diff-player');
+      /* Remove any previously inserted orange separator */
+      var oldSep = tbody.querySelector('.goat-orange-sep');
+      if (oldSep) oldSep.remove();
+      /* Hide cutoff message */
+      var msgDiv = table.closest('.year-table').querySelector('.goat-cutoff-msg');
+      if (msgDiv) msgDiv.style.display = 'none';
+      var showCutoff = (mode === 'diff-cutoff');
       rows.forEach(function(r, i) {
-        var bdrTop = (showOrange && mode !== 'diff-player' && i === 30) ? '2px solid #ee7623' : '';
-        var bdrBot = (mode === 'diff-player' && i === 29) ? '3px solid #ee7623' : '';
-        var hide = (mode === 'diff-player' && i >= 30);
+        var bdrBot = ((mode === 'diff-player' || showCutoff) && i === 29) ? '3px solid #ee7623' : '';
+        var hide = ((mode === 'diff-player' || showCutoff) && i >= 30);
         r.style.display = hide ? 'none' : '';
         for (var c = 0; c < r.cells.length; c++) {
-          r.cells[c].style.borderTop = bdrTop;
+          r.cells[c].style.borderTop = '';
           r.cells[c].style.borderBottom = bdrBot;
-          r.cells[c].style.paddingBottom = (mode === 'diff-player' && i === 29) ? '8px' : '';
+          r.cells[c].style.paddingBottom = ((mode === 'diff-player' || showCutoff) && i === 29) ? '8px' : '';
         }
         tbody.appendChild(r);
       });
+      /* Insert clickable orange separator in diff mode */
+      if (mode === 'diff') {
+        var sep = document.createElement('tr');
+        sep.className = 'goat-orange-sep';
+        sep.innerHTML = '<td colspan="5">\u00a0</td>';
+        tbody.insertBefore(sep, tbody.children[30]);
+        sep.addEventListener('click', function() {
+          goatSortMode = 'diff-cutoff';
+          goatApplySort();
+        });
+      }
+      /* Show cutoff message */
+      if (showCutoff && msgDiv) msgDiv.style.display = '';
     }
     function goatApplySort() {
       document.querySelectorAll('.goat-table table').forEach(function(t) {
         if (t.style.visibility === 'hidden') return;
         goatSort(t, goatSortMode);
       });
-      /* Hide/show placeholder year-table in diff-player mode */
+      /* Hide/show placeholder year-table when rows are truncated */
+      var hidePlaceholder = (goatSortMode === 'diff-player' || goatSortMode === 'diff-cutoff');
       document.querySelectorAll('.goat-table table[style*="visibility:hidden"]').forEach(function(t) {
-        t.closest('.year-table').style.display = goatSortMode === 'diff-player' ? 'none' : '';
+        t.closest('.year-table').style.display = hidePlaceholder ? 'none' : '';
       });
     }
     document.querySelectorAll('.goat-sort-diff').forEach(function(th) {
       th.addEventListener('click', function(e) {
         e.stopPropagation();
-        goatSortMode = goatSortMode === 'diff' ? 'year' : 'diff';
+        if (goatSortMode === 'diff' || goatSortMode === 'diff-cutoff') goatSortMode = 'year';
+        else goatSortMode = 'diff';
         goatApplySort();
       });
     });
@@ -12770,10 +12846,35 @@
         e.stopPropagation();
         if (goatSortMode === 'player') goatSortMode = 'year';
         else if (goatSortMode === 'diff-player') goatSortMode = 'diff';
-        else if (goatSortMode === 'diff') goatSortMode = 'diff-player';
+        else if (goatSortMode === 'diff' || goatSortMode === 'diff-cutoff') goatSortMode = 'diff-player';
         else goatSortMode = 'player';
         goatApplySort();
       });
+    });
+
+    /* TOP 9* tooltip */
+    var avgTooltip = document.getElementById('goat-avg-tooltip');
+    var statLabel = document.querySelector('.view-ted') &&
+      window.getComputedStyle(document.querySelector('.view-ted')).display !== 'none' ? 'TED' : 'TAP';
+    document.querySelectorAll('thead th.goat-avg').forEach(function(th) {
+      th.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isActive = avgTooltip.classList.contains('active');
+        avgTooltip.classList.remove('active');
+        if (isActive) return;
+        var activeStat = 'TAP';
+        document.querySelectorAll('.view-ted').forEach(function(v) {
+          if (window.getComputedStyle(v).display !== 'none' && v.querySelector('.goat-table')) activeStat = 'TED';
+        });
+        avgTooltip.textContent = '* average of top 9 ' + activeStat + ' scores that season excluding the winner (i.e. avg of rank #2–10)';
+        var rect = th.getBoundingClientRect();
+        avgTooltip.style.left = Math.max(8, rect.left + rect.width / 2 - 130) + 'px';
+        avgTooltip.style.top = (rect.bottom + 6) + 'px';
+        avgTooltip.classList.add('active');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('th.goat-avg')) avgTooltip.classList.remove('active');
     });
 
     /* Scroll helper — only scrolls when the sticky header is floating.
