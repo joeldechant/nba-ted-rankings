@@ -886,6 +886,7 @@ def generate_html(weekly, season, daily, updated_at):
       background: #000;
       text-align: center;
       padding: 12px 16px;
+      border-right: 2px solid #fff;
     }}
 
     .goat-cutoff-msg p {{
