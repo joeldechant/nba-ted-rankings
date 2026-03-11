@@ -110,6 +110,7 @@ def render_historical_section(data, stat_key='ted', season_all=None):
     nav_links = ''.join(
         f'<a href="#decade-{d}" data-decade="{d}">{d[:-1]}<span class="decade-s">s</span></a>' for d in decade_order if d in data['decades']
     )
+    nav_links += '<div class="nav-break"></div>'
     nav_links += '<a href="#" data-goat="true" style="color:#ee7623">GOAT</a>'
     nav_links += '<a href="#" data-g2="true" style="color:#ee7623">G2</a>'
     nav_links += '<a href="#" data-g3="true" style="color:#ee7623">G3</a>'
@@ -1530,12 +1531,16 @@ def generate_html(weekly, season, daily, updated_at):
         text-align: center;
       }}
       .decade-nav {{
-        gap: 3px;
+        gap: 4px;
         padding: 10px 8px;
       }}
       .decade-nav a {{
-        font-size: 0.8em;
-        padding: 3px 6px;
+        font-size: 0.85em;
+        padding: 4px 8px;
+      }}
+      .decade-nav .nav-break {{
+        width: 100%;
+        height: 0;
       }}
       .year-pair {{
         grid-template-columns: 1fr;
