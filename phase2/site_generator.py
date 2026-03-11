@@ -1702,6 +1702,7 @@ def generate_html(weekly, season, daily, updated_at):
         for (var c = 0; c < r.cells.length; c++) {{
           r.cells[c].style.borderTop = '';
           r.cells[c].style.borderBottom = bdrBot;
+          r.cells[c].style.borderRight = (bdrBot && c === r.cells.length - 1) ? '2px solid #fff' : '';
           r.cells[c].style.paddingBottom = ((mode === 'diff-player' || showCutoff) && i === 29) ? '8px' : '';
         }}
         tbody.appendChild(r);
