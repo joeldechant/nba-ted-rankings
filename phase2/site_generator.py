@@ -591,12 +591,8 @@ def generate_html(weekly, season, daily, updated_at):
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 0.85em;
       font-style: italic;
-      color: #fff;
-      margin: 0;
-    }}
-
-    .season-hint .orange {{
       color: #ee7623;
+      margin: 0;
     }}
 
     .description {{
@@ -1239,7 +1235,7 @@ def generate_html(weekly, season, daily, updated_at):
 
 {decade_nav_html}
     <div class="season-header" id="season-header"><h3>{season_label} Season <span class="season-click-hint">Click here</span></h3></div>
-    <div class="season-hint" id="season-hint"><p>Everything you see in <span class="orange">orange</span> is <b>clickable</b> for added functionality&mdash;only NBA heads need apply!</p></div>
+    <div class="season-hint" id="season-hint"><p>Everything you see in orange is CLICKABLE for added functionality&mdash;only NBA heads need apply!</p></div>
     <div class="view-ted" style="display:none">
       <div class="tables-grid">
         <div class="weekly-daily-slot">
