@@ -288,11 +288,17 @@ def build_historical_json():
         top10_taps = [p['tap'] for p in tap_sorted[:10]]
         ted_leader = ted_sorted[0]
         tap_leader = tap_sorted[0]
+        ted_second = ted_sorted[1] if len(ted_sorted) > 1 else None
+        tap_second = tap_sorted[1] if len(tap_sorted) > 1 else None
         season_stats[str(year)] = {
             'top10_ted': round(sum(top10_teds) / len(top10_teds), 1),
             'top10_tap': round(sum(top10_taps) / len(top10_taps), 1),
             'ldr_ted': ted_leader['player'], 'ldr_ted_val': round(ted_leader['ted'], 1),
             'ldr_tap': tap_leader['player'], 'ldr_tap_val': round(tap_leader['tap'], 1),
+            'g2_ted': ted_second['player'] if ted_second else '',
+            'g2_ted_val': round(ted_second['ted'], 1) if ted_second else 0,
+            'g2_tap': tap_second['player'] if tap_second else '',
+            'g2_tap_val': round(tap_second['tap'], 1) if tap_second else 0,
         }
     print(f"  Season stats: {len(season_stats)} years")
 
