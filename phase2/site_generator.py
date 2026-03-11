@@ -1263,9 +1263,6 @@ def generate_html(weekly, season, daily, updated_at):
       .goat-table .year-pair > :first-child {{
         border-bottom: none;
       }}
-      .goat-table thead th:last-child {{
-        border-right: none;
-      }}
       .all-time-table .year-pair > :last-child,
       .decade-top100 .year-pair > :last-child,
       .goat-table .year-pair > :last-child {{
