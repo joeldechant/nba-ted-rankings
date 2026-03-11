@@ -1775,7 +1775,7 @@ def generate_html(weekly, season, daily, updated_at):
         document.querySelectorAll('.view-ted').forEach(function(v) {{
           if (window.getComputedStyle(v).display !== 'none' && v.querySelector('.goat-table')) activeStat = 'TED';
         }});
-        avgTooltip.textContent = '* average of top 9 ' + activeStat + ' scores that season excluding the winner (i.e. avg of rank #2\u201310)';
+        avgTooltip.textContent = '* average of top 9 ' + activeStat + ' scores that season excluding the winner (ie. avg of rank #2\u201310)';
         var rect = th.getBoundingClientRect();
         avgTooltip.style.left = Math.max(8, rect.left + rect.width / 2 - 130) + 'px';
         avgTooltip.style.top = (rect.bottom + 6) + 'px';
