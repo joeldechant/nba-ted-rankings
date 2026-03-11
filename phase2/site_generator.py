@@ -887,6 +887,7 @@ def generate_html(weekly, season, daily, updated_at):
       text-align: center;
       padding: 12px 16px;
       border-right: 2px solid #fff;
+      border-top: 2px solid #fff;
       cursor: pointer;
     }}
 
