@@ -1740,6 +1740,7 @@ def generate_html(weekly, season, daily, updated_at):
         if (goatSortMode === 'diff' || goatSortMode === 'diff-cutoff') goatSortMode = 'year';
         else goatSortMode = 'diff';
         goatApplySort();
+        th.closest('.year-table').querySelector('.table-header').scrollIntoView({{block: 'start'}});
       }});
     }});
     document.querySelectorAll('.goat-sort-val').forEach(function(th) {{
@@ -1747,6 +1748,7 @@ def generate_html(weekly, season, daily, updated_at):
         e.stopPropagation();
         goatSortMode = goatSortMode === 'val' ? 'year' : 'val';
         goatApplySort();
+        th.closest('.year-table').querySelector('.table-header').scrollIntoView({{block: 'start'}});
       }});
     }});
     document.querySelectorAll('.goat-sort-yr').forEach(function(th) {{
@@ -1754,6 +1756,7 @@ def generate_html(weekly, season, daily, updated_at):
         e.stopPropagation();
         goatSortMode = 'year';
         goatApplySort();
+        th.closest('.year-table').querySelector('.table-header').scrollIntoView({{block: 'start'}});
       }});
     }});
     document.querySelectorAll('.goat-sort-player').forEach(function(th) {{
@@ -1764,12 +1767,15 @@ def generate_html(weekly, season, daily, updated_at):
         else if (goatSortMode === 'diff' || goatSortMode === 'diff-cutoff') goatSortMode = 'diff-player';
         else goatSortMode = 'player';
         goatApplySort();
+        th.closest('.year-table').querySelector('.table-header').scrollIntoView({{block: 'start'}});
       }});
     }});
     document.querySelectorAll('.goat-cutoff-msg').forEach(function(msg) {{
       msg.addEventListener('click', function() {{
         goatSortMode = 'diff';
         goatApplySort();
+        var yt = msg.closest('.goat-table').querySelector('.table-header');
+        if (yt) yt.scrollIntoView({{block: 'start'}});
       }});
     }});
 
