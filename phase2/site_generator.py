@@ -389,7 +389,7 @@ def render_goat_html(season_stats, stat_key='ted', season_all=None):
           <tbody>
 {rows}          </tbody>
         </table>
-        <div class="goat-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 30 DIFF seasons to see the top GOAT candidates!</p></div>
+        <div class="goat-cutoff-msg" style="display:none"><p>Click <span class="orange">PLAYER</span> above to sort the top 30 DIFF seasons and see the top GOAT candidates!</p></div>
       </div>
       <div class="year-table">
         <div class="table-header"><h2>&nbsp;</h2></div>
