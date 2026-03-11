@@ -1811,8 +1811,8 @@ def generate_html(weekly, season, daily, updated_at):
         avgTooltip.classList.add('active');
       }});
     }});
-    document.addEventListener('click', function(e) {{
-      if (!e.target.closest('th.goat-avg')) avgTooltip.classList.remove('active');
+    document.addEventListener('click', function() {{
+      avgTooltip.classList.remove('active');
     }});
 
     /* Scroll helper — only scrolls when the sticky header is floating.
