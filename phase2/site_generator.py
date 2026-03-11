@@ -555,6 +555,7 @@ def generate_html(weekly, season, daily, updated_at):
       background: #000;
       padding: 10px 16px;
       text-align: center;
+      cursor: pointer;
     }}
 
     .season-header h3 {{
@@ -564,6 +565,38 @@ def generate_html(weekly, season, daily, updated_at):
       letter-spacing: 0.1em;
       color: #ee7623;
       margin: 0;
+    }}
+
+    .season-click-hint {{
+      font-size: 0.68em;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }}
+
+    .season-hint {{
+      background: #000;
+      text-align: center;
+      padding: 0 16px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }}
+
+    .season-hint.open {{
+      max-height: 60px;
+      padding: 8px 16px 12px;
+    }}
+
+    .season-hint p {{
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 0.85em;
+      font-style: italic;
+      color: #fff;
+      margin: 0;
+    }}
+
+    .season-hint .orange {{
+      color: #ee7623;
     }}
 
     .description {{
@@ -1196,7 +1229,8 @@ def generate_html(weekly, season, daily, updated_at):
     </div>
 
 {decade_nav_html}
-    <div class="season-header"><h3>{season_label} Season</h3></div>
+    <div class="season-header" id="season-header"><h3>{season_label} Season <span class="season-click-hint">Click here</span></h3></div>
+    <div class="season-hint" id="season-hint"><p>Everything you see in <span class="orange">orange</span> is <span class="orange">clickable</span> for added functionality&mdash;only NBA heads need apply!</p></div>
     <div class="view-ted" style="display:none">
       <div class="tables-grid">
         <div class="weekly-daily-slot">
@@ -1362,6 +1396,9 @@ def generate_html(weekly, season, daily, updated_at):
     document.querySelector('.basketball').addEventListener('click', doToggle);
     toggleLink.addEventListener('click', doToggle);
     floatToggle.addEventListener('click', doToggle);
+    document.getElementById('season-header').addEventListener('click', function() {{
+      document.getElementById('season-hint').classList.toggle('open');
+    }});
     document.querySelectorAll('.decade-nav a[data-decade]').forEach(function(a) {{
       a.addEventListener('click', function(e) {{
         e.preventDefault();
