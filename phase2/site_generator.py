@@ -110,7 +110,7 @@ def render_historical_section(data, stat_key='ted', season_all=None):
     nav_links = ''.join(
         f'<a href="#decade-{d}" data-decade="{d}">{d[:-1]}<span class="decade-s">s</span></a>' for d in decade_order if d in data['decades']
     )
-    nav_links += '<a href="#" data-goat="true" style="color:#ee7623;border-color:#ee7623">GOAT</a>'
+    nav_links += '<a href="#" data-goat="true" style="color:#ee7623">GOAT</a>'
 
     # Build decade sections
     decades_html = ''
