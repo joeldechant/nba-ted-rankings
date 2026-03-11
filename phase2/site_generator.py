@@ -254,10 +254,6 @@ def render_all_time_html(data, stat_key='ted', season_all=None):
 {rows}          </tbody>
         </table>
       </div>
-      <div class="year-table">
-        <div class="table-header"><h2>&nbsp;</h2></div>
-        <table style="visibility:hidden"><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
-      </div>
     </div>
 """
 
@@ -316,10 +312,6 @@ def render_decade_top100_html(decade_label, decade_data, stat_key='ted', season_
           <tbody>
 {rows}          </tbody>
         </table>
-      </div>
-      <div class="year-table">
-        <div class="table-header"><h2><span class="decade-label" style="visibility:hidden">&nbsp;</span></h2></div>
-        <table style="visibility:hidden"><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead></table>
       </div>
     </div>
 """
@@ -951,9 +943,13 @@ def generate_html(weekly, season, daily, updated_at):
       width: 100%;
     }}
 
+    .all-time-table .year-pair,
+    .decade-top100 .year-pair {{
+      grid-template-columns: 1fr;
+    }}
     .all-time-table .year-pair > :first-child,
     .decade-top100 .year-pair > :first-child {{
-      border-right: 2px solid #000;
+      border-right: none;
     }}
 
     .all-time-table .player,
@@ -1254,6 +1250,10 @@ def generate_html(weekly, season, daily, updated_at):
       .year-pair > :first-child {{
         border-right: none;
         border-bottom: 2px solid #fff;
+      }}
+      .all-time-table .year-pair > :first-child,
+      .decade-top100 .year-pair > :first-child {{
+        border-bottom: none;
       }}
       .year-table table {{
         max-width: 100%;
