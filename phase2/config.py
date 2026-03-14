@@ -23,6 +23,7 @@ MIN_MP_SEASON = 20          # minimum average MPG for season-to-date
 # Temporary player exclusions — (player_name, end_date)
 # Player is excluded until end_date (inclusive). After that date, they reappear automatically.
 EXCLUDED_PLAYERS = [
+    ("Kristaps Porzingis", date(2026, 4, 10)),
 ]
 
 # Tiered minimum games for season-to-date rankings
@@ -69,6 +70,15 @@ RB_AVG_BASELINE = 7.5
 NA_DIFF_WEIGHT = 0.3
 NA_AVG_BASELINE = 3.5
 OP_MULTIPLIER = 1.0
+
+# Weekly/daily TAP: use season-to-date OP instead of per-game OP derivation?
+# When True: OP is pre-computed from season averages (stable "gravity" value,
+#   conceptually stronger — avoids inverse relationship where better box score
+#   games get more negative OP). But TED and TAP converge to nearly identical
+#   values on a daily/weekly basis, losing diagnostic value of their divergence.
+# When False (default): OP is derived per-game from OBPM/OWS against that game's
+#   box score. Preserves meaningful TED-TAP gap that reveals player archetype.
+USE_SEASON_OP_FOR_WEEKLY = True
 
 # Era-varying P/Shot OP baselines (for OP extraction, not EP36)
 ERA_PSHOT_BASELINES = [
