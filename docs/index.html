@@ -328,7 +328,7 @@
     .potm-popup .pm-player { width: 160px; }
     .potm-popup .pm-stat { width: 52px; font-weight: 900; }
 
-    .potm-popup tbody tr:last-child td {
+    .potm-popup tbody tr:first-child td {
       color: #ee7623;
       font-weight: 900;
     }
@@ -14844,7 +14844,7 @@
       potmTitle.textContent = 'PLAYER OF THE MONTH';
       potmStatHeader.textContent = su;
       var html = '';
-      for (var i = 0; i < winners.length; i++) {
+      for (var i = winners.length - 1; i >= 0; i--) {
         var w = winners[i];
         var player = s === 'ted' ? w.ted_player : w.tap_player;
         var val = s === 'ted' ? w.ted_val : w.tap_val;
