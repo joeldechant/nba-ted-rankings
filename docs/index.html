@@ -209,6 +209,18 @@
       color: #ee7623;
     }
 
+    .season-monthly-slot .table-header {
+      cursor: pointer;
+    }
+
+    .season-monthly-slot .table-header:hover {
+      background: #eee;
+    }
+
+    .season-monthly-slot .table-section h2 {
+      color: #ee7623;
+    }
+
     .week-label {
       font-family: Georgia, 'Times New Roman', serif;
       font-weight: 400;
@@ -1758,7 +1770,8 @@
   </div>
 </div>
         </div>
-  <div class="table-section">
+        <div class="season-monthly-slot">
+          <div class="season-table">  <div class="table-section">
     <div class="table-header"><h2>SEASON-TO-DATE TED TOP 100</h2></div>
     <table>
       <thead>
@@ -2373,7 +2386,624 @@
       </tbody>
     </table>
   </div>
-
+</div>
+          <div class="monthly-table" style="display:none">  <div class="table-section">
+    <div class="table-header"><h2>PLAYER OF THE MONTH TED — MARCH 2026</h2></div>
+    <table>
+      <thead>
+        <tr>
+          <th class="rank">Rank</th>
+          <th class="player">Player</th>
+          <th class="team">Team</th>
+          <th class="num stat">TED</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">1</td>
+          <td class="player" data-player="Victor Wembanyama"><span class="fname">Victor</span> <span class="lname">Wembanyama</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">60.7</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td class="player" data-player="Nikola Jokić"><span class="fname">Nikola</span> <span class="lname">Jokić</span></td>
+          <td class="team">DEN</td>
+          <td class="num stat">57.4</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td class="player" data-player="Shai Gilgeous-Alexander"><span class="fname">Shai Gilgeous-</span><span class="lname">Alexander</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">54.9</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="player" data-player="Luka Dončić"><span class="fname">Luka</span> <span class="lname">Dončić</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">53.9</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="player" data-player="Kawhi Leonard"><span class="fname">Kawhi</span> <span class="lname">Leonard</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">53.2</td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td class="player" data-player="Jalen Duren"><span class="fname">Jalen</span> <span class="lname">Duren</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">48.8</td>
+        </tr>
+        <tr>
+          <td class="rank">7</td>
+          <td class="player" data-player="Dejounte Murray"><span class="fname">Dejounte</span> <span class="lname">Murray</span></td>
+          <td class="team">NOP</td>
+          <td class="num stat">45.9</td>
+        </tr>
+        <tr>
+          <td class="rank">8</td>
+          <td class="player" data-player="Karl-Anthony Towns"><span class="fname">Karl-Anthony</span> <span class="lname">Towns</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">44.8</td>
+        </tr>
+        <tr>
+          <td class="rank">9</td>
+          <td class="player" data-player="Giannis Antetokounmpo"><span class="fname">Giannis</span> <span class="lname">Antetokounmpo</span></td>
+          <td class="team">MIL</td>
+          <td class="num stat">44.8</td>
+        </tr>
+        <tr>
+          <td class="rank">10</td>
+          <td class="player" data-player="Anthony Edwards"><span class="fname">Anthony</span> <span class="lname">Edwards</span></td>
+          <td class="team">MIN</td>
+          <td class="num stat">43.3</td>
+        </tr>
+        <tr>
+          <td class="rank">11</td>
+          <td class="player" data-player="Cade Cunningham"><span class="fname">Cade</span> <span class="lname">Cunningham</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">42.5</td>
+        </tr>
+        <tr>
+          <td class="rank">12</td>
+          <td class="player" data-player="Bam Adebayo"><span class="fname">Bam</span> <span class="lname">Adebayo</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">42.4</td>
+        </tr>
+        <tr>
+          <td class="rank">13</td>
+          <td class="player" data-player="Donovan Mitchell"><span class="fname">Donovan</span> <span class="lname">Mitchell</span></td>
+          <td class="team">CLE</td>
+          <td class="num stat">41.5</td>
+        </tr>
+        <tr>
+          <td class="rank">14</td>
+          <td class="player" data-player="Evan Mobley"><span class="fname">Evan</span> <span class="lname">Mobley</span></td>
+          <td class="team">CLE</td>
+          <td class="num stat">41.1</td>
+        </tr>
+        <tr>
+          <td class="rank">15</td>
+          <td class="player" data-player="Jalen Johnson"><span class="fname">Jalen</span> <span class="lname">Johnson</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">41.0</td>
+        </tr>
+        <tr>
+          <td class="rank">16</td>
+          <td class="player" data-player="Jayson Tatum"><span class="fname">Jayson</span> <span class="lname">Tatum</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">40.7</td>
+        </tr>
+        <tr>
+          <td class="rank">17</td>
+          <td class="player" data-player="Trae Young"><span class="fname">Trae</span> <span class="lname">Young</span></td>
+          <td class="team">WAS</td>
+          <td class="num stat">40.4</td>
+        </tr>
+        <tr>
+          <td class="rank">18</td>
+          <td class="player" data-player="Devin Booker"><span class="fname">Devin</span> <span class="lname">Booker</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">40.1</td>
+        </tr>
+        <tr>
+          <td class="rank">19</td>
+          <td class="player" data-player="Collin Sexton"><span class="fname">Collin</span> <span class="lname">Sexton</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">40.1</td>
+        </tr>
+        <tr>
+          <td class="rank">20</td>
+          <td class="player" data-player="Josh Giddey"><span class="fname">Josh</span> <span class="lname">Giddey</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">39.9</td>
+        </tr>
+        <tr>
+          <td class="rank">21</td>
+          <td class="player" data-player="Ajay Mitchell"><span class="fname">Ajay</span> <span class="lname">Mitchell</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">39.5</td>
+        </tr>
+        <tr>
+          <td class="rank">22</td>
+          <td class="player" data-player="Daniel Gafford"><span class="fname">Daniel</span> <span class="lname">Gafford</span></td>
+          <td class="team">DAL</td>
+          <td class="num stat">39.4</td>
+        </tr>
+        <tr>
+          <td class="rank">23</td>
+          <td class="player" data-player="Ty Jerome"><span class="fname">Ty</span> <span class="lname">Jerome</span></td>
+          <td class="team">MEM</td>
+          <td class="num stat">39.2</td>
+        </tr>
+        <tr>
+          <td class="rank">24</td>
+          <td class="player" data-player="Amen Thompson"><span class="fname">Amen</span> <span class="lname">Thompson</span></td>
+          <td class="team">HOU</td>
+          <td class="num stat">38.5</td>
+        </tr>
+        <tr>
+          <td class="rank">25</td>
+          <td class="player" data-player="Jrue Holiday"><span class="fname">Jrue</span> <span class="lname">Holiday</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">38.5</td>
+        </tr>
+        <tr>
+          <td class="rank">26</td>
+          <td class="player" data-player="Kristaps Porziņģis"><span class="fname">Kristaps</span> <span class="lname">Porziņģis</span></td>
+          <td class="team">GSW</td>
+          <td class="num stat">38.2</td>
+        </tr>
+        <tr>
+          <td class="rank">27</td>
+          <td class="player" data-player="Kyle Filipowski"><span class="fname">Kyle</span> <span class="lname">Filipowski</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">37.9</td>
+        </tr>
+        <tr>
+          <td class="rank">28</td>
+          <td class="player" data-player="Deni Avdija"><span class="fname">Deni</span> <span class="lname">Avdija</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">37.8</td>
+        </tr>
+        <tr>
+          <td class="rank">29</td>
+          <td class="player" data-player="Robert Williams"><span class="fname">Robert</span> <span class="lname">Williams</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">37.4</td>
+        </tr>
+        <tr>
+          <td class="rank">30</td>
+          <td class="player" data-player="Jaylen Brown"><span class="fname">Jaylen</span> <span class="lname">Brown</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">37.3</td>
+        </tr>
+        <tr>
+          <td class="rank">31</td>
+          <td class="player" data-player="Darius Garland"><span class="fname">Darius</span> <span class="lname">Garland</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">37.2</td>
+        </tr>
+        <tr>
+          <td class="rank">32</td>
+          <td class="player" data-player="Tyler Herro"><span class="fname">Tyler</span> <span class="lname">Herro</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">37.2</td>
+        </tr>
+        <tr>
+          <td class="rank">33</td>
+          <td class="player" data-player="Stephon Castle"><span class="fname">Stephon</span> <span class="lname">Castle</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">37.1</td>
+        </tr>
+        <tr>
+          <td class="rank">34</td>
+          <td class="player" data-player="Donovan Clingan"><span class="fname">Donovan</span> <span class="lname">Clingan</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">37.0</td>
+        </tr>
+        <tr>
+          <td class="rank">35</td>
+          <td class="player" data-player="Chet Holmgren"><span class="fname">Chet</span> <span class="lname">Holmgren</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">37.0</td>
+        </tr>
+        <tr>
+          <td class="rank">36</td>
+          <td class="player" data-player="Paolo Banchero"><span class="fname">Paolo</span> <span class="lname">Banchero</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">37.0</td>
+        </tr>
+        <tr>
+          <td class="rank">37</td>
+          <td class="player" data-player="De&#x27;Aaron Fox"><span class="fname">De'Aaron</span> <span class="lname">Fox</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">37.0</td>
+        </tr>
+        <tr>
+          <td class="rank">38</td>
+          <td class="player" data-player="Pascal Siakam"><span class="fname">Pascal</span> <span class="lname">Siakam</span></td>
+          <td class="team">IND</td>
+          <td class="num stat">36.9</td>
+        </tr>
+        <tr>
+          <td class="rank">39</td>
+          <td class="player" data-player="LaMelo Ball"><span class="fname">LaMelo</span> <span class="lname">Ball</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">36.2</td>
+        </tr>
+        <tr>
+          <td class="rank">40</td>
+          <td class="player" data-player="Derrick White"><span class="fname">Derrick</span> <span class="lname">White</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">35.9</td>
+        </tr>
+        <tr>
+          <td class="rank">41</td>
+          <td class="player" data-player="Kevin Durant"><span class="fname">Kevin</span> <span class="lname">Durant</span></td>
+          <td class="team">HOU</td>
+          <td class="num stat">35.9</td>
+        </tr>
+        <tr>
+          <td class="rank">42</td>
+          <td class="player" data-player="Onyeka Okongwu"><span class="fname">Onyeka</span> <span class="lname">Okongwu</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">35.8</td>
+        </tr>
+        <tr>
+          <td class="rank">43</td>
+          <td class="player" data-player="Day&#x27;Ron Sharpe"><span class="fname">Day'Ron</span> <span class="lname">Sharpe</span></td>
+          <td class="team">BRK</td>
+          <td class="num stat">35.8</td>
+        </tr>
+        <tr>
+          <td class="rank">44</td>
+          <td class="player" data-player="Tyrese Maxey"><span class="fname">Tyrese</span> <span class="lname">Maxey</span></td>
+          <td class="team">PHI</td>
+          <td class="num stat">35.7</td>
+        </tr>
+        <tr>
+          <td class="rank">45</td>
+          <td class="player" data-player="RJ Barrett"><span class="fname">RJ</span> <span class="lname">Barrett</span></td>
+          <td class="team">TOR</td>
+          <td class="num stat">35.5</td>
+        </tr>
+        <tr>
+          <td class="rank">46</td>
+          <td class="player" data-player="Desmond Bane"><span class="fname">Desmond</span> <span class="lname">Bane</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">35.3</td>
+        </tr>
+        <tr>
+          <td class="rank">47</td>
+          <td class="player" data-player="Jamal Murray"><span class="fname">Jamal</span> <span class="lname">Murray</span></td>
+          <td class="team">DEN</td>
+          <td class="num stat">35.2</td>
+        </tr>
+        <tr>
+          <td class="rank">48</td>
+          <td class="player" data-player="Jalen Brunson"><span class="fname">Jalen</span> <span class="lname">Brunson</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">35.1</td>
+        </tr>
+        <tr>
+          <td class="rank">49</td>
+          <td class="player" data-player="James Harden"><span class="fname">James</span> <span class="lname">Harden</span></td>
+          <td class="team">CLE</td>
+          <td class="num stat">34.7</td>
+        </tr>
+        <tr>
+          <td class="rank">50</td>
+          <td class="player" data-player="Russell Westbrook"><span class="fname">Russell</span> <span class="lname">Westbrook</span></td>
+          <td class="team">SAC</td>
+          <td class="num stat">34.7</td>
+        </tr>
+        <tr>
+          <td class="rank">51</td>
+          <td class="player" data-player="LeBron James"><span class="fname">LeBron</span> <span class="lname">James</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">34.6</td>
+        </tr>
+        <tr>
+          <td class="rank">52</td>
+          <td class="player" data-player="Isaiah Collier"><span class="fname">Isaiah</span> <span class="lname">Collier</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">34.4</td>
+        </tr>
+        <tr>
+          <td class="rank">53</td>
+          <td class="player" data-player="Neemias Queta"><span class="fname">Neemias</span> <span class="lname">Queta</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">34.2</td>
+        </tr>
+        <tr>
+          <td class="rank">54</td>
+          <td class="player" data-player="Keyonte George"><span class="fname">Keyonte</span> <span class="lname">George</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">34.1</td>
+        </tr>
+        <tr>
+          <td class="rank">55</td>
+          <td class="player" data-player="Jalen Green"><span class="fname">Jalen</span> <span class="lname">Green</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">34.1</td>
+        </tr>
+        <tr>
+          <td class="rank">56</td>
+          <td class="player" data-player="Jaylin Williams"><span class="fname">Jaylin</span> <span class="lname">Williams</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">34.0</td>
+        </tr>
+        <tr>
+          <td class="rank">57</td>
+          <td class="player" data-player="Grayson Allen"><span class="fname">Grayson</span> <span class="lname">Allen</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">34.0</td>
+        </tr>
+        <tr>
+          <td class="rank">58</td>
+          <td class="player" data-player="Jalen Suggs"><span class="fname">Jalen</span> <span class="lname">Suggs</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">33.9</td>
+        </tr>
+        <tr>
+          <td class="rank">59</td>
+          <td class="player" data-player="Brandon Williams"><span class="fname">Brandon</span> <span class="lname">Williams</span></td>
+          <td class="team">DAL</td>
+          <td class="num stat">33.6</td>
+        </tr>
+        <tr>
+          <td class="rank">60</td>
+          <td class="player" data-player="Austin Reaves"><span class="fname">Austin</span> <span class="lname">Reaves</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">33.6</td>
+        </tr>
+        <tr>
+          <td class="rank">61</td>
+          <td class="player" data-player="Dylan Harper"><span class="fname">Dylan</span> <span class="lname">Harper</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">33.6</td>
+        </tr>
+        <tr>
+          <td class="rank">62</td>
+          <td class="player" data-player="Dyson Daniels"><span class="fname">Dyson</span> <span class="lname">Daniels</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">33.4</td>
+        </tr>
+        <tr>
+          <td class="rank">63</td>
+          <td class="player" data-player="OG Anunoby"><span class="fname">OG</span> <span class="lname">Anunoby</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">33.2</td>
+        </tr>
+        <tr>
+          <td class="rank">64</td>
+          <td class="player" data-player="Javon Small"><span class="fname">Javon</span> <span class="lname">Small</span></td>
+          <td class="team">MEM</td>
+          <td class="num stat">32.4</td>
+        </tr>
+        <tr>
+          <td class="rank">65</td>
+          <td class="player" data-player="Trey Murphy III"><span class="fname">Trey</span> <span class="lname">Murphy&nbsp;III</span></td>
+          <td class="team">NOP</td>
+          <td class="num stat">31.8</td>
+        </tr>
+        <tr>
+          <td class="rank">66</td>
+          <td class="player" data-player="Jaime Jaquez Jr."><span class="fname">Jaime</span> <span class="lname">Jaquez&nbsp;Jr.</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">31.8</td>
+        </tr>
+        <tr>
+          <td class="rank">67</td>
+          <td class="player" data-player="Zion Williamson"><span class="fname">Zion</span> <span class="lname">Williamson</span></td>
+          <td class="team">NOP</td>
+          <td class="num stat">31.8</td>
+        </tr>
+        <tr>
+          <td class="rank">68</td>
+          <td class="player" data-player="Matas Buzelis"><span class="fname">Matas</span> <span class="lname">Buzelis</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">31.5</td>
+        </tr>
+        <tr>
+          <td class="rank">69</td>
+          <td class="player" data-player="Alex Sarr"><span class="fname">Alex</span> <span class="lname">Sarr</span></td>
+          <td class="team">WAS</td>
+          <td class="num stat">31.5</td>
+        </tr>
+        <tr>
+          <td class="rank">70</td>
+          <td class="player" data-player="Alperen Şengün"><span class="fname">Alperen</span> <span class="lname">Şengün</span></td>
+          <td class="team">HOU</td>
+          <td class="num stat">31.4</td>
+        </tr>
+        <tr>
+          <td class="rank">71</td>
+          <td class="player" data-player="Cam Spencer"><span class="fname">Cam</span> <span class="lname">Spencer</span></td>
+          <td class="team">MEM</td>
+          <td class="num stat">31.3</td>
+        </tr>
+        <tr>
+          <td class="rank">72</td>
+          <td class="player" data-player="Josh Hart"><span class="fname">Josh</span> <span class="lname">Hart</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">30.9</td>
+        </tr>
+        <tr>
+          <td class="rank">73</td>
+          <td class="player" data-player="Kon Knueppel"><span class="fname">Kon</span> <span class="lname">Knueppel</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">30.6</td>
+        </tr>
+        <tr>
+          <td class="rank">74</td>
+          <td class="player" data-player="Tristan Da Silva"><span class="fname">Tristan</span> <span class="lname">Da Silva</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">30.6</td>
+        </tr>
+        <tr>
+          <td class="rank">75</td>
+          <td class="player" data-player="Kyshawn George"><span class="fname">Kyshawn</span> <span class="lname">George</span></td>
+          <td class="team">WAS</td>
+          <td class="num stat">30.5</td>
+        </tr>
+        <tr>
+          <td class="rank">76</td>
+          <td class="player" data-player="Michael Porter Jr."><span class="fname">Michael</span> <span class="lname">Porter&nbsp;Jr.</span></td>
+          <td class="team">BRK</td>
+          <td class="num stat">30.5</td>
+        </tr>
+        <tr>
+          <td class="rank">77</td>
+          <td class="player" data-player="Brandon Miller"><span class="fname">Brandon</span> <span class="lname">Miller</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">30.4</td>
+        </tr>
+        <tr>
+          <td class="rank">78</td>
+          <td class="player" data-player="Gary Payton II"><span class="fname">Gary</span> <span class="lname">Payton&nbsp;II</span></td>
+          <td class="team">GSW</td>
+          <td class="num stat">30.4</td>
+        </tr>
+        <tr>
+          <td class="rank">79</td>
+          <td class="player" data-player="Ziaire Williams"><span class="fname">Ziaire</span> <span class="lname">Williams</span></td>
+          <td class="team">BRK</td>
+          <td class="num stat">30.4</td>
+        </tr>
+        <tr>
+          <td class="rank">80</td>
+          <td class="player" data-player="Justin Edwards"><span class="fname">Justin</span> <span class="lname">Edwards</span></td>
+          <td class="team">PHI</td>
+          <td class="num stat">30.3</td>
+        </tr>
+        <tr>
+          <td class="rank">81</td>
+          <td class="player" data-player="Bobby Portis"><span class="fname">Bobby</span> <span class="lname">Portis</span></td>
+          <td class="team">MIL</td>
+          <td class="num stat">30.3</td>
+        </tr>
+        <tr>
+          <td class="rank">82</td>
+          <td class="player" data-player="Justin Champagnie"><span class="fname">Justin</span> <span class="lname">Champagnie</span></td>
+          <td class="team">WAS</td>
+          <td class="num stat">30.2</td>
+        </tr>
+        <tr>
+          <td class="rank">83</td>
+          <td class="player" data-player="Kel&#x27;el Ware"><span class="fname">Kel'el</span> <span class="lname">Ware</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">30.2</td>
+        </tr>
+        <tr>
+          <td class="rank">84</td>
+          <td class="player" data-player="Malik Monk"><span class="fname">Malik</span> <span class="lname">Monk</span></td>
+          <td class="team">SAC</td>
+          <td class="num stat">30.1</td>
+        </tr>
+        <tr>
+          <td class="rank">85</td>
+          <td class="player" data-player="Nickeil Alexander-Walker"><span class="fname">Nickeil</span> <span class="lname">Alexander-Walker</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">30.0</td>
+        </tr>
+        <tr>
+          <td class="rank">86</td>
+          <td class="player" data-player="Tre Jones"><span class="fname">Tre</span> <span class="lname">Jones</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">30.0</td>
+        </tr>
+        <tr>
+          <td class="rank">87</td>
+          <td class="player" data-player="Bennedict Mathurin"><span class="fname">Bennedict</span> <span class="lname">Mathurin</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">29.6</td>
+        </tr>
+        <tr>
+          <td class="rank">88</td>
+          <td class="player" data-player="Immanuel Quickley"><span class="fname">Immanuel</span> <span class="lname">Quickley</span></td>
+          <td class="team">TOR</td>
+          <td class="num stat">29.6</td>
+        </tr>
+        <tr>
+          <td class="rank">89</td>
+          <td class="player" data-player="Danny Wolf"><span class="fname">Danny</span> <span class="lname">Wolf</span></td>
+          <td class="team">BRK</td>
+          <td class="num stat">29.4</td>
+        </tr>
+        <tr>
+          <td class="rank">90</td>
+          <td class="player" data-player="Coby White"><span class="fname">Coby</span> <span class="lname">White</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">29.4</td>
+        </tr>
+        <tr>
+          <td class="rank">91</td>
+          <td class="player" data-player="De&#x27;Anthony Melton"><span class="fname">De'Anthony</span> <span class="lname">Melton</span></td>
+          <td class="team">GSW</td>
+          <td class="num stat">29.4</td>
+        </tr>
+        <tr>
+          <td class="rank">92</td>
+          <td class="player" data-player="Isaiah Stewart"><span class="fname">Isaiah</span> <span class="lname">Stewart</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">29.2</td>
+        </tr>
+        <tr>
+          <td class="rank">93</td>
+          <td class="player" data-player="Deandre Ayton"><span class="fname">Deandre</span> <span class="lname">Ayton</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">29.1</td>
+        </tr>
+        <tr>
+          <td class="rank">94</td>
+          <td class="player" data-player="Wendell Carter Jr."><span class="fname">Wendell</span> <span class="lname">Carter&nbsp;Jr.</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">29.1</td>
+        </tr>
+        <tr>
+          <td class="rank">95</td>
+          <td class="player" data-player="Brandin Podziemski"><span class="fname">Brandin</span> <span class="lname">Podziemski</span></td>
+          <td class="team">GSW</td>
+          <td class="num stat">29.0</td>
+        </tr>
+        <tr>
+          <td class="rank">96</td>
+          <td class="player" data-player="DeMar DeRozan"><span class="fname">DeMar</span> <span class="lname">DeRozan</span></td>
+          <td class="team">SAC</td>
+          <td class="num stat">28.9</td>
+        </tr>
+        <tr>
+          <td class="rank">97</td>
+          <td class="player" data-player="Precious Achiuwa"><span class="fname">Precious</span> <span class="lname">Achiuwa</span></td>
+          <td class="team">SAC</td>
+          <td class="num stat">28.8</td>
+        </tr>
+        <tr>
+          <td class="rank">98</td>
+          <td class="player" data-player="Brice Sensabaugh"><span class="fname">Brice</span> <span class="lname">Sensabaugh</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">28.7</td>
+        </tr>
+        <tr>
+          <td class="rank">99</td>
+          <td class="player" data-player="Cooper Flagg"><span class="fname">Cooper</span> <span class="lname">Flagg</span></td>
+          <td class="team">DAL</td>
+          <td class="num stat">28.7</td>
+        </tr>
+        <tr>
+          <td class="rank">100</td>
+          <td class="player" data-player="Reed Sheppard"><span class="fname">Reed</span> <span class="lname">Sheppard</span></td>
+          <td class="team">HOU</td>
+          <td class="num stat">28.7</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+        </div>
       </div>
     </div>
     <div class="view-tap">
@@ -3252,7 +3882,8 @@
   </div>
 </div>
         </div>
-  <div class="table-section">
+        <div class="season-monthly-slot">
+          <div class="season-table">  <div class="table-section">
     <div class="table-header"><h2>SEASON-TO-DATE TAP TOP 100</h2></div>
     <table>
       <thead>
@@ -3867,7 +4498,624 @@
       </tbody>
     </table>
   </div>
-
+</div>
+          <div class="monthly-table" style="display:none">  <div class="table-section">
+    <div class="table-header"><h2>PLAYER OF THE MONTH TAP — MARCH 2026</h2></div>
+    <table>
+      <thead>
+        <tr>
+          <th class="rank">Rank</th>
+          <th class="player">Player</th>
+          <th class="team">Team</th>
+          <th class="num stat">TAP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">1</td>
+          <td class="player" data-player="Victor Wembanyama"><span class="fname">Victor</span> <span class="lname">Wembanyama</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">67.7</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td class="player" data-player="Kawhi Leonard"><span class="fname">Kawhi</span> <span class="lname">Leonard</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">63.2</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td class="player" data-player="Luka Dončić"><span class="fname">Luka</span> <span class="lname">Dončić</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">59.0</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="player" data-player="Shai Gilgeous-Alexander"><span class="fname">Shai Gilgeous-</span><span class="lname">Alexander</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">54.6</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="player" data-player="Bam Adebayo"><span class="fname">Bam</span> <span class="lname">Adebayo</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">53.8</td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td class="player" data-player="Jayson Tatum"><span class="fname">Jayson</span> <span class="lname">Tatum</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">53.3</td>
+        </tr>
+        <tr>
+          <td class="rank">7</td>
+          <td class="player" data-player="Nikola Jokić"><span class="fname">Nikola</span> <span class="lname">Jokić</span></td>
+          <td class="team">DEN</td>
+          <td class="num stat">53.1</td>
+        </tr>
+        <tr>
+          <td class="rank">8</td>
+          <td class="player" data-player="Darius Garland"><span class="fname">Darius</span> <span class="lname">Garland</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">53.0</td>
+        </tr>
+        <tr>
+          <td class="rank">9</td>
+          <td class="player" data-player="Jalen Johnson"><span class="fname">Jalen</span> <span class="lname">Johnson</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">52.8</td>
+        </tr>
+        <tr>
+          <td class="rank">10</td>
+          <td class="player" data-player="Jalen Duren"><span class="fname">Jalen</span> <span class="lname">Duren</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">52.3</td>
+        </tr>
+        <tr>
+          <td class="rank">11</td>
+          <td class="player" data-player="Onyeka Okongwu"><span class="fname">Onyeka</span> <span class="lname">Okongwu</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">51.2</td>
+        </tr>
+        <tr>
+          <td class="rank">12</td>
+          <td class="player" data-player="Cade Cunningham"><span class="fname">Cade</span> <span class="lname">Cunningham</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">49.8</td>
+        </tr>
+        <tr>
+          <td class="rank">13</td>
+          <td class="player" data-player="Dejounte Murray"><span class="fname">Dejounte</span> <span class="lname">Murray</span></td>
+          <td class="team">NOP</td>
+          <td class="num stat">48.9</td>
+        </tr>
+        <tr>
+          <td class="rank">14</td>
+          <td class="player" data-player="Stephon Castle"><span class="fname">Stephon</span> <span class="lname">Castle</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">48.2</td>
+        </tr>
+        <tr>
+          <td class="rank">15</td>
+          <td class="player" data-player="Robert Williams"><span class="fname">Robert</span> <span class="lname">Williams</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">47.3</td>
+        </tr>
+        <tr>
+          <td class="rank">16</td>
+          <td class="player" data-player="Dyson Daniels"><span class="fname">Dyson</span> <span class="lname">Daniels</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">47.1</td>
+        </tr>
+        <tr>
+          <td class="rank">17</td>
+          <td class="player" data-player="Derrick White"><span class="fname">Derrick</span> <span class="lname">White</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">45.6</td>
+        </tr>
+        <tr>
+          <td class="rank">18</td>
+          <td class="player" data-player="Donovan Mitchell"><span class="fname">Donovan</span> <span class="lname">Mitchell</span></td>
+          <td class="team">CLE</td>
+          <td class="num stat">45.5</td>
+        </tr>
+        <tr>
+          <td class="rank">19</td>
+          <td class="player" data-player="Chet Holmgren"><span class="fname">Chet</span> <span class="lname">Holmgren</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">45.4</td>
+        </tr>
+        <tr>
+          <td class="rank">20</td>
+          <td class="player" data-player="Tyler Herro"><span class="fname">Tyler</span> <span class="lname">Herro</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">44.5</td>
+        </tr>
+        <tr>
+          <td class="rank">21</td>
+          <td class="player" data-player="CJ McCollum"><span class="fname">CJ</span> <span class="lname">McCollum</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">44.3</td>
+        </tr>
+        <tr>
+          <td class="rank">22</td>
+          <td class="player" data-player="Nickeil Alexander-Walker"><span class="fname">Nickeil</span> <span class="lname">Alexander-Walker</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">44.1</td>
+        </tr>
+        <tr>
+          <td class="rank">23</td>
+          <td class="player" data-player="Evan Mobley"><span class="fname">Evan</span> <span class="lname">Mobley</span></td>
+          <td class="team">CLE</td>
+          <td class="num stat">44.0</td>
+        </tr>
+        <tr>
+          <td class="rank">24</td>
+          <td class="player" data-player="Jalen Suggs"><span class="fname">Jalen</span> <span class="lname">Suggs</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">43.1</td>
+        </tr>
+        <tr>
+          <td class="rank">25</td>
+          <td class="player" data-player="Collin Sexton"><span class="fname">Collin</span> <span class="lname">Sexton</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">43.1</td>
+        </tr>
+        <tr>
+          <td class="rank">26</td>
+          <td class="player" data-player="De&#x27;Aaron Fox"><span class="fname">De'Aaron</span> <span class="lname">Fox</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">42.7</td>
+        </tr>
+        <tr>
+          <td class="rank">27</td>
+          <td class="player" data-player="Ajay Mitchell"><span class="fname">Ajay</span> <span class="lname">Mitchell</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">42.4</td>
+        </tr>
+        <tr>
+          <td class="rank">28</td>
+          <td class="player" data-player="Jalen Green"><span class="fname">Jalen</span> <span class="lname">Green</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">41.9</td>
+        </tr>
+        <tr>
+          <td class="rank">29</td>
+          <td class="player" data-player="Paolo Banchero"><span class="fname">Paolo</span> <span class="lname">Banchero</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">41.8</td>
+        </tr>
+        <tr>
+          <td class="rank">30</td>
+          <td class="player" data-player="Devin Booker"><span class="fname">Devin</span> <span class="lname">Booker</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">41.7</td>
+        </tr>
+        <tr>
+          <td class="rank">31</td>
+          <td class="player" data-player="Grayson Allen"><span class="fname">Grayson</span> <span class="lname">Allen</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">41.1</td>
+        </tr>
+        <tr>
+          <td class="rank">32</td>
+          <td class="player" data-player="Jrue Holiday"><span class="fname">Jrue</span> <span class="lname">Holiday</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">40.9</td>
+        </tr>
+        <tr>
+          <td class="rank">33</td>
+          <td class="player" data-player="Kristaps Porziņģis"><span class="fname">Kristaps</span> <span class="lname">Porziņģis</span></td>
+          <td class="team">GSW</td>
+          <td class="num stat">40.8</td>
+        </tr>
+        <tr>
+          <td class="rank">34</td>
+          <td class="player" data-player="Kevin Huerter"><span class="fname">Kevin</span> <span class="lname">Huerter</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">40.8</td>
+        </tr>
+        <tr>
+          <td class="rank">35</td>
+          <td class="player" data-player="Karl-Anthony Towns"><span class="fname">Karl-Anthony</span> <span class="lname">Towns</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">40.7</td>
+        </tr>
+        <tr>
+          <td class="rank">36</td>
+          <td class="player" data-player="Jaylen Brown"><span class="fname">Jaylen</span> <span class="lname">Brown</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">40.7</td>
+        </tr>
+        <tr>
+          <td class="rank">37</td>
+          <td class="player" data-player="Desmond Bane"><span class="fname">Desmond</span> <span class="lname">Bane</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">40.6</td>
+        </tr>
+        <tr>
+          <td class="rank">38</td>
+          <td class="player" data-player="John Collins"><span class="fname">John</span> <span class="lname">Collins</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">40.2</td>
+        </tr>
+        <tr>
+          <td class="rank">39</td>
+          <td class="player" data-player="Jalen Brunson"><span class="fname">Jalen</span> <span class="lname">Brunson</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">39.9</td>
+        </tr>
+        <tr>
+          <td class="rank">40</td>
+          <td class="player" data-player="Bennedict Mathurin"><span class="fname">Bennedict</span> <span class="lname">Mathurin</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">39.5</td>
+        </tr>
+        <tr>
+          <td class="rank">41</td>
+          <td class="player" data-player="Anthony Edwards"><span class="fname">Anthony</span> <span class="lname">Edwards</span></td>
+          <td class="team">MIN</td>
+          <td class="num stat">39.1</td>
+        </tr>
+        <tr>
+          <td class="rank">42</td>
+          <td class="player" data-player="Marcus Smart"><span class="fname">Marcus</span> <span class="lname">Smart</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">38.8</td>
+        </tr>
+        <tr>
+          <td class="rank">43</td>
+          <td class="player" data-player="Jamal Murray"><span class="fname">Jamal</span> <span class="lname">Murray</span></td>
+          <td class="team">DEN</td>
+          <td class="num stat">38.5</td>
+        </tr>
+        <tr>
+          <td class="rank">44</td>
+          <td class="player" data-player="Tristan Da Silva"><span class="fname">Tristan</span> <span class="lname">Da Silva</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">38.2</td>
+        </tr>
+        <tr>
+          <td class="rank">45</td>
+          <td class="player" data-player="Jaime Jaquez Jr."><span class="fname">Jaime</span> <span class="lname">Jaquez&nbsp;Jr.</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">38.1</td>
+        </tr>
+        <tr>
+          <td class="rank">46</td>
+          <td class="player" data-player="Josh Giddey"><span class="fname">Josh</span> <span class="lname">Giddey</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">37.9</td>
+        </tr>
+        <tr>
+          <td class="rank">47</td>
+          <td class="player" data-player="Austin Reaves"><span class="fname">Austin</span> <span class="lname">Reaves</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">37.2</td>
+        </tr>
+        <tr>
+          <td class="rank">48</td>
+          <td class="player" data-player="OG Anunoby"><span class="fname">OG</span> <span class="lname">Anunoby</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">37.1</td>
+        </tr>
+        <tr>
+          <td class="rank">49</td>
+          <td class="player" data-player="Amen Thompson"><span class="fname">Amen</span> <span class="lname">Thompson</span></td>
+          <td class="team">HOU</td>
+          <td class="num stat">36.9</td>
+        </tr>
+        <tr>
+          <td class="rank">50</td>
+          <td class="player" data-player="Neemias Queta"><span class="fname">Neemias</span> <span class="lname">Queta</span></td>
+          <td class="team">BOS</td>
+          <td class="num stat">36.7</td>
+        </tr>
+        <tr>
+          <td class="rank">51</td>
+          <td class="player" data-player="LeBron James"><span class="fname">LeBron</span> <span class="lname">James</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">36.7</td>
+        </tr>
+        <tr>
+          <td class="rank">52</td>
+          <td class="player" data-player="Deni Avdija"><span class="fname">Deni</span> <span class="lname">Avdija</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">36.2</td>
+        </tr>
+        <tr>
+          <td class="rank">53</td>
+          <td class="player" data-player="Devin Vassell"><span class="fname">Devin</span> <span class="lname">Vassell</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">35.8</td>
+        </tr>
+        <tr>
+          <td class="rank">54</td>
+          <td class="player" data-player="Aaron Wiggins"><span class="fname">Aaron</span> <span class="lname">Wiggins</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">35.5</td>
+        </tr>
+        <tr>
+          <td class="rank">55</td>
+          <td class="player" data-player="Jaxson Hayes"><span class="fname">Jaxson</span> <span class="lname">Hayes</span></td>
+          <td class="team">LAL</td>
+          <td class="num stat">35.5</td>
+        </tr>
+        <tr>
+          <td class="rank">56</td>
+          <td class="player" data-player="Trey Murphy III"><span class="fname">Trey</span> <span class="lname">Murphy&nbsp;III</span></td>
+          <td class="team">NOP</td>
+          <td class="num stat">35.4</td>
+        </tr>
+        <tr>
+          <td class="rank">57</td>
+          <td class="player" data-player="James Harden"><span class="fname">James</span> <span class="lname">Harden</span></td>
+          <td class="team">CLE</td>
+          <td class="num stat">35.0</td>
+        </tr>
+        <tr>
+          <td class="rank">58</td>
+          <td class="player" data-player="Brook Lopez"><span class="fname">Brook</span> <span class="lname">Lopez</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">35.0</td>
+        </tr>
+        <tr>
+          <td class="rank">59</td>
+          <td class="player" data-player="Giannis Antetokounmpo"><span class="fname">Giannis</span> <span class="lname">Antetokounmpo</span></td>
+          <td class="team">MIL</td>
+          <td class="num stat">34.9</td>
+        </tr>
+        <tr>
+          <td class="rank">60</td>
+          <td class="player" data-player="Wendell Carter Jr."><span class="fname">Wendell</span> <span class="lname">Carter&nbsp;Jr.</span></td>
+          <td class="team">ORL</td>
+          <td class="num stat">34.7</td>
+        </tr>
+        <tr>
+          <td class="rank">61</td>
+          <td class="player" data-player="Jalen Slawson"><span class="fname">Jalen</span> <span class="lname">Slawson</span></td>
+          <td class="team">IND</td>
+          <td class="num stat">34.7</td>
+        </tr>
+        <tr>
+          <td class="rank">62</td>
+          <td class="player" data-player="Pelle Larsson"><span class="fname">Pelle</span> <span class="lname">Larsson</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">34.7</td>
+        </tr>
+        <tr>
+          <td class="rank">63</td>
+          <td class="player" data-player="Kel&#x27;el Ware"><span class="fname">Kel'el</span> <span class="lname">Ware</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">34.7</td>
+        </tr>
+        <tr>
+          <td class="rank">64</td>
+          <td class="player" data-player="LaMelo Ball"><span class="fname">LaMelo</span> <span class="lname">Ball</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">34.6</td>
+        </tr>
+        <tr>
+          <td class="rank">65</td>
+          <td class="player" data-player="Coby White"><span class="fname">Coby</span> <span class="lname">White</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">34.6</td>
+        </tr>
+        <tr>
+          <td class="rank">66</td>
+          <td class="player" data-player="Davion Mitchell"><span class="fname">Davion</span> <span class="lname">Mitchell</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">34.5</td>
+        </tr>
+        <tr>
+          <td class="rank">67</td>
+          <td class="player" data-player="Oso Ighodaro"><span class="fname">Oso</span> <span class="lname">Ighodaro</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">34.3</td>
+        </tr>
+        <tr>
+          <td class="rank">68</td>
+          <td class="player" data-player="Taylor Hendricks"><span class="fname">Taylor</span> <span class="lname">Hendricks</span></td>
+          <td class="team">MEM</td>
+          <td class="num stat">34.2</td>
+        </tr>
+        <tr>
+          <td class="rank">69</td>
+          <td class="player" data-player="Isaiah Hartenstein"><span class="fname">Isaiah</span> <span class="lname">Hartenstein</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">34.1</td>
+        </tr>
+        <tr>
+          <td class="rank">70</td>
+          <td class="player" data-player="Zion Williamson"><span class="fname">Zion</span> <span class="lname">Williamson</span></td>
+          <td class="team">NOP</td>
+          <td class="num stat">33.8</td>
+        </tr>
+        <tr>
+          <td class="rank">71</td>
+          <td class="player" data-player="Russell Westbrook"><span class="fname">Russell</span> <span class="lname">Westbrook</span></td>
+          <td class="team">SAC</td>
+          <td class="num stat">33.8</td>
+        </tr>
+        <tr>
+          <td class="rank">72</td>
+          <td class="player" data-player="Julian Champagnie"><span class="fname">Julian</span> <span class="lname">Champagnie</span></td>
+          <td class="team">SAS</td>
+          <td class="num stat">33.6</td>
+        </tr>
+        <tr>
+          <td class="rank">73</td>
+          <td class="player" data-player="RJ Barrett"><span class="fname">RJ</span> <span class="lname">Barrett</span></td>
+          <td class="team">TOR</td>
+          <td class="num stat">33.1</td>
+        </tr>
+        <tr>
+          <td class="rank">74</td>
+          <td class="player" data-player="Norman Powell"><span class="fname">Norman</span> <span class="lname">Powell</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">32.8</td>
+        </tr>
+        <tr>
+          <td class="rank">75</td>
+          <td class="player" data-player="Jonathan Kuminga"><span class="fname">Jonathan</span> <span class="lname">Kuminga</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">32.8</td>
+        </tr>
+        <tr>
+          <td class="rank">76</td>
+          <td class="player" data-player="Kyle Filipowski"><span class="fname">Kyle</span> <span class="lname">Filipowski</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">32.6</td>
+        </tr>
+        <tr>
+          <td class="rank">77</td>
+          <td class="player" data-player="Keyonte George"><span class="fname">Keyonte</span> <span class="lname">George</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">32.4</td>
+        </tr>
+        <tr>
+          <td class="rank">78</td>
+          <td class="player" data-player="Tobias Harris"><span class="fname">Tobias</span> <span class="lname">Harris</span></td>
+          <td class="team">DET</td>
+          <td class="num stat">32.4</td>
+        </tr>
+        <tr>
+          <td class="rank">79</td>
+          <td class="player" data-player="Kon Knueppel"><span class="fname">Kon</span> <span class="lname">Knueppel</span></td>
+          <td class="team">CHO</td>
+          <td class="num stat">32.4</td>
+        </tr>
+        <tr>
+          <td class="rank">80</td>
+          <td class="player" data-player="Aaron Gordon"><span class="fname">Aaron</span> <span class="lname">Gordon</span></td>
+          <td class="team">DEN</td>
+          <td class="num stat">32.3</td>
+        </tr>
+        <tr>
+          <td class="rank">81</td>
+          <td class="player" data-player="Kris Dunn"><span class="fname">Kris</span> <span class="lname">Dunn</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">32.1</td>
+        </tr>
+        <tr>
+          <td class="rank">82</td>
+          <td class="player" data-player="Landry Shamet"><span class="fname">Landry</span> <span class="lname">Shamet</span></td>
+          <td class="team">NYK</td>
+          <td class="num stat">32.1</td>
+        </tr>
+        <tr>
+          <td class="rank">83</td>
+          <td class="player" data-player="Day&#x27;Ron Sharpe"><span class="fname">Day'Ron</span> <span class="lname">Sharpe</span></td>
+          <td class="team">BRK</td>
+          <td class="num stat">32.0</td>
+        </tr>
+        <tr>
+          <td class="rank">84</td>
+          <td class="player" data-player="Kasparas Jakučionis"><span class="fname">Kasparas</span> <span class="lname">Jakučionis</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">31.9</td>
+        </tr>
+        <tr>
+          <td class="rank">85</td>
+          <td class="player" data-player="Scoot Henderson"><span class="fname">Scoot</span> <span class="lname">Henderson</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">31.6</td>
+        </tr>
+        <tr>
+          <td class="rank">86</td>
+          <td class="player" data-player="Collin Gillespie"><span class="fname">Collin</span> <span class="lname">Gillespie</span></td>
+          <td class="team">PHO</td>
+          <td class="num stat">31.5</td>
+        </tr>
+        <tr>
+          <td class="rank">87</td>
+          <td class="player" data-player="Jaylin Williams"><span class="fname">Jaylin</span> <span class="lname">Williams</span></td>
+          <td class="team">OKC</td>
+          <td class="num stat">31.5</td>
+        </tr>
+        <tr>
+          <td class="rank">88</td>
+          <td class="player" data-player="Dru Smith"><span class="fname">Dru</span> <span class="lname">Smith</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">31.3</td>
+        </tr>
+        <tr>
+          <td class="rank">89</td>
+          <td class="player" data-player="Brice Sensabaugh"><span class="fname">Brice</span> <span class="lname">Sensabaugh</span></td>
+          <td class="team">UTA</td>
+          <td class="num stat">31.2</td>
+        </tr>
+        <tr>
+          <td class="rank">90</td>
+          <td class="player" data-player="Javon Small"><span class="fname">Javon</span> <span class="lname">Small</span></td>
+          <td class="team">MEM</td>
+          <td class="num stat">31.1</td>
+        </tr>
+        <tr>
+          <td class="rank">91</td>
+          <td class="player" data-player="Derrick Jones Jr."><span class="fname">Derrick</span> <span class="lname">Jones&nbsp;Jr.</span></td>
+          <td class="team">LAC</td>
+          <td class="num stat">31.0</td>
+        </tr>
+        <tr>
+          <td class="rank">92</td>
+          <td class="player" data-player="Zaccharie Risacher"><span class="fname">Zaccharie</span> <span class="lname">Risacher</span></td>
+          <td class="team">ATL</td>
+          <td class="num stat">30.9</td>
+        </tr>
+        <tr>
+          <td class="rank">93</td>
+          <td class="player" data-player="Scottie Barnes"><span class="fname">Scottie</span> <span class="lname">Barnes</span></td>
+          <td class="team">TOR</td>
+          <td class="num stat">30.8</td>
+        </tr>
+        <tr>
+          <td class="rank">94</td>
+          <td class="player" data-player="Andrew Wiggins"><span class="fname">Andrew</span> <span class="lname">Wiggins</span></td>
+          <td class="team">MIA</td>
+          <td class="num stat">30.6</td>
+        </tr>
+        <tr>
+          <td class="rank">95</td>
+          <td class="player" data-player="Reed Sheppard"><span class="fname">Reed</span> <span class="lname">Sheppard</span></td>
+          <td class="team">HOU</td>
+          <td class="num stat">30.4</td>
+        </tr>
+        <tr>
+          <td class="rank">96</td>
+          <td class="player" data-player="Leonard Miller"><span class="fname">Leonard</span> <span class="lname">Miller</span></td>
+          <td class="team">CHI</td>
+          <td class="num stat">30.3</td>
+        </tr>
+        <tr>
+          <td class="rank">97</td>
+          <td class="player" data-player="Donovan Clingan"><span class="fname">Donovan</span> <span class="lname">Clingan</span></td>
+          <td class="team">POR</td>
+          <td class="num stat">30.1</td>
+        </tr>
+        <tr>
+          <td class="rank">98</td>
+          <td class="player" data-player="De&#x27;Anthony Melton"><span class="fname">De'Anthony</span> <span class="lname">Melton</span></td>
+          <td class="team">GSW</td>
+          <td class="num stat">30.1</td>
+        </tr>
+        <tr>
+          <td class="rank">99</td>
+          <td class="player" data-player="Justin Champagnie"><span class="fname">Justin</span> <span class="lname">Champagnie</span></td>
+          <td class="team">WAS</td>
+          <td class="num stat">29.9</td>
+        </tr>
+        <tr>
+          <td class="rank">100</td>
+          <td class="player" data-player="Walter Clayton"><span class="fname">Walter</span> <span class="lname">Clayton</span></td>
+          <td class="team">MEM</td>
+          <td class="num stat">29.8</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+        </div>
       </div>
     </div>
 
@@ -13272,10 +14520,12 @@
       closeCareer();
       var anchor = findScrollAnchor();
       var savedScroll = window.scrollY;
-      /* Capture weekly/daily state from old view before switching */
+      /* Capture weekly/daily and season/monthly state from old view before switching */
       var oldView = stat === 'ted' ? '.view-ted' : '.view-tap';
       var oldSlot = document.querySelector(oldView + ' .weekly-daily-slot');
       var showingDaily = oldSlot && oldSlot.querySelector('.daily-table').style.display !== 'none';
+      var oldSeasonSlot = document.querySelector(oldView + ' .season-monthly-slot');
+      var showingMonthly = oldSeasonSlot && oldSeasonSlot.querySelector('.monthly-table').style.display !== 'none';
       stat = stat === 'ted' ? 'tap' : 'ted';
       document.querySelectorAll('.view-ted').forEach(function(el) {
         el.style.display = stat === 'ted' ? '' : 'none';
@@ -13289,6 +14539,12 @@
       if (newSlot) {
         newSlot.querySelector('.weekly-table').style.display = showingDaily ? 'none' : '';
         newSlot.querySelector('.daily-table').style.display = showingDaily ? '' : 'none';
+      }
+      /* Sync season/monthly state to new view */
+      var newSeasonSlot = document.querySelector(newView + ' .season-monthly-slot');
+      if (newSeasonSlot) {
+        newSeasonSlot.querySelector('.season-table').style.display = showingMonthly ? 'none' : '';
+        newSeasonSlot.querySelector('.monthly-table').style.display = showingMonthly ? '' : 'none';
       }
       /* Sync all-time and decade top 100 expand/collapse state */
       var oldSec = document.querySelector(oldView + ' .historical-section');
@@ -13453,6 +14709,23 @@
         } else {
           weekly.style.display = 'none';
           daily.style.display = '';
+        }
+      });
+    });
+
+    /* Season / Monthly toggle — click header to swap */
+    document.querySelectorAll('.season-monthly-slot').forEach(function(slot) {
+      slot.addEventListener('click', function(e) {
+        var header = e.target.closest('.table-header');
+        if (!header) return;
+        var seasonDiv = slot.querySelector('.season-table');
+        var monthlyDiv = slot.querySelector('.monthly-table');
+        if (seasonDiv.style.display === 'none') {
+          seasonDiv.style.display = '';
+          monthlyDiv.style.display = 'none';
+        } else {
+          seasonDiv.style.display = 'none';
+          monthlyDiv.style.display = '';
         }
       });
     });
