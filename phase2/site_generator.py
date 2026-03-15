@@ -15,6 +15,22 @@ from .weekly_update import calculate_season_rankings, calculate_weekly_rankings
 DOCS_DIR = os.path.join(config.PROJECT_DIR, "docs")
 
 
+def _remap_tap_dopm(tap_dopm_ranked):
+    """Remap tap_dopm results so they look like standard tap results.
+
+    Copies each result dict, sets 'tap' = 'tap_dopm' and re-numbers 'tap_rank'.
+    This lets render_table() display TAP_DOPM values using the existing 'tap'
+    stat_key (column header stays "TAP", no code changes needed downstream).
+    """
+    remapped = []
+    for i, r in enumerate(tap_dopm_ranked):
+        rc = dict(r)
+        rc['tap'] = rc['tap_dopm']
+        rc['tap_rank'] = i + 1
+        remapped.append(rc)
+    return remapped
+
+
 def get_rolling_week():
     """Return (start, end) for the rolling 7-day window ending yesterday.
 
@@ -2063,7 +2079,7 @@ def generate_html(weekly, season, daily, updated_at):
           if (mode === 'diff-player') {{
             textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0;min-height:2.4em;display:flex;align-items:center;justify-content:center">Watch out for the herd of GOATs above!</p></td>';
           }} else {{
-            textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0">Click <span style="font-weight:700;font-style:normal;color:#ee7623">PLAYER</span> above to sort the top 30 DIFF seasons and see the GOAT candidates!</p></td>';
+            textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0;max-width:20em;display:inline-block">Click <span style="font-weight:700;font-style:normal;color:#ee7623">PLAYER</span> above to sort the top 30 DIFF seasons and see the GOAT candidates!</p></td>';
           }}
           if (mode === 'diff') {{
             tbody.insertBefore(textRow, tbody.children[30]);
@@ -2318,7 +2334,7 @@ def generate_html(weekly, season, daily, updated_at):
           if (mode === 'diff-player') {{
             textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0;min-height:2.4em;display:flex;align-items:center;justify-content:center">Watch out for the herd of GOATs above!</p></td>';
           }} else {{
-            textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0">Click <span style="font-weight:700;font-style:normal;color:#ee7623">PLAYER</span> above to sort the top 40 DIFF seasons and see the GOAT candidates!</p></td>';
+            textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0;max-width:20em;display:inline-block">Click <span style="font-weight:700;font-style:normal;color:#ee7623">PLAYER</span> above to sort the top 40 DIFF seasons and see the GOAT candidates!</p></td>';
           }}
           if (mode === 'diff') {{
             tbody.insertBefore(textRow, tbody.children[40]);
@@ -2561,7 +2577,7 @@ def generate_html(weekly, season, daily, updated_at):
           if (mode === 'diff-player') {{
             textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0;min-height:2.4em;display:flex;align-items:center;justify-content:center">Watch out for the herd of GOATs above!</p></td>';
           }} else {{
-            textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0">Click <span style="font-weight:700;font-style:normal;color:#ee7623">PLAYER</span> above to sort the top 50 DIFF seasons and see the GOAT candidates!</p></td>';
+            textRow.innerHTML = '<td colspan="5" style="text-align:center;padding:12px 16px;cursor:pointer;border:none;background:#000"><p style="font-family:Georgia,serif;font-size:0.85em;font-style:italic;color:#ee7623;margin:0;max-width:20em;display:inline-block">Click <span style="font-weight:700;font-style:normal;color:#ee7623">PLAYER</span> above to sort the top 50 DIFF seasons and see the GOAT candidates!</p></td>';
           }}
           if (mode === 'diff') {{
             tbody.insertBefore(textRow, tbody.children[50]);
@@ -2726,13 +2742,29 @@ def generate_site():
     print(f"  Weekly TED: {len(weekly['ted'])} players")
     print(f"  Weekly TAP: {len(weekly['tap'])} players")
 
+    # For daily/weekly TAP view, use TAP_DOPM (game-level PM-derived OP) instead of
+    # standard TAP (season-level OBPM/OWS-derived OP). Remap tap_dopm → tap so the
+    # existing render_table code works unchanged (column header stays "TAP").
+    # Falls back to standard TAP if no DOPM data available.
+    weekly_tap_dopm = weekly.get('tap_dopm', [])
+    if weekly_tap_dopm:
+        weekly['tap'] = _remap_tap_dopm(weekly_tap_dopm)
+        print(f"  Weekly TAP using DOPM: {len(weekly['tap'])} players")
+    else:
+        print(f"  Weekly TAP using standard OP (no PM data)")
+
     # Daily rankings = most recent game day (top 40)
     last_game_date = db.get_last_game_date(config.CURRENT_SEASON_YEAR)
     if last_game_date:
         daily_full = calculate_weekly_rankings(last_game_date, last_game_date)
+        daily_tap_dopm = daily_full.get('tap_dopm', [])
+        if daily_tap_dopm:
+            daily_tap = _remap_tap_dopm(daily_tap_dopm)[:40]
+        else:
+            daily_tap = daily_full['tap'][:40]
         daily = {
             'ted': daily_full['ted'][:40],
-            'tap': daily_full['tap'][:40],
+            'tap': daily_tap,
         }
         print(f"  Daily ({last_game_date}): TED {len(daily['ted'])}, TAP {len(daily['tap'])} players")
     else:
